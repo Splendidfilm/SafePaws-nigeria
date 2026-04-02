@@ -18,7 +18,7 @@ export default function Home() {
     <HowItWorks/>
     <Coverage/>
     <CTA/>
-    {/* <Footer/> */}
+    <Footer/>
     </div>
   );
 }
