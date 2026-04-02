@@ -2,15 +2,15 @@
 
 import { useState } from 'react'
 // import "../../app/globals.css";
-import Logo from './Logo';
+import Logo from '../ui/Logo';
 import { motion } from 'framer-motion';
-import Button from './button';
+import Button from '../ui/button';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const Links =[
-    {name:'Home',link:'#home'},
+    {name:'Home',link:'/'},
     {name:'Services',link:'#Services'},
     {name:'How-it-works',link:'#how-it-works'},
     {name:'Coverage',link:'#coverage'},

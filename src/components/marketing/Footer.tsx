@@ -1,7 +1,22 @@
+'use client'
 import React from 'react';
-import Logo from './Logo';
+import Logo from '../ui/Logo';
+import Link from 'next/link';
 
 function Footer() {
+
+const company =[
+  {name:'About Us', link:'/about'},
+  {name:'Careers', link:'/careers'},
+  {name:'Press', link:'/press'},
+]
+
+const support =[
+  {name:'Help Center', link:'/help'},
+  {name:'Safety Guidelines', link:'/safety'},
+  {name:'Terms of Service', link:'/terms'},
+]
+
   return (
     <footer className="w-full bg-[#F8F9FA] pt-16 pb-10 rounded-t-3xl mb-10 rounded-b-3xl shadow-2xl ">
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
@@ -25,13 +40,16 @@ function Footer() {
             <div>
               <h3 className="font-semibold text-slate-700 mb-4">Company</h3>
               <ul className="space-y-3">
-                {['About Us', 'Careers', 'Press'].map((item) => (
-                  <li 
-                    key={item}
+                {company.map((item,index) => (
+                  <Link 
+                  key={index}
+                  href={item.link}>
+                    <li 
                     className="text-[#6B7280] hover:text-[#17CFAD] transition-colors cursor-pointer"
                   >
-                    {item}
+                    {item.name }
                   </li>
+                  </Link>
                 ))}
               </ul>
             </div>
@@ -40,13 +58,17 @@ function Footer() {
             <div>
               <h3 className="font-semibold text-slate-700 mb-4">Support</h3>
               <ul className="space-y-3">
-                {['Help Center', 'Safety Guidelines', 'Terms of Service'].map((item) => (
+                {support.map((item, index) => (
+                  <Link 
+                  key={index}
+                  href={item.link}
+                  >
                   <li 
-                    key={item}
                     className="text-[#6B7280] hover:text-[#17CFAD] transition-colors cursor-pointer"
                   >
-                    {item}
+                    {item.name}
                   </li>
+                  </Link>
                 ))}
               </ul>
             </div>
@@ -77,15 +99,15 @@ function Footer() {
             <p className="hover:text-[#17CFAD] transition-colors cursor-pointer">
               Privacy Policy
             </p>
-            <p className="hover:text-[#17CFAD] transition-colors cursor-pointer">
+            <Link href="/terms" className="hover:text-[#17CFAD] transition-colors cursor-pointer">
               Terms of Service
-            </p>
-          </div>
+            </Link>
+          </div>    
         </div>
 
-      </div>
+      </div>  
     </footer>
-  );
+  );    
 }
-
+  
 export default Footer;

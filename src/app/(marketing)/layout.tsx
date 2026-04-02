@@ -1,6 +1,6 @@
-import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/ui/Footer";
-
+import Navbar from "@/components/marketing/Navbar";
+import Footer from "@/components/marketing/Footer";
+import '@/app/global.css'
 
 export default function MarketingLayout({
   children,
@@ -10,7 +10,7 @@ export default function MarketingLayout({
   return (
     <>
       <Navbar />
-      <main className="flex flex-col items-center bg-zinc-50">
+      <main className="flex flex-col items-center bg-zinc-50  ">
         {children}
       </main>
       <Footer />

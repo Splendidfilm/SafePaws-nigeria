@@ -1,12 +1,12 @@
 'use client'
 
-import Navbar from "@/components/ui/Navbar";
-import Hero from "@/components/ui/Hero";
-import Services from "@/components/ui/Services";
-import HowItWorks from "@/components/ui/HowItWorks";
-import Footer from "@/components/ui/Footer";
-import Coverage from "@/components/ui/Coverage";
-import CTA from "@/components/ui/CTA"
+// import Navbar from "@/components/marketing/Navbar";
+import Hero from "@/components/marketing/Hero";
+import Services from "@/components/marketing/Services";
+import HowItWorks from "@/components/marketing/HowItWorks";
+// import Footer from "@/components/marketing/Footer";
+import Coverage from "@/components/marketing/Coverage";
+import CTA from "@/components/marketing/CTA"
 
 export default function MarketingPage() {
   return (
