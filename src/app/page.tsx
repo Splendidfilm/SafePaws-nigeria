@@ -7,6 +7,7 @@ import Services from "@/components/marketing/Services";
 import HowItWorks from "@/components/marketing/HowItWorks";
 import Footer from "@/components/marketing/Footer";
 import Coverage from "@/components/marketing/Coverage";
+import CTA from "@/components/marketing/CTA"
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
     <Services/>
     <HowItWorks/>
     <Coverage/>
+    <CTA/>
     {/* <Footer/> */}
     </div>
   );

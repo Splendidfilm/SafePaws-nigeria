@@ -10,9 +10,9 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const Links =[
-    {name:'Home',link:'#Home'},
+    {name:'Home',link:'#home'},
     {name:'Services',link:'#Services'},
-    {name:'How-it-works',link:'how-it-works'},
+    {name:'How-it-works',link:'#how-it-works'},
     {name:'Coverage',link:'#coverage'},
   ]
 
@@ -55,7 +55,7 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <Button type='Book now' />
+            <Button size='md' type='Book now' />
           </div>
           
         )}

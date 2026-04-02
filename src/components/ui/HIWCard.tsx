@@ -16,7 +16,7 @@ function HIWCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="w-full md:w-1/3 flex flex-col items-center md:items-start bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow"
+      className="w-full md:w-2/3 flex flex-col items-center md:items-start bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow"
     >
       {/* Number Circle - Auto play animation when in view */}
       <motion.div
