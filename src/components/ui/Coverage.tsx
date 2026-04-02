@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from "../ui/button";
+import Button from "./button";
 // If you're still using Material Symbols, make sure the font is loaded in your layout
 
 export default function Coverage() {

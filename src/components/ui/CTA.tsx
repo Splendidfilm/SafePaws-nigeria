@@ -1,6 +1,6 @@
 import React from 'react'
-import Logo from '../ui/Logo'
-import Button from '../ui/button'
+import Logo from './Logo'
+import Button from './button'
 import { motion } from 'framer-motion'
 
 function CTA() {

@@ -1,6 +1,6 @@
 // import { section } from 'framer-motion/client'
 import React from 'react'
-import HIW from '../ui/HIWCard'
+import HIW from './HIWCard'
 
 function HowItWorks() {
 

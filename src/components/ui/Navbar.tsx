@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 // import "../../app/globals.css";
-import Logo from '../ui/Logo';
+import Logo from './Logo';
 import { motion } from 'framer-motion';
-import Button from '../ui/button';
+import Button from './button';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
