@@ -1,6 +1,6 @@
 // import { section } from 'framer-motion/client'
 import React from 'react'
-import HIW from '../ui/HIWCard'
+import HIW from './HIWCard'
 
 function HowItWorks() {
 
@@ -25,7 +25,7 @@ function HowItWorks() {
 </button>
 
 </div>
-<div className='flex flex-wrap gap-10' >
+<div className='grid grid-cols-1 md:grid-cols-2 gap-10 w-full place-items-center place-content-center ' >
     {steps.map((step,index)=>(
 <HIW
 key={index}

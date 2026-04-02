@@ -3,7 +3,7 @@ import Button from '../ui/button'
 
 export default function Hero() {
   return (
-    <div className="w-full bg-white">
+    <section id='home' className="w-full bg-white">
       <div className="px-4 md:px-10 lg:px-40 mx-auto py-10">
         <div className="flex flex-col-reverse gap-6 lg:flex-row lg:items-center w-full  ">
           {/* Left Content */}
@@ -19,7 +19,7 @@ export default function Hero() {
 
               {/* Heading */}
               <h1 className="text-text-main text-5xl font-black leading-[1.1] tracking-[-0.033em] sm:text-5xl lg:text-6xl flex flex-col">
-                Safe Journey,<span className="text-[#17CFAD]">Happy Pets</span>
+                Safe Journey,<span className="text-[#17CFAD]">Happy Pets 🐾</span>
               </h1>
 
               {/* Subheading */}
@@ -31,10 +31,14 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button type="Book Transport Now"/>
-              <button className="flex cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-gray-100 hover:bg-gray-200 transition-colors text-base font-medium">
-                <span>View Coverage</span>
-              </button>
+              <Button
+              variant='primary'
+              size='md'
+              type="Book Transport Now"/>
+              <Button
+              variant='outline'
+              size='md'
+              type="View Coverage"/>
             </div>
 
             {/* Social Proof */}
@@ -64,6 +68,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

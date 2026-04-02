@@ -1,77 +1,113 @@
 'use client'
+import React from 'react';
+import Logo from '../ui/Logo';
+import Link from 'next/link';
 
-import { useState } from 'react'
+function Footer() {
 
-export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+const company =[
+  {name:'About Us', link:'/about'},
+  {name:'Careers', link:'/careers'},
+  {name:'Press', link:'/press'},
+]
+
+const support =[
+  {name:'Help Center', link:'/help'},
+  {name:'Safety Guidelines', link:'/safety'},
+  {name:'Terms of Service', link:'/terms'},
+]
 
   return (
-    <div className="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
-      <div className="px-4 md:px-10 lg:px-40 max-w-[960px] mx-auto">
-        <header className="flex items-center justify-between py-3">
-          {/* Logo */}
-          <div className="flex items-center gap-4 text-[--color-text-main]">
-            <div className="size-8 flex items-center justify-center rounded-lg bg-[--color-primary]/20 text-[--color-primary]">
-              <span className="material-symbols-outlined">pets</span>
+    <footer className="w-full bg-[#F8F9FA] pt-16 pb-10 rounded-t-3xl mb-10 rounded-b-3xl shadow-2xl ">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
+        
+        {/* Main Footer Content */}
+        <div className="flex flex-col lg:flex-row gap-12 pb-12 border-b border-gray-200">
+          
+          {/* Logo + Description */}
+          <div className="flex-1 lg:w-2/5">
+            <Logo />
+            <p className="mt-6 text-[#6B7280] leading-relaxed max-w-md">
+              Providing safe, reliable, and comfortable transportation for pets across Nigeria. 
+              Because they aren&apos;t just cargo — they are family.
+            </p>
+          </div>
+
+          {/* Links Sections */}
+          <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-10">
+            
+            {/* Company */}
+            <div>
+              <h3 className="font-semibold text-slate-700 mb-4">Company</h3>
+              <ul className="space-y-3">
+                {company.map((item,index) => (
+                  <Link 
+                  key={index}
+                  href={item.link}>
+                    <li 
+                    className="text-[#6B7280] hover:text-[#17CFAD] transition-colors cursor-pointer"
+                  >
+                    {item.name }
+                  </li>
+                  </Link>
+                ))}
+              </ul>
             </div>
-            <h2 className="text-[--color-text-main] text-lg font-bold leading-tight tracking-[-0.015em]">
-              SafePaws Nigeria
-            </h2>
-          </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex flex-1 justify-end gap-8">
-            <div className="flex items-center gap-6 lg:gap-9">
-              <a className="text-[--color-text-main] text-sm font-medium hover:text-[--color-primary] transition-colors" href="#">
-                Home
-              </a>
-              <a className="text-[--color-text-main] text-sm font-medium hover:text-[--color-primary] transition-colors" href="#services">
-                Services
-              </a>
-              <a className="text-[--color-text-main] text-sm font-medium hover:text-[--color-primary] transition-colors" href="#how-it-works">
-                How It Works
-              </a>
-              <a className="text-[--color-text-main] text-sm font-medium hover:text-[--color-primary] transition-colors" href="#coverage">
-                Coverage
-              </a>
+            {/* Support */}
+            <div>
+              <h3 className="font-semibold text-slate-700 mb-4">Support</h3>
+              <ul className="space-y-3">
+                {support.map((item, index) => (
+                  <Link 
+                  key={index}
+                  href={item.link}
+                  >
+                  <li 
+                    className="text-[#6B7280] hover:text-[#17CFAD] transition-colors cursor-pointer"
+                  >
+                    {item.name}
+                  </li>
+                  </Link>
+                ))}
+              </ul>
             </div>
-            <button className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[--color-primary] hover:bg-[--color-primary]/90 transition-colors text-[#111816] text-sm font-bold tracking-[0.015em]">
-              <span className="truncate">Book Now</span>
-            </button>
-          </div>
 
-          {/* Mobile Menu Icon */}
-          <div className="md:hidden flex items-center">
-            <span 
-              className="material-symbols-outlined text-[--color-text-main] cursor-pointer"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              menu
-            </span>
-          </div>
-        </header>
+            {/* Contact */}
+            <div>
+              <h3 className="font-semibold text-slate-700 mb-4">Contact</h3>
+              <ul className="space-y-3">
+                <li className="text-[#6B7280] hover:text-[#17CFAD] transition-colors cursor-pointer">
+                  Email: info@safepawsng.com
+                </li>
+                <li className="text-[#6B7280] hover:text-[#17CFAD] transition-colors cursor-pointer">
+                  Phone: +234 912 773 0659
+                </li>
+              </ul>
+            </div>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden pb-4 flex flex-col gap-4">
-            <a className="text-[--color-text-main] text-sm font-medium hover:text-[--color-primary] transition-colors" href="#">
-              Home
-            </a>
-            <a className="text-[--color-text-main] text-sm font-medium hover:text-[--color-primary] transition-colors" href="#services">
-              Services
-            </a>
-            <a className="text-[--color-text-main] text-sm font-medium hover:text-[--color-primary] transition-colors" href="#how-it-works">
-              How It Works
-            </a>
-            <a className="text-[--color-text-main] text-sm font-medium hover:text-[--color-primary] transition-colors" href="#coverage">
-              Coverage
-            </a>
-            <button className="flex w-full cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-[--color-primary] hover:bg-[--color-primary]/90 transition-colors text-[#111816] text-sm font-bold tracking-[0.015em]">
-              <span>Book Now</span>
-            </button>
           </div>
-        )}
-      </div>
-    </div>
-  )
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-500">
+          <p>
+            &copy; {new Date().getFullYear()} SafePaws Nigeria. All rights reserved.
+          </p>
+
+          <div className="flex items-center gap-8">
+            <p className="hover:text-[#17CFAD] transition-colors cursor-pointer">
+              Privacy Policy
+            </p>
+            <Link href="/terms" className="hover:text-[#17CFAD] transition-colors cursor-pointer">
+              Terms of Service
+            </Link>
+          </div>    
+        </div>
+
+      </div>  
+    </footer>
+  );    
 }
+  
+export default Footer;

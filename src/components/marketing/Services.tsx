@@ -1,5 +1,5 @@
 import React from 'react'
-import ServiceCard from '../ui/ServiceCard'
+import ServiceCard from './ServiceCard'
 import { Clock, Truck, MapPin } from 'lucide-react'
 
 function Services() {
@@ -11,7 +11,7 @@ function Services() {
         {icon: MapPin, title: "Live GPS Tracking", description: "Peace of mind included. Track your pet's/animals location and status in real-time via our secure web app linked to your booking. Receive updates on their journey, estimated arrival time, and any important notifications, ensuring you stay connected every step of the way."},
     ]
   return (
-    <section id='services' className='flex flex-col gap-14 items-center justify-around p-5  bg-[#F6F8F8]' >
+    <section id='Services' className='flex flex-col gap-14 items-center justify-around p-5  bg-[#F6F8F8]' >
 <div className='flex flex-col items-center gap-4.5' >
             <h3 className='text-[#17CFAD] font-bold text-lg' >Our Services</h3>
         <h1 className='text-3xl font-bold text-slate-900 text-center '>Tailored Logistics for Your Four-legged<br/> Friends</h1>
