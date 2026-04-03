@@ -62,13 +62,10 @@ export default function Coverage() {
               {/* Map Background */}
               <div 
                 className="absolute inset-0 bg-cover bg-center"
-                style={{
-                  backgroundImage: `url("https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?w=800&auto=format&fit=crop")`
-                }}
               />
 
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/30 to-white/90" />
+              <div className="absolute inset-0 bg-linear-to-b from-transparent via-white/30 to-white/90" />
 
               {/* Map Pins with Animation */}
               <div className="absolute bottom-[35%] left-[28%] flex flex-col items-center">
@@ -80,7 +77,7 @@ export default function Coverage() {
                 </div>
               </div>
 
-              <div className="absolute top-[38%] right-[32%] flex flex-col items-center" style={{ animationDelay: '300ms' }}>
+              <div className="absolute top-[38%] right-[32%] flex flex-col items-center">
                 <div className="animate-bounce">
                   <span className="material-symbols-outlined text-[#17CFAD] text-5xl drop-shadow-md">location_on</span>
                 </div>
@@ -90,7 +87,7 @@ export default function Coverage() {
               </div>
 
               {/* Optional third pin */}
-              <div className="absolute top-[65%] left-[55%] flex flex-col items-center" style={{ animationDelay: '600ms' }}>
+              <div className="absolute top-[65%] left-[55%] flex flex-col items-center">
                 <div className="animate-bounce">
                   <span className="material-symbols-outlined text-[#17CFAD] text-4xl drop-shadow-md">location_on</span>
                 </div>

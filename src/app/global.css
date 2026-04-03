@@ -2,6 +2,10 @@
 
 @layer base {
   body {
-    @apply bg-white text-black;
+    background-color: white;
+    color: black;
   }
+}
+.background{
+              background-image: url("https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?w=800&auto=format&fit=crop");
 }
