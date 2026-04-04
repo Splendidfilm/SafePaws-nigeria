@@ -15,7 +15,7 @@ export default function MediaContact() {
 
             <div className="space-y-8">
               <div className="flex gap-5">
-                <div className="w-11 h-11 bg-[#D1F5EF] rounded-2xl flex items-center justify-center text-[#17CFAD] flex-shrink-0">
+                <div className="w-11 h-11 bg-[#D1F5EF] rounded-2xl flex items-center justify-center text-[#17CFAD] shrink-0">
                   <span className="material-symbols-outlined">mail</span>
                 </div>
                 <div>
@@ -25,7 +25,7 @@ export default function MediaContact() {
               </div>
 
               <div className="flex gap-5">
-                <div className="w-11 h-11 bg-[#D1F5EF] rounded-2xl flex items-center justify-center text-[#17CFAD] flex-shrink-0">
+                <div className="w-11 h-11 bg-[#D1F5EF] rounded-2xl flex items-center justify-center text-[#17CFAD] shrink-0">
                   <span className="material-symbols-outlined">phone_iphone</span>
                 </div>
                 <div>
@@ -35,7 +35,7 @@ export default function MediaContact() {
               </div>
 
               <div className="flex gap-5">
-                <div className="w-11 h-11 bg-[#D1F5EF] rounded-2xl flex items-center justify-center text-[#17CFAD] flex-shrink-0">
+                <div className="w-11 h-11 bg-[#D1F5EF] rounded-2xl flex items-center justify-center text-[#17CFAD] shrink-0">
                   <span className="material-symbols-outlined">location_on</span>
                 </div>
                 <div>

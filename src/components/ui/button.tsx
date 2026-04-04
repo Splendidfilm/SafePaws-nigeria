@@ -1,4 +1,5 @@
 import React from 'react';
+// import LatestNews from '../marketing/press/LatsetNews';
 
 type ButtonProps = {
   type: string;           // This is actually the button text
@@ -26,6 +27,7 @@ function Button({
     about:"bg-white text-[#17CFAD] px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform active:scale-95",
     insurance:'bg-gray-900 text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-black hover:scale-105 active:scale-100',
     carriers:'border border-gray-300 px-6 py-3 rounded-full text-sm font-bold hover:bg-gray-100 hover:scale-105 active:scale-100',
+    LatestNews:"bg-[#17CFAD] text-white px-8 py-4 rounded-2xl font-bold ex items-center gap-2 hover:shadow-lg transition-all"
     };
 
   const sizes = {

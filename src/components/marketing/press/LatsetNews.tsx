@@ -1,10 +1,12 @@
 // src/components/marketing/press/LatestNews.tsx
 
+// import  Image  from "next/image";
+
 import Image  from "next/image";
 
 export default function LatestNews() {
   return (
-    <section id="latest-news" className="py-20 bg-white">
+    <section id="latest-news" className="py-20 bg-white w-full">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-end justify-between mb-12">
           <div>
@@ -78,7 +80,14 @@ export default function LatestNews() {
 
           {/* Bottom Wide Article */}
           <div className="md:col-span-12 bg-gray-900 p-8 rounded-3xl flex flex-col md:flex-row gap-8 items-center">
-            <div className="w-full md:w-1/3 aspect-video rounded-2xl overflow-hidden shrink-0">
+            <div className="w-full md:w-1/3 rounded-2xl overflow-hiddenwe shrink-0">
+            {/* <Image
+                src={'/images/Dog_image_GR.png'}
+                alt="Dog with SafePaws branding"
+                fill
+                className="w-full h-full object-cover rounded-2xl"
+                priority
+                /> */}
             </div>
             <div className="flex-1">
               <span className="text-[#17CFAD] text-sm font-medium">Vanguard News • Oct 05, 2024</span>
@@ -89,6 +98,7 @@ export default function LatestNews() {
                 Celebrating three years of excellence and the community that trusts us with their furry family members.
               </p>
             </div>
+
           </div>
         </div>
       </div>

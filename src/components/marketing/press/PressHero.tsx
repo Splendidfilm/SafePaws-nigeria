@@ -16,24 +16,21 @@ export default function PressHero() {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <button 
-            className="bg-[#17CFAD] text-white px-8 py-4 rounded-2xl font-bold ex items-center gap-2 hover:shadow-lg transition-all" >
+            <button >
                 <a 
               href="#latest-news" 
+              className="bg-[#17CFAD] text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 hover:shadow-lg transition-all"
             >
               Latest Coverage
-              <span className="material-symbols-outlined text-sm  items-center justify-center flex ">arrow_downward</span>
+              <span className="material-symbols-outlined text-sm">arrow_downward</span>
             </a>
             </button>
-            <button 
-            className="bg-white border border-gray-200 px-8 py-4 rounded-2xl font-bold hover:bg-gray-50 transition-all " >
-             <a 
+            <a 
               href="#media-kit" 
-              
+              className="bg-white border border-gray-200 px-8 py-4 rounded-2xl font-bold hover:bg-gray-50 transition-all"
             >
               Media Kit
             </a>
-            </button>
           </div>
 
         </div>
