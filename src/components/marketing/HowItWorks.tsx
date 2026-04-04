@@ -12,7 +12,7 @@ function HowItWorks() {
     ]
 
   return (
-    <section className='flex w-full p-7 px-4 items-start justify-start ' id='how-it-works' >
+    <section className='flex  w-full p-7 px-4 items-start justify-start ' id='how-it-works' >
 <div className=" flex flex-col gap-10 items-start justify-start w-4/5 mx-auto " >
     <div className='flex w-full justify-between items-center flex-wrap' >
 <div className='flex flex-col items-start' >
@@ -25,7 +25,7 @@ function HowItWorks() {
 </button>
 
 </div>
-<div className='grid grid-cols-1 md:grid-cols-2 gap-10 w-full place-items-center place-content-center ' >
+<div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10 w-full place-items-center place-content-center ' >
     {steps.map((step,index)=>(
 <HIW
 key={index}
