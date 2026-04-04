@@ -6,6 +6,12 @@
     color: black;
   }
 }
-.background{
-              background-image: url("https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?w=800&auto=format&fit=crop");
+/* .background{
+              background-image: url("../../public/images/");
+} */
+.background-press {
+  background-image: url("/images/Dog_image_GR.png"), 
+                    linear-gradient(rgba(23, 207, 173, 0.1), transparent);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
