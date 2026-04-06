@@ -12,6 +12,7 @@ export default function HelpHero() {
           alt="Happy pet in car"
           fill
           className="w-full h-full object-cover"
+          priority
         />
       </div>
 
