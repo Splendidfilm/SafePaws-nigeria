@@ -47,7 +47,7 @@ shield_with_heart
               fill
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-10">
+            <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent flex items-end p-10">
               <p className="text-white font-medium">Standardizing comfort across every kilometer of Nigerian roads.</p>
             </div>
           </div>
