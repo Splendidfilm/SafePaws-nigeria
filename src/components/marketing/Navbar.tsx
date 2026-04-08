@@ -33,7 +33,7 @@ export default function Navbar() {
             ))}
 
             </div>
-            <Button type='Book now' />
+            <Button>Get Started</Button>
           </div>
 
           {/* Mobile Menu Icon */}
@@ -55,7 +55,7 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <Button size='md' type='Book now' />
+            <Button size='md'>Get Started</Button>
           </div>
           
         )}

@@ -16,11 +16,10 @@ function CTA() {
         <h1 className='text-[#111c1a] text-2xl font-semibold' >Ready to Move Your Pet?</h1>
         <p className='text-[#5F8881] text-center' >Join Hundreds of happy pet owners who trust SafePaws Nigeria for thier transportation needs.Get a free quote today</p>
         <div className='flex gap-10' >
-        <Button type='Get Free Quote'/>
+        <Button size='md' variant='secondary' >Get Free Quote</Button>
         <Button 
         size='md'
-        variant='outline'
-        type='Contact Support'/>
+        variant='outline'>Contact Support</Button>
         </div>
     </div>
   )

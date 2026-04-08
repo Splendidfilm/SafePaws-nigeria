@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from "../ui/button";
+import Image from 'next/image';
 // If you're still using Material Symbols, make sure the font is loaded in your layout
 
 export default function Coverage() {
@@ -52,7 +53,7 @@ export default function Coverage() {
               </div>
             </div>
 
-            <Button type="Check My Location" className="mt-6" />
+            <Button className="mt-6" variant='primary' >Check My Location</Button>
           </div>
 
           {/* Right Map Section */}
@@ -60,8 +61,12 @@ export default function Coverage() {
             <div className="relative w-full aspect-square bg-white rounded-3xl shadow-xl overflow-hidden">
               
               {/* Map Background */}
-              <div 
-                className="absolute inset-0 bg-cover bg-center"
+              <Image
+              src={'/images/map_marketing.png'}
+              fill
+              alt='map'
+              className='absolute inset-0 bg-cover bg-center'
+              priority
               />
 
               {/* Gradient Overlay */}
