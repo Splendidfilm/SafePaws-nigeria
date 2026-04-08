@@ -22,15 +22,13 @@ export default function FinalCTA() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
            <Button
-           type="Book a Trip Now"
            variant="about"
             size="lg"
-           />
+           >Book a Trip Now</Button>
            <Button
-           type='Contact Sales'
            variant='aboutOutline'
            size='lg'
-           />
+           >Contact Sales</Button>
           </div>
         </div>
       </div>

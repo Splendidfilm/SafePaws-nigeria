@@ -18,7 +18,7 @@ const support =[
 ]
 
   return (
-    <footer className="w-full bg-[#F8F9FA] pt-16 pb-10 rounded-t-3xl mb-10 rounded-b-3xl shadow-2xl ">
+    <footer className="w-full bg-[#F8F9FA] pt-16 pb-10 rounded-t-3xl mb-18 rounded-b-3xl shadow-2xl ">
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
         
         {/* Main Footer Content */}
