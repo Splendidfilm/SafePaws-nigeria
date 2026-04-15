@@ -14,4 +14,20 @@
                     linear-gradient(rgba(23, 207, 173, 0.1), transparent);
   background-repeat: no-repeat;
   background-size: cover;
+
+}
+.material-symbols-filled {
+  font-family: 'Material Symbols Filled';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Adjust size as needed */
+  display: inline-block;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
 }
