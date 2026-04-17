@@ -3,11 +3,11 @@ import Image from "next/image";
 
 export default function MissionSection() {
   return (
-    <section className="py-24 bg-[#F1F5F3]">
+    <section className="py-24 bg-[#F8FAF9] dark:bg-[#11211e] ">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-black text-gray-900 mb-4">Our Mission</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-5xl font-black text-gray-900 mb-4 dark:text-zinc-100 ">Our Mission</h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto dark:text-zinc-300 ">
             Providing a sanctuary on wheels for NigeriaZ&apos;s beloved companions.
           </p>
         </div>

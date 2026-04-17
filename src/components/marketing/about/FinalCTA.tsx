@@ -4,7 +4,7 @@ import Button from "@/components/ui/button";
 
 export default function FinalCTA() {
   return (
-    <section className="py-20">
+    <section className="py-20 border-b border-b-zinc-600">
       <div className="max-w-7xl mx-auto px-6">
         <div className="bg-[#17CFAD] rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
           {/* Decorative circles */}

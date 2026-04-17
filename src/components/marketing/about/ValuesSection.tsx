@@ -19,9 +19,9 @@ export default function ValuesSection() {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white dark:bg-[#11211e]">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl font-black text-gray-900 mb-12 text-center">
+        <h2 className="text-5xl dark:text-zinc-100 font-black text-gray-900 mb-12 text-center">
           Core Values
         </h2>
 
@@ -29,15 +29,15 @@ export default function ValuesSection() {
           {values.map((value, index) => (
             <div 
               key={index}
-              className="p-8 rounded-3xl bg-white border border-gray-100 hover:border-[#17CFAD] transition-all duration-300 group"
+              className="p-8 rounded-3xl bg-white border border-gray-100 hover:border-[#17CFAD] transition-all duration-300 group dark:bg-[#19322d] dark:border-zinc-500 "
             >
               <div className="w-14 h-14 bg-[#D1F5EF] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-[#17CFAD] text-4xl">
                   {value.icon}
                 </span>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{value.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{value.desc}</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 dark:text-zinc-200 ">{value.title}</h3>
+              <p className="text-gray-600 dark:text-zinc-400 leading-relaxed">{value.desc}</p>
             </div>
           ))}
         </div>

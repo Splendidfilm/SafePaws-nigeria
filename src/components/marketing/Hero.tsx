@@ -65,14 +65,16 @@ export default function Hero() {
 
           {/* Right Image */}
           <div className="w-full flex-1">
-            <div className="relative w-full aspect-[4/3] rounded-3xl shadow-2xl overflow-hidden">
+            <div className="relative w-full aspect-4/3 rounded-3xl shadow-2xl overflow-hidden">
               <Image
                 src="/images/group-of-portrait.jpg"
                 alt="Happy dog in a pet carrier"
                 priority
                 fill
                 className="object-cover"
+                
               />
+              <div className='absolute inset-0 bg-black/20' />
             </div>
           </div>
 

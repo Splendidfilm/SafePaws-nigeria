@@ -18,7 +18,7 @@ const support =[
 ]
 
   return (
-    <footer className="w-full bg-[#F8F9FA] pt-16 pb-10 rounded-t-3xl mb-18 rounded-b-3xl shadow-2xl ">
+    <footer className="w-full bg-[#F8F9FA] pt-16 pb-10 rounded-t-3xl mb-18 shadow-2xl dark:bg-[#11211e] ">
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
         
         {/* Main Footer Content */}
@@ -27,7 +27,7 @@ const support =[
           {/* Logo + Description */}
           <div className="flex-1 lg:w-2/5">
             <Logo />
-            <p className="mt-6 text-[#6B7280] leading-relaxed max-w-md">
+            <p className="mt-6 text-[#6B7280] leading-relaxed max-w-md dark:text-zinc-300 ">
               Providing safe, reliable, and comfortable transportation for pets across Nigeria. 
               Because they aren&apos;t just cargo — they are family.
             </p>
@@ -38,14 +38,14 @@ const support =[
             
             {/* Company */}
             <div>
-              <h3 className="font-semibold text-slate-700 mb-4">Company</h3>
+              <h3 className="font-semibold text-slate-700 mb-4 dark:text-zinc-100 ">Company</h3>
               <ul className="space-y-3">
                 {company.map((item,index) => (
                   <Link 
                   key={index}
                   href={item.link}>
                     <li 
-                    className="text-[#6B7280] hover:text-[#17CFAD] transition-colors cursor-pointer"
+                    className="text-[#6B7280] hover:text-[#17CFAD] transition-colors cursor-pointer dark:text-zinc-300"
                   >
                     {item.name }
                   </li>
@@ -56,7 +56,7 @@ const support =[
 
             {/* Support */}
             <div>
-              <h3 className="font-semibold text-slate-700 mb-4">Support</h3>
+              <h3 className="font-semibold text-slate-700 mb-4 dark:text-zinc-100">Support</h3>
               <ul className="space-y-3">
                 {support.map((item, index) => (
                   <Link 
@@ -64,7 +64,7 @@ const support =[
                   href={item.link}
                   >
                   <li 
-                    className="text-[#6B7280] hover:text-[#17CFAD] transition-colors cursor-pointer"
+                    className="text-[#6B7280] hover:text-[#17CFAD] transition-colors cursor-pointer dark:text-zinc-300 "
                   >
                     {item.name}
                   </li>
@@ -75,12 +75,12 @@ const support =[
 
             {/* Contact */}
             <div>
-              <h3 className="font-semibold text-slate-700 mb-4">Contact</h3>
+              <h3 className="font-semibold text-slate-700 mb-4 dark:text-zinc-100">Contact</h3>
               <ul className="space-y-3">
-                <li className="text-[#6B7280] hover:text-[#17CFAD] transition-colors cursor-pointer">
+                <li className="text-[#6B7280] hover:text-[#17CFAD] transition-colors cursor-pointer dark:text-zinc-300 ">
                   Email: info@safepawsng.com
                 </li>
-                <li className="text-[#6B7280] hover:text-[#17CFAD] transition-colors cursor-pointer">
+                <li className="text-[#6B7280] hover:text-[#17CFAD] transition-colors cursor-pointer dark:text-zinc-300 ">
                   Phone: +234 912 773 0659
                 </li>
               </ul>
@@ -90,7 +90,7 @@ const support =[
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-500">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-500 dark:text-zinc-200">
           <p>
             &copy; {new Date().getFullYear()} SafePaws Nigeria. All rights reserved.
           </p>
