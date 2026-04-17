@@ -1,73 +1,65 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+// src/components/marketing/GetStarted.tsx
+import React from 'react';
+import { motion } from 'framer-motion';
+import GetStartedCard from './GetStartedCard';
+import { UserPlus, PawPrint, ShieldCheck } from 'lucide-react';
 
-    const cardDetails = [
-        {num: 1, head: 'Create an account', desc:'Join our comunity in seconds with a simple sin up process to access all features.'},
-        {num: 2, head: 'Register your pet', desc:'Add your furry freinds profiles including health records and specific travel needs.'},
-        {num: 3, head: 'Track, report and protect', desc:'Monitor journeys, access health reports, and keep your pets safe with our ecosystem.'},
-    ]
-
+const cardDetails = [
+  {
+    icon: UserPlus,
+    title: "Create an account",
+    description: "Join our community in seconds with a simple signup process to access all features."
+  },
+  {
+    icon: PawPrint,
+    title: "Register your pet",
+    description: "Add your furry friends' profiles including health records and specific travel needs."
+  },
+  {
+    icon: ShieldCheck,
+    title: "Track, report and protect",
+    description: "Monitor journeys, access health reports, and keep your pets safe with our ecosystem."
+  },
+];
 
 export default function GetStarted() {
-
-
   return (
-    <div className='  space-y-3 flex flex-col items-center justify-center w-full py-7 ' >
-        <h2 className='uppercase font-semibold' >onboarding</h2>
-        <h1 className='text-2xl font-bold' >Get Started with SafePaws</h1>
-        <div className=' rounded-full px-10 py-0.5 bg-[#17CFAD] ' />
+    <section className="w-full bg-white py-16 dark:bg-[#11211e] ">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
+        
+        {/* Header */}
+        <div className="text-center mb-12">
+          <p className="uppercase text-[#17CFAD] font-semibold tracking-wider text-sm mb-2">
+            Onboarding
+          </p>
+          
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white leading-tight">
+            Get Started with SafePaws
+          </h2>
 
-        {/* Conatainers */}
-
-        <div className=" grid md:grid-cols-3 grid-cols-1 space-y-7 place-items-center place-content-center ">
-        {cardDetails.map((item,index) =>(
-             <motion.div
-             key={index}
-                  initial={{ opacity: 0, y: 60 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  className=" w-2/3 flex flex-col items-center bg-gray-100 border border-gray-100 rounded-3xl p-8  hover:shadow-2xl transition-shadow"
-                >
-                  {/* Number Circle - Auto play animation when in view */}
-                  <motion.div
-                    initial={{ 
-                      scale: 0.6, 
-                      rotate: 15,
-                      backgroundColor: '#D1F5EF' 
-                    }}
-                    whileInView={{ 
-                      scale: 1.1,      
-                      rotate:0,
-                      backgroundColor: '#17CFAD'
-                    }}
-                    whileHover={{ 
-                      scale: 1.2, 
-                      rotate: 0 
-                    }}
-                    // viewport={{ once: true }}
-                    transition={{
-                      duration: 1.2,
-                      ease: "backOut",
-                      backgroundColor: { duration: 0.6, delay: 0.15 }
-                    }}
-                    className="w-16 h-16 flex items-center justify-center rounded-full text-3xl font-bold text-white shadow-lg mb-6"
-                  >
-                    {item.num}
-                  </motion.div>
-            
-                  <h2 className="text-2xl font-semibold text-slate-800 text-center mb-3">
-                    {item.head}
-                  </h2>
-            
-                  <p className="text-slate-600 text-base leading-relaxed text-center">
-                    {item.desc}
-                  </p>
-                </motion.div>
-        ))}
-
-
+          {/* Decorative Line */}
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 80 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="h-1 bg-[#17CFAD] mx-auto mt-4 rounded-full"
+          />
         </div>
 
-    </div>
-  )
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 place-items-center">
+          {cardDetails.map((card, index) => (
+            <GetStartedCard
+              key={index}
+              icon={card.icon}
+              title={card.title}
+              description={card.description}
+            />
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
 }
