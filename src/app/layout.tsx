@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="light dark">
+    <html lang="en" className="light  ">
       <head>
         {/* Material Symbols */}
         <link
@@ -42,7 +42,7 @@ export default function RootLayout({
         className={`${inter.variable} ${notoSans.variable} font-display 
                    bg-background-light dark:bg-background-dark 
                    text-text-main dark:text-white 
-                   overflow-x-hidden antialiased w-full `}
+                   overflow-x-hidden antialiased w-full dark:bg-[#11211e] `}
       >
         {children}
       </body>

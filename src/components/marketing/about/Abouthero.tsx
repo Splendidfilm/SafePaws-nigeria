@@ -3,17 +3,17 @@
 import Image from "next/image";
 export default function AboutHero() {
   return (
-    <section className="relative py-20 overflow-hidden bg-[#F8FAF9]">
+    <section className="relative py-20 overflow-hidden bg-[#F8FAF9] dark:bg-[#11211e] w-full ">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
         <div>
           <span className="text-[#17CFAD] font-bold tracking-widest uppercase text-sm mb-4 block">
             Our Story
           </span>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight text-gray-900 leading-tight mb-6">
+          <h1 className="text-5xl md:text-7xl font-black tracking-tight text-gray-900 leading-tight dark:text-zinc-100 mb-6">
             Founded by <span className="text-[#17CFAD]">Pet Lovers</span>, Built for Safety.
           </h1>
-          <p className="text-lg text-gray-600 mb-8 max-w-xl leading-relaxed">
+          <p className="text-lg text-gray-600 mb-8 max-w-xl leading-relaxed dark:text-zinc-300 ">
             SafePaws Nigeria began with a simple observation: pets aren&apos;t just luggage—they are family. 
             Born in Lagos, we set out to redefine regional pet transport with a &apos;   safety first&apos; mindset.
           </p>
@@ -21,15 +21,15 @@ export default function AboutHero() {
           <div className="flex gap-8">
             <div className="border-r-2 border-gray-300 pr-5" >
               <span className="text-4xl font-black text-[#17CFAD]  ">5k+</span>
-              <p className="text-sm text-gray-500 ">Happy Pets</p>
+              <p className="text-sm text-gray-500 dark:text-zinc-400 ">Happy Pets</p>
             </div>
             <div className="border-r-2 border-gray-300 pr-5">
               <span className="text-4xl font-black text-[#17CFAD]">36</span>
-              <p className="text-sm text-gray-500">States Covered</p>
+              <p className="text-sm text-gray-500 dark:text-zinc-400">States Covered</p>
             </div>
             <div>
               <span className="text-4xl font-black text-[#17CFAD]">100%</span>
-              <p className="text-sm text-gray-500">Safety Record</p>
+              <p className="text-sm text-gray-500 dark:text-zinc-400 ">Safety Record</p>
             </div>
           </div>
         </div>

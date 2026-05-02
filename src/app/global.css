@@ -5,6 +5,9 @@
     background-color: white;
     color: black;
   }
+  .bgsafepaws{
+  background-color: #11211e;
+}
 }
 /* .background{
               background-image: url("../../public/images/");
@@ -31,3 +34,5 @@
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
+
+

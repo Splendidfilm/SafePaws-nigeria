@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
+// dark:hover:border-[#1a322e] 
 function HIWCard({
   number,
   title,
@@ -16,7 +16,7 @@ function HIWCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="w-full md:w-2/3 flex flex-col items-center md:items-start bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow"
+      className="w-full md:w-2/3 flex flex-col items-center md:items-start bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow dark:bg-[#162a26] dark:border-white/20 dark:border  "
     >
       {/* Number Circle - Auto play animation when in view */}
       <motion.div
@@ -40,16 +40,16 @@ function HIWCard({
           ease: "backOut",
           backgroundColor: { duration: 0.4, delay: 0.1 }
         }}
-        className="w-16 h-16 flex items-center justify-center rounded-full text-3xl font-bold text-white shadow-lg mb-6"
+        className="w-16 h-16 flex items-center justify-center rounded-full text-3xl font-bold text-white shadow-lg mb-6 "
       >
         {number}
       </motion.div>
 
-      <h2 className="text-2xl font-semibold text-slate-800 text-center md:text-left mb-3">
+      <h2 className="text-2xl font-semibold text-slate-800 text-center md:text-left mb-3 dark:text-white ">
         {title}
       </h2>
 
-      <p className="text-slate-600 text-base leading-relaxed text-center md:text-left">
+      <p className="text-slate-600 text-base leading-relaxed text-center md:text-left dark:text-white/80">
         {description}
       </p>
     </motion.div>
