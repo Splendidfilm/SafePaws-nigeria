@@ -6,8 +6,8 @@ export default function MissionSection() {
     <section className="py-24 bg-[#F8FAF9] dark:bg-[#11211e] ">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-black text-gray-900 mb-4 dark:text-zinc-100 ">Our Mission</h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto dark:text-zinc-300 ">
+          <h2 className="text-5xl font-black text-zinc-900 mb-4 dark:text-zinc-100 ">Our Mission</h2>
+          <p className="text-zinc-600 text-lg max-w-2xl mx-auto dark:text-zinc-300 ">
             Providing a sanctuary on wheels for NigeriaZ&apos;s beloved companions.
           </p>
         </div>
@@ -25,16 +25,16 @@ shield_with_heart
           </div>
 
           {/* Vetted Professionalism */}
-          <div className="bg-white p-10 rounded-3xl shadow-sm border border-gray-100">
+          <div className="bg-white p-10 rounded-3xl shadow-sm border border-zinc-100">
             <div className="w-12 h-12 bg-[#D1F5EF] rounded-full flex items-center justify-center mb-4">
               <span className="material-symbols-outlined text-[#17CFAD]">verified</span>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Vetted Professionalism</h3>
-            <p className="text-gray-600 text-sm">Our drivers undergo rigorous background checks and pet-first-aid certification.</p>
+            <h3 className="text-xl font-bold text-zinc-900 mb-2">Vetted Professionalism</h3>
+            <p className="text-zinc-600 text-sm">Our drivers undergo rigorous background checks and pet-first-aid certification.</p>
           </div>
 
           {/* Real-time Updates */}
-          <div className="bg-gray-900 p-10 rounded-3xl text-white">
+          <div className="bg-zinc-900 p-10 rounded-3xl text-white">
             <h3 className="text-xl font-bold mb-2">Real-time Updates</h3>
             <p className="text-white/70 text-sm">Photos and location pings sent to your phone every hour of the journey.</p>
           </div>

@@ -1,4 +1,5 @@
-// src/components/marketing/Ecosystem.tsx
+// src/components/marketing/Ecosystem.
+'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Search, Heart, Stethoscope } from 'lucide-react';
@@ -34,7 +35,7 @@ export default function Ecosystem() {
           <h3 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
             Our Ecosystem
           </h3>
-          <p className="text-slate-600 dark:text-gray-400 max-w-150 mx-auto mt-4">
+          <p className="text-slate-600 dark:text-zinc-400 max-w-150 mx-auto mt-4">
             Comprehensive pet care and community tools to support you and your companion.
           </p>
         </div>

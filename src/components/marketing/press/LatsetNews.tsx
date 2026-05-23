@@ -6,12 +6,12 @@ import Image  from "next/image";
 
 export default function LatestNews() {
   return (
-    <section id="latest-news" className="py-20 bg-white w-full">
+    <section id="latest-news" className="py-20 bg-white w-full dark:bg-[#11211e] ">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-end justify-between mb-12">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900">Latest News</h2>
-            <p className="text-gray-600 mt-2">External media coverage and editorial features</p>
+            <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50">Latest News</h2>
+            <p className="text-zinc-600 dark:text-zinc-200  mt-2">External media coverage and editorial features</p>
           </div>
           <button className="text-[#17CFAD] font-bold flex items-center gap-2 hover:gap-3 transition-all group">
             View All Coverage
@@ -49,13 +49,13 @@ export default function LatestNews() {
           {/* Side Articles */}
           <div className="md:col-span-4 flex flex-col gap-6">
             {/* Article 1 */}
-            <div className="bg-white p-8 rounded-3xl border border-gray-100 hover:shadow-xl transition-all flex-1 flex flex-col justify-between">
+            <div className="bg-white p-8 rounded-3xl border border-zinc-100 hover:shadow-xl transition-all flex-1 flex flex-col justify-between">
               <div>
-                <span className="text-gray-500 text-sm">BusinessDay • 2 days ago</span>
-                <h3 className="text-xl font-bold text-gray-900 mt-3 leading-snug">
+                <span className="text-zinc-500 text-sm">BusinessDay • 2 days ago</span>
+                <h3 className="text-xl font-bold text-zinc-900 mt-3 leading-snug">
                   SafePaws Announces Strategic Expansion to West African Hubs
                 </h3>
-                <p className="text-gray-600 mt-4 text-sm">
+                <p className="text-zinc-600 mt-4 text-sm">
                   New logistics routes established connecting Lagos to Accra and Abidjan.
                 </p>
               </div>
@@ -65,21 +65,23 @@ export default function LatestNews() {
             </div>
 
             {/* Article 2 */}
-            <div className="bg-[#D1F5EF]/30 p-8 rounded-3xl border border-[#17CFAD]/20 hover:shadow-xl transition-all flex-1 flex flex-col justify-between">
+            <div className="bg-[#D1F5EF]/30 p-8 rounded-3xl border border-[#17CFAD]/20 hover:shadow-xl transition-all flex-1 flex flex-col dark:bg-[#17CFAD] justify-between">
               <div>
-                <span className="text-[#17CFAD] font-semibold text-sm">Daily Trust • Oct 12, 2024</span>
-                <h3 className="text-xl font-bold text-gray-900 mt-3 leading-snug">
+                
+                <span className="text-[#17CFAD] font-semibold text-sm dark:text-zinc-900 ">Daily Trust • Oct 12, 2024</span>
+                <h3 className="text-xl font-bold text-zinc-900 mt-3 leading-snug dark:text-zinc-100
+                 ">
                   The Rising Demand for Professional Pet Sitters and Movers in Nigeria
                 </h3>
               </div>
-              <a href="#" className="mt-6 text-[#17CFAD] font-bold flex items-center gap-2 text-sm">
+              <a href="#" className="mt-6 text-[#17CFAD] font-bold flex items-center gap-2 text-sm dark:text-zinc-100 ">
                 Read More <span className="material-symbols-outlined">trending_flat</span>
               </a>
             </div>
           </div>
 
           {/* Bottom Wide Article */}
-          <div className="md:col-span-12 bg-gray-900 p-8 rounded-3xl flex flex-col md:flex-row gap-8 items-center">
+          <div className="md:col-span-12 bg-zinc-900 p-8 rounded-3xl flex flex-col md:flex-row gap-8 items-center">
             <div className="w-full md:w-1/3 rounded-2xl overflow-hiddenwe shrink-0">
             {/* <Image
                 src={'/images/Dog_image_GR.png'}
@@ -94,7 +96,7 @@ export default function LatestNews() {
               <h3 className="text-2xl font-bold text-white mt-3 leading-tight">
                 SafePaws Hits 10,000 Safe Deliveries Milestone in 2024
               </h3>
-              <p className="text-gray-400 mt-4">
+              <p className="text-zinc-400 mt-4 dark:text-zinc-200 ">
                 Celebrating three years of excellence and the community that trusts us with their furry family members.
               </p>
             </div>

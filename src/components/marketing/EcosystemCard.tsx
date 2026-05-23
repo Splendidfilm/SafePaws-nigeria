@@ -32,7 +32,7 @@ export default function EcosystemCard({icon:Icon, title, description}: Ecosystem
                 {title}
               </h4>
 
-              <p className="text-slate-600 dark:text-gray-400 text-base leading-relaxed mb-6">
+              <p className="text-slate-600 dark:text-zinc-400 text-base leading-relaxed mb-6">
                 {description}
               </p>
 

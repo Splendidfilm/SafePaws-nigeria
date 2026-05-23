@@ -1,4 +1,5 @@
 // src/components/marketing/ServiceCard.tsx
+'use client'
 import React from 'react';
 import { LucideIcon } from 'lucide-react';
 
@@ -15,7 +16,7 @@ export default function ServiceCard({
 }: ServiceCardProps) {
   return (
     <div className="flex flex-col bg-white dark:bg-[#1a2e2b] shadow-lg rounded-3xl py-10 px-8 gap-6 
-                    hover:shadow-2xl hover:-translate-y-1 border border-gray-100 dark:border-[#2a403d] 
+                    hover:shadow-2xl hover:-translate-y-1 border border-zinc-100 dark:border-[#2a403d] 
                     transition-all duration-300 group w-full">
       
       {/* Icon Container */}
@@ -32,7 +33,7 @@ export default function ServiceCard({
         {title}
       </h3>
 
-      <p className="text-slate-600 dark:text-gray-400 text-[15.5px] leading-relaxed">
+      <p className="text-slate-600 dark:text-zinc-400 text-[15.5px] leading-relaxed">
         {description}
       </p>
     </div>

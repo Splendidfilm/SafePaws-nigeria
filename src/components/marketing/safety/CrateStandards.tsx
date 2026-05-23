@@ -8,7 +8,8 @@ export default function CrateStandards() {
         <div className="flex flex-col md:flex-row items-center gap-16">
           
           {/* Image Side */}
-          <div className="w-full md:w-1/2 relative h-96">
+          <div className="w-full md:w-2/3 relative text-zinc-50
+        h-120 md:h-140">
             <Image 
               src="/images/crate.png" 
               alt="SafeCrate system"
@@ -23,11 +24,11 @@ export default function CrateStandards() {
               Hardware Standards
             </span>
             
-            <h2 className="text-4xl font-black text-gray-900 mb-6 leading-tight">
+            <h2 className="text-4xl font-black text-zinc-900 mb-6 leading-tight">
               The SafeCrate™ System
             </h2>
             
-            <p className="text-gray-600 text-lg leading-relaxed mb-10">
+            <p className="text-zinc-600 text-lg leading-relaxed mb-10">
               We follow IATA Live Animals Regulations (LAR) strictly. If your crate doesn&apos;t meet these specs, we provide rental units to ensure total safety.
             </p>
 
@@ -35,32 +36,32 @@ export default function CrateStandards() {
               <div className="flex gap-4">
                 <span className="material-symbols-outlined text-[#17CFAD] text-3xl mt-1">grid_view</span>
                 <div>
-                  <h4 className="font-bold text-gray-900">Ventilation</h4>
-                  <p className="text-gray-600 text-sm mt-1">Minimum 4-side ventilation for optimal airflow.</p>
+                  <h4 className="font-bold text-zinc-900">Ventilation</h4>
+                  <p className="text-zinc-600 text-sm mt-1">Minimum 4-side ventilation for optimal airflow.</p>
                 </div>
               </div>
 
               <div className="flex gap-4">
                 <span className="material-symbols-outlined text-[#17CFAD] text-3xl mt-1">lock</span>
                 <div>
-                  <h4 className="font-bold text-gray-900">Security</h4>
-                  <p className="text-gray-600 text-sm mt-1">Metal bolts and spring-loaded door locks only.</p>
+                  <h4 className="font-bold text-zinc-900">Security</h4>
+                  <p className="text-zinc-600 text-sm mt-1">Metal bolts and spring-loaded door locks only.</p>
                 </div>
               </div>
 
               <div className="flex gap-4">
                 <span className="material-symbols-outlined text-[#17CFAD] text-3xl mt-1">aspect_ratio</span>
                 <div>
-                  <h4 className="font-bold text-gray-900">Size Ratio</h4>
-                  <p className="text-gray-600 text-sm mt-1">Must allow pet to stand, turn, and lie down naturally.</p>
+                  <h4 className="font-bold text-zinc-900">Size Ratio</h4>
+                  <p className="text-zinc-600 text-sm mt-1">Must allow pet to stand, turn, and lie down naturally.</p>
                 </div>
               </div>
 
               <div className="flex gap-4">
                 <span className="material-symbols-outlined text-[#17CFAD] text-3xl mt-1">restaurant</span>
                 <div>
-                  <h4 className="font-bold text-gray-900">Provisioning</h4>
-                  <p className="text-gray-600 text-sm mt-1">Two fixed bowls accessible from outside the door.</p>
+                  <h4 className="font-bold text-zinc-900">Provisioning</h4>
+                  <p className="text-zinc-600 text-sm mt-1">Two fixed bowls accessible from outside the door.</p>
                 </div>
               </div>
             </div>

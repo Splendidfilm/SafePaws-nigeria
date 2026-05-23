@@ -1,7 +1,7 @@
 // src/components/marketing/careers/GeneralInquiryCTA.tsx
 export default function GeneralInquiryCTA() {
   return (
-    <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+    <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto dark:bg-[#11211e]">
       <div className="bg-[#17CFAD] rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
         <div className="absolute top-0 right-0 p-8 opacity-20 hidden md:block">
           <span className="material-symbols-outlined text-[180px] text-black">pets</span>

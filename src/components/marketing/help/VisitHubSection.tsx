@@ -4,12 +4,12 @@ import Image from "next/image";
 export default function VisitHubSection() {
   return (
     <section className="w-full mx-auto px-6 py-20">
-      <div className="bg-white rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row border border-gray-100">
+      <div className="bg-white rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row border border-zinc-100">
         
         {/* Left Content */}
         <div className="p-10 md:w-1/2 flex flex-col justify-center">
-          <h3 className="text-3xl font-bold text-gray-900 mb-4">Visit our Support Hub</h3>
-          <p className="text-gray-600 mb-8">
+          <h3 className="text-3xl font-bold text-zinc-900 mb-4">Visit our Support Hub</h3>
+          <p className="text-zinc-600 mb-8">
             For physical document drop-offs or in-person consultations, visit our regional headquarters in Lagos.
           </p>
 
@@ -17,23 +17,23 @@ export default function VisitHubSection() {
             <div className="flex items-start gap-4">
               <span className="material-symbols-outlined text-[#17CFAD] text-2xl mt-1">location_on</span>
               <div>
-                <p className="font-medium text-gray-900">12 Victoria Island Expressway</p>
-                <p className="text-gray-600">Lagos, Nigeria</p>
+                <p className="font-medium text-zinc-900">12 Victoria Island Expressway</p>
+                <p className="text-zinc-600">Lagos, Nigeria</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
               <span className="material-symbols-outlined text-[#17CFAD] text-2xl mt-1">call</span>
               <div>
-                <p className="font-medium text-gray-900">+234 (0) 800-PET-MOVE</p>
-                <p className="text-gray-600">Toll-free support line</p>
+                <p className="font-medium text-zinc-900">+234 (0) 800-PET-MOVE</p>
+                <p className="text-zinc-600">Toll-free support line</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Right Map / Image Area */}
-        <div className="md:w-1/2 min-h-80 md:min-h-100 relative bg-gray-200 overflow-hidden">
+        <div className="md:w-1/2 min-h-80 md:min-h-100 relative bg-zinc-200 overflow-hidden">
           <Image 
             src="/images/bottom_image_Help.png" 
             alt="Lagos Support Hub Map"

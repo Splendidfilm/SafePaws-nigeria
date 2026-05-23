@@ -1,7 +1,8 @@
 'use client'
 import React from 'react';
-import Logo from '../ui/Logo';
+import Logo from './Logo';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 function Footer() {
 
@@ -22,7 +23,8 @@ const support =[
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
         
         {/* Main Footer Content */}
-        <div className="flex flex-col lg:flex-row gap-12 pb-12 border-b border-gray-200">
+        <div className="flex flex-col lg:flex-row gap-12 pb-12 border-b border-zinc-200">
+
           
           {/* Logo + Description */}
           <div className="flex-1 lg:w-2/5">
@@ -74,23 +76,27 @@ const support =[
             </div>
 
             {/* Contact */}
-            <div>
+            <div className=' w-5xl ' >
               <h3 className="font-semibold text-slate-700 mb-4 dark:text-zinc-100">Contact</h3>
               <ul className="space-y-3">
-                <li className="text-[#6B7280] hover:text-[#17CFAD] transition-colors cursor-pointer dark:text-zinc-300 ">
-                  Email: info@safepawsng.com
+                  <li className="text-[#6B7280] ] transition-colors cursor-pointer dark:text-zinc-300 ">
+                  Email: <a className='hover:text-[#17CFAD]' href="mailto:info@safepawsng.com">info@safepawsng.com</a>
                 </li>
-                <li className="text-[#6B7280] hover:text-[#17CFAD] transition-colors cursor-pointer dark:text-zinc-300 ">
-                  Phone: +234 912 773 0659
+                <li className="text-[#6B7280] transition-colors cursor-pointer dark:text-zinc-300 flex ">
+                  Phone:<span className='w-max flex flex-col items-start ml-2 justify-center group ' >
+                    <a className='hover:text-[#17CFAD]' href="tel:+2349127730659">+234 912 773 0659</a>
+                   
+                  </span>
                 </li>
               </ul>
             </div>
 
           </div>
+          
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-500 dark:text-zinc-200">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-zinc-500 dark:text-zinc-200">
           <p>
             &copy; {new Date().getFullYear()} SafePaws Nigeria. All rights reserved.
           </p>

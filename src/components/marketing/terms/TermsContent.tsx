@@ -11,7 +11,7 @@ export default function TermsContent() {
         number="01" 
         title="Acceptance of Terms"
       >
-        <p className="mb-4">
+        <p className="mb-4 text-zinc-700 ">
           By accessing or using the SafePaws Nigeria platform, operated by{' '}
           <span className="font-semibold text-on-surface">PetMove Professional Transportation</span>, 
           you agree to be bound by these Terms of Service.
@@ -34,11 +34,11 @@ export default function TermsContent() {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="bg-gray-200 border-2 border-gray-300 p-5 bg-surface-container rounded-2xl">
+          <div className="bg-zinc-200 border-2 border-zinc-300 p-5 bg-surface-container rounded-2xl">
             <p className="  font-semibold text-on-surface mb-1">Ground Transport</p>
             <p className="text-sm">Temperature-controlled local and interstate vehicle transport.</p>
           </div>
-          <div className=" bg-gray-200 border-2 border-gray-300 p-5 bg-surface-container rounded-2xl">
+          <div className=" bg-zinc-200 border-2 border-zinc-300 p-5 bg-surface-container rounded-2xl">
             <p className="font-semibold text-on-surface mb-1">Air Relocation</p>
             <p className="text-sm">Assistance with flight booking and crate compliance for domestic flights.</p>
           </div>
@@ -99,7 +99,7 @@ export default function TermsContent() {
         </p>
       </Section>
 
-      <div className="pt-12 border-t border-outline-variant text-center text-sm text-on-surface-variant">
+      <div className="pt-12 border-t border-outline-variant text-center text-sm text-on-surface-variant text-zinc-700 ">
         Last updated: October 2024. For questions regarding these terms, please email{' '}
         <a href="mailto:legal@safepawsng.com" className="text-primary font-semibold hover:underline">
           legal@safepawsng.com

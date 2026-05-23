@@ -1,4 +1,5 @@
 // src/components/marketing/TestimonialCard.tsx
+'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -29,7 +30,7 @@ export default function TestimonialCard({
       format_quote
     </span>
 
-    <p className="text-slate-700 dark:text-gray-300 italic leading-relaxed text-[17px] pl-6">
+    <p className="text-slate-700 dark:text-zinc-300 italic leading-relaxed text-[17px] pl-6">
       {quote}
     </p>
 
@@ -46,7 +47,7 @@ export default function TestimonialCard({
         />
         <div>
           <h4 className="font-semibold text-slate-800 dark:text-white">{name}</h4>
-          <p className="text-sm text-slate-500 dark:text-gray-400">{petInfo}</p>
+          <p className="text-sm text-slate-500 dark:text-zinc-400">{petInfo}</p>
         </div>
       </div>
     </motion.div>

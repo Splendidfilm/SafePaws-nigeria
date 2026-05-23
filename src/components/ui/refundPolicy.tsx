@@ -1,30 +1,17 @@
-'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import { X } from 'lucide-react'
 
-type PaymentModalProps ={
+type RefundPolicyProps= {
     isOpen: boolean;
     onClose: () => void;
 }
 
-export default function PaymentModal({ isOpen, onClose }: PaymentModalProps) {
-const [copied, setCopied] = useState(false)
+// const []
 
-const copyAccountNumber = () => {
-  navigator.clipboard.writeText('1224559800')
-
-  setCopied(true)
-
-  setTimeout(() => {
-    setCopied(false)
-  }, 2000)
-
-}
-
+export default function RefundPolicy({isOpen , onClose} : RefundPolicyProps) {
     if (!isOpen) return null
-
   return (
-    <div className='fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm' >
+     <div className='fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm' >
         <div className="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden"
         onClick={(e)=> e.stopPropagation}
         >
@@ -84,9 +71,9 @@ const copyAccountNumber = () => {
                 <span className="font-semibold flex items-center gap-2">
                   1224559800 
                   {
-                    <span 
-                    onClick={copyAccountNumber}
-                  className="material-symbols-outlined text-xs cursor-pointer hover:text-[#17CFAD]">{copied ? 'check' : 'content_copy'}</span>
+                //     <span 
+                //     // onClick={copyAccountNumber}
+                //   className="material-symbols-outlined text-xs cursor-pointer hover:text-[#17CFAD]">{copied ? 'check' : 'content_copy'}</span>
                   }
                 </span>
               </div>
@@ -128,6 +115,6 @@ const copyAccountNumber = () => {
         </div>
 
         </div>
-
   )
 }
+

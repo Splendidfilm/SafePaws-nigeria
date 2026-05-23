@@ -1,9 +1,9 @@
 import React from 'react';
 
 type ButtonProps = {
-  children: React.ReactNode;   // ✅ FIXED
+  children: React.ReactNode;
   onClick?: () => void;
-  variant?: 
+  variant?:
     | 'primary'
     | 'secondary'
     | 'outline'
@@ -16,49 +16,76 @@ type ButtonProps = {
   className?: string;
 };
 
-function Button({ 
-  children, 
-  onClick, 
+function Button({
+  children,
+  onClick,
   variant = 'primary',
   size = 'md',
-  className = '' 
+  className = '',
 }: ButtonProps) {
+  const base =
+    'inline-flex items-center justify-center gap-2 font-semibold tracking-[0.01em] transition-all duration-200 active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#17CFAD]';
 
-  const baseStyles =
-    "flex items-center justify-center font-bold tracking-[0.015em] transition-all duration-300 active:scale-95";
-
-  // 🔥 YOUR ORIGINAL STYLES (cleaned, not removed)
   const variants = {
-    primary: "bg-[#17CFAD] hover:bg-[#12A88F] dark:text-white/80 text-zinc-900 hover:text-white shadow-md hover:shadow-lg rounded-xl",
-    
-    secondary: "bg-white border border-[#17CFAD] text-[#17CFAD] hover:bg-[#17CFAD] hover:text-white rounded-xl dark:text-zinc-50 dark:bg-[#17CFAD] ",
-    
-    outline: "border-2 border-zinc-400 dark:text-zinc-300 text-zinc-700 hover:bg-zinc-800 hover:text-white hover:border-zinc-800 rounded-xl dark:hover:border-zinc-400 ",
-    
-    about: "bg-white rounded-full font-bold hover:scale-105 dark:text-zinc-600 ",
-    
-    aboutOutline: "bg-transparent border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/20 ",
-    
-    insurance: "bg-gray-900 text-white rounded-full text-sm font-bold hover:bg-black hover:scale-105",
-    
-    carriers: "border border-gray-300 rounded-full text-sm font-bold hover:bg-gray-100 hover:scale-105",
-    
-    latestNews: "bg-[#17CFAD] text-white rounded-2xl font-bold flex items-center gap-2 hover:shadow-lg"
+    // Solid teal — main CTA
+    primary:
+      'bg-[#17CFAD] text-[#0a3d30] hover:bg-[#11b898] rounded-xl ' +
+      'shadow-[0_2px_10px_rgba(23,207,173,0.30)] hover:shadow-[0_4px_18px_rgba(23,207,173,0.40)] ' +
+      'dark:shadow-[0_2px_12px_rgba(23,207,173,0.20)] dark:hover:shadow-[0_4px_22px_rgba(23,207,173,0.32)]',
+
+    // Teal outline — secondary action
+    secondary:
+      'bg-transparent border-[1.5px] border-[#17CFAD] text-[#17CFAD] rounded-xl ' +
+      'hover:bg-[#17CFAD] hover:text-[#0a3d30] ' +
+      'dark:text-[#17CFAD] dark:hover:text-[#0a3d30]',
+
+    // Neutral outline — tertiary / ghost
+    outline:
+      'bg-transparent border-[1.5px] border-zinc-300 text-zinc-700 rounded-xl ' +
+      'hover:bg-zinc-900 hover:text-white hover:border-zinc-900 ' +
+      'dark:border-zinc-600 dark:text-zinc-300 dark:hover:bg-zinc-700 dark:hover:border-zinc-500 dark:hover:text-white',
+
+    // White pill — used on teal/colored hero backgrounds
+    about:
+      'bg-white text-[#0a2e28] rounded-full ' +
+      'shadow-[0_2px_8px_rgba(0,0,0,0.10)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.14)] hover:scale-[1.03]',
+
+    // Transparent outline pill — paired with `about` on colored backgrounds
+    aboutOutline:
+      'bg-transparent border-2 border-white/85 text-white rounded-full ' +
+      'hover:bg-white/20 hover:border-white',
+
+    // Dark pill — insurance / high-contrast CTA
+    insurance:
+      'bg-zinc-900 text-white rounded-full text-sm ' +
+      'hover:bg-black hover:scale-[1.03] ' +
+      'dark:bg-zinc-200 dark:text-zinc-900 dark:hover:bg-white',
+
+    // Light outline pill — carriers / low-emphasis
+    carriers:
+      'bg-transparent border-[1.5px] border-zinc-300 text-zinc-700 rounded-full text-sm ' +
+      'hover:bg-zinc-100 hover:scale-[1.03] ' +
+      'dark:border-zinc-600 dark:text-zinc-300 dark:hover:bg-zinc-800',
+
+    // Teal rounded — news / article CTAs with icon slot
+    latestNews:
+      'bg-[#17CFAD] text-[#0a3d30] rounded-2xl ' +
+      'shadow-[0_2px_10px_rgba(23,207,173,0.25)] hover:shadow-[0_6px_22px_rgba(23,207,173,0.38)] ' +
+      'dark:shadow-[0_2px_10px_rgba(23,207,173,0.18)]',
   };
 
-  // ✅ ALL spacing handled here (no conflict anymore)
   const sizes = {
-    sm: "h-10 px-5 text-sm",
-    md: "h-12 px-7 text-base",
-    lg: "h-14 px-8 text-lg",
+    sm: 'h-9 px-4 text-sm',
+    md: 'h-11 px-6 text-[15px]',
+    lg: 'h-13 px-8 text-base',
   };
 
   return (
     <button
       onClick={onClick}
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}  dark:shadow-[0_0_20px_rgba(21,204,171,0.1)] dark:hover:shadow-[0_0_30px_rgba(23,200,170,0.2)]  `}
+      className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
     >
-      <span className="truncate">{children}</span>
+      {children}
     </button>
   );
 }

@@ -6,16 +6,16 @@ import Image from "next/image";
 
 export default function CareersHero() {
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden bg-white">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="relative py-20 lg:py-32 overflow-hidden bg-white dark:bg-[#11211e]">
+      <div className="w-full mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="w-full" >
           <span className="inline-block py-1 px-4 rounded-full bg-[#D1F5EF] text-[#007A6B] text-sm font-bold tracking-wider mb-6">
             CAREERS
           </span>
-          <h1 className="text-5xl lg:text-7xl font-black text-gray-900 tracking-tight leading-tight mb-8">
+          <h1 className="text-5xl lg:text-7xl font-black text-zinc-900 tracking-tight leading-tight mb-8 dark:text-zinc-50 ">
             Join Our <span className="text-[#17CFAD]">Pack</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-xl leading-relaxed mb-10">
+          <p className="text-xl dark:text-zinc-100 text-zinc-600 max-w-xl leading-relaxed mb-10">
             We&apos;re building the future of pet logistics in Nigeria. Help us create a world where every pet journey is safe, comfortable, and full of love.
           </p>
 
@@ -28,7 +28,7 @@ export default function CareersHero() {
             </a>
             <a 
               href="#culture" 
-              className="border-2 border-gray-300 px-8 py-4 rounded-2xl font-bold hover:bg-gray-50 transition-all"
+              className="border-2 border-zinc-300 px-8 py-4 rounded-2xl font-bold hover:bg-zinc-50 transition-all dark:hover:text-zinc-900 "
             >
               Our Culture
             </a>
@@ -59,8 +59,8 @@ export default function CareersHero() {
                 <span className="material-symbols-outlined text-[#17CFAD]">pets</span>
               </div>
               <div>
-                <p className="text-sm font-bold text-gray-900">100% Pet Friendly</p>
-                <p className="text-xs text-gray-500">Office dogs are our VPs</p>
+                <p className="text-sm font-bold text-zinc-900">100% Pet Friendly</p>
+                <p className="text-xs text-zinc-500">Office dogs are our VPs</p>
               </div>
             </div>
           </div>

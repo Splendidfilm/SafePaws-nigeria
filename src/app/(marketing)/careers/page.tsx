@@ -7,13 +7,12 @@ import React from 'react'
 
 function page() {
   return (
-    <div className='w-full' >
+    <div className='w-full dark:bg-[#11211e]' >
       <CareersHero />
       <CultureSection/>
       <BenefitsSection/>
       <OpenRolesSection/>
       <GeneralInquiryCTA/>
-
     </div>
   )
 }

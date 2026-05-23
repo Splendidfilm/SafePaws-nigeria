@@ -1,4 +1,5 @@
 // src/components/marketing/Services.tsx
+'use client'
 import React from 'react';
 import ServiceCard from './ServiceCard';
 import { Clock, Truck, MapPin } from 'lucide-react';
@@ -36,7 +37,7 @@ export default function Services() {
             Tailored Logistics for Your<br className="hidden md:block" /> Four-legged Friends
           </h2>
 
-          <p className="text-slate-700 dark:text-gray-400 text-lg max-w-2xl mt-4">
+          <p className="text-slate-700 dark:text-zinc-400 text-lg max-w-2xl mt-4">
             At SafePaws Nigeria, we understand that your pets are family. Our comprehensive pet transportation services are designed to provide a safe, comfortable, and stress-free travel experience for your furry companions.
           </p>
         </div>

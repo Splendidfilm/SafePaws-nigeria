@@ -2,21 +2,22 @@
 'use client';
 
 import { useState } from 'react';
-import Logo from '../ui/Logo';
-import Button from '../ui/button';
+import Logo from './Logo';
+import Button from './button';
 
 const navLinks = [
   { name: 'Home', link: '/' },
-  { name: 'Services', link: '#services' },
-  { name: 'How it Works', link: '#how-it-works' },
-  { name: 'Coverage', link: '#coverage' },
+  { name: 'Careers', link: '/careers' },
+  { name: 'About us', link: '/about' },
+  { name: 'Help Center', link: '/help' },
+  { name: 'Safety Guidlines', link: '/safety' },
 ];
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-white/20 backdrop-blur-xl dark:bg-[#1a2e2b]/20 border-b border-gray-200 dark:border-[#2a403d] sticky top-0 z-50">
+    <nav className="w-full bg-white/40 backdrop-blur-xl dark:bg-[#1a2e2b]/20 border-b border-zinc-200 dark:border-[#2a403d] sticky top-0 z-50">
       <div className="w-full mx-auto px-4 md:px-10 lg:px-16">
         <header className="flex items-center justify-between py-4">
           
@@ -30,7 +31,7 @@ export default function Navbar() {
                 <a
                   key={item.name}
                   href={item.link}
-                  className="text-slate-700 dark:text-gray-200 hover:text-[#17CFAD] font-medium transition-colors"
+                  className="text-slate-700 dark:text-zinc-200 hover:text-[#17CFAD] font-medium transition-colors"
                 >
                   {item.name}
                 </a>
@@ -45,7 +46,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-slate-700 dark:text-gray-200 hover:text-[#17CFAD] transition-colors"
+            className="md:hidden p-2 text-slate-700 dark:text-zinc-200 hover:text-[#17CFAD] transition-colors"
             aria-label="Toggle menu"
           >
             <span className="material-symbols-outlined text-3xl">
@@ -56,12 +57,12 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-6 border-t border-gray-100 dark:border-[#2a403d] flex flex-col gap-5">
+          <div className="md:hidden py-6 border-t border-zinc-100 dark:border-[#2a403d] flex flex-col gap-5">
             {navLinks.map((item) => (
               <a
                 key={item.name}
                 href={item.link}
-                className="text-slate-700 dark:text-gray-200 hover:text-[#17CFAD] font-medium py-2 transition-colors"
+                className="text-slate-700 dark:text-zinc-200 hover:text-[#17CFAD] font-medium py-2 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}

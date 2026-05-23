@@ -10,26 +10,26 @@ export default function AboutHero() {
           <span className="text-[#17CFAD] font-bold tracking-widest uppercase text-sm mb-4 block">
             Our Story
           </span>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight text-gray-900 leading-tight dark:text-zinc-100 mb-6">
+          <h1 className="text-5xl md:text-7xl font-black tracking-tight text-zinc-900 leading-tight dark:text-zinc-100 mb-6">
             Founded by <span className="text-[#17CFAD]">Pet Lovers</span>, Built for Safety.
           </h1>
-          <p className="text-lg text-gray-600 mb-8 max-w-xl leading-relaxed dark:text-zinc-300 ">
+          <p className="text-lg text-zinc-600 mb-8 max-w-xl leading-relaxed dark:text-zinc-300 ">
             SafePaws Nigeria began with a simple observation: pets aren&apos;t just luggage—they are family. 
             Born in Lagos, we set out to redefine regional pet transport with a &apos;   safety first&apos; mindset.
           </p>
 
           <div className="flex gap-8">
-            <div className="border-r-2 border-gray-300 pr-5" >
+            <div className="border-r-2 border-zinc-300 pr-5" >
               <span className="text-4xl font-black text-[#17CFAD]  ">5k+</span>
-              <p className="text-sm text-gray-500 dark:text-zinc-400 ">Happy Pets</p>
+              <p className="text-sm text-zinc-500 dark:text-zinc-400 ">Happy Pets</p>
             </div>
-            <div className="border-r-2 border-gray-300 pr-5">
+            <div className="border-r-2 border-zinc-300 pr-5">
               <span className="text-4xl font-black text-[#17CFAD]">36</span>
-              <p className="text-sm text-gray-500 dark:text-zinc-400">States Covered</p>
+              <p className="text-sm text-zinc-500 dark:text-zinc-400">States Covered</p>
             </div>
             <div>
               <span className="text-4xl font-black text-[#17CFAD]">100%</span>
-              <p className="text-sm text-gray-500 dark:text-zinc-400 ">Safety Record</p>
+              <p className="text-sm text-zinc-500 dark:text-zinc-400 ">Safety Record</p>
             </div>
           </div>
         </div>

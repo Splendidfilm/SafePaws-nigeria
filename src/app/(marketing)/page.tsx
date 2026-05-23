@@ -13,7 +13,7 @@ import Testimonials from "@/components/marketing/Testimonials";
 
 export default function MarketingPage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans w-full ">
+    <div className="  flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans w-full ">
       <Hero/>
       <GetStarted/>
       <Services/>

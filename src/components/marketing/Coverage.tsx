@@ -36,7 +36,7 @@ export default function Coverage() {
              whileInView={{ opacity:2, x:0 }}
              viewport={{once: true}}
              transition={{ ease:'linear', duration:0.5, delay:0.5 }}
-             className="flex items-center gap-4 bg-white p-4 rounded-2xl border border-gray-100 hover:border-[#17CFAD]/30 transition-colors dark:bg-[#1a2e2b] dark:border-white/30 ">
+             className="flex items-center gap-4 bg-white p-4 rounded-2xl border border-zinc-100 hover:border-[#17CFAD]/30 transition-colors dark:bg-[#1a2e2b] dark:border-white/30 ">
                 <div className="w-10 h-10 flex items-center justify-center bg-[#D1F5EF] rounded-xl">
                   <span className="material-symbols-outlined text-[#17CFAD] text-3xl">{item.icon}</span>
                 </div>

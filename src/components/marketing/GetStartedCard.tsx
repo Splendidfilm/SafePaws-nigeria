@@ -1,4 +1,5 @@
-// src/components/marketing/GetStartedCard.tsx
+// src/components/marketing/GetStartedCard.
+'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
 import { LucideIcon } from 'lucide-react';
@@ -22,7 +23,7 @@ export default function GetStartedCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="flex flex-col items-center bg-gray-100 border border-gray-300 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 w-full max-w-95 dark:bg-[#1a2e2b] dark:border-[#2a403d] group -hover:rotate-8 "
+      className="flex flex-col items-center bg-zinc-100 border border-zinc-300 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 w-full max-w-95 dark:bg-[#1a2e2b] dark:border-[#2a403d] group -hover:rotate-8 "
     >
       {/* Icon Circle with nice animation */}
       <motion.div
@@ -49,12 +50,12 @@ export default function GetStartedCard({
       </motion.div>
 
       {/* Title */}
-      <h3 className="text-2xl font-semibold text-slate-800 text-center mb-4 dark:text-gray-100 ">
+      <h3 className="text-2xl font-semibold text-slate-800 text-center mb-4 dark:text-zinc-100 ">
         {title}
       </h3>
 
       {/* Description */}
-      <p className="text-slate-600 text-base leading-relaxed text-center  dark:text-gray-300">
+      <p className="text-slate-600 text-base leading-relaxed text-center  dark:text-zinc-300">
         {description}
       </p>
     </motion.div>
