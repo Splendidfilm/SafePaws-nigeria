@@ -9,12 +9,12 @@ export default function MarketingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <div className="" >
       <Navbar />
       <main className="flex flex-col items-center dark:bg-[#11211e] bg-zinc-50 w-full ">
         {children}
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

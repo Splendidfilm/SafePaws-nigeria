@@ -76,7 +76,7 @@ export default function CoreProtocols() {
           <div className="mt-12 p-5 bg-red-50 border-l-4 border-red-500 rounded-r-xl">
             <p className="text-red-600 text-sm font-medium flex items-start gap-2">
               <span className="material-symbols-outlined">warning</span>
-              NEVER sedate your pet for travel unless explicitly ordered by a SafePaws veterinary partner.
+              NEVER sedate your pet for travel unless explicitly ordered by a SafePaws veterinary partner or your Vet .
             </p>
           </div>
         </div>

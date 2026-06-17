@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation"; 
-import PaymentModal from "@/components/ui/PaymentInfoModal";
-import RefundPolicy from "@/components/ui/refundPolicy";
-// import RefundPolicy from "@/components/ui/refundPolicy";
+import PaymentModal from "@/components/marketing/help/PaymentInfoModal";
+import RefundPolicy from "@/components/marketing/help/refundPolicy";
+import QuoteModal from '@/components/marketing/help/QuoteModal'
+import Button from "@/components/ui/button";
+ // import RefundPolicy from "@/components/ui/refundPolicy";
 // import RefundPolicy
 
 export default function HelpCategories() {
@@ -13,7 +15,7 @@ export default function HelpCategories() {
 
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [showRefundModal, setShowRefundModal] = useState(false);
-  const [showQuotesModal, setShowQuotesModal] = useState(false);
+  const [showQuoteModal, setShowQuoteModal] = useState(false);
 
   const paymentOptions = [
     { text: "Refund Policy" },
@@ -89,9 +91,9 @@ export default function HelpCategories() {
                   } else if (item.text === "Refund Policy") {
                     setShowRefundModal(true);
                   } else if (item.text === "Understanding Quotes") {
-                    setShowQuotesModal(true);
+                    setShowQuoteModal(true);
                   } else {
-                    console.error('Modalnot set for this item:', item.text);
+                    console.error('Modal not set for this item:', item.text);
                     
                   }
                 }}
@@ -114,8 +116,14 @@ export default function HelpCategories() {
             <p className="text-zinc-600 mb-8 max-w-md">
               Learn how we protect your pets with 24/7 monitoring and comprehensive transit insurance coverages.
             </p>
+            {/* bg-zinc-900 text-white px-6 py-3 rounded-full text-sm font-bold */}
             <div className="flex gap-4">
-              <button className="bg-zinc-900 text-white px-6 py-3 rounded-full text-sm font-bold">Insurance Details</button>
+              <Button
+              size="md"
+              variant="insurance"
+              >
+                Insurance Details
+              </Button>
               <button
               onClick={() => router.push('/careers')}
               className="border border-zinc-300 px-6 py-3 rounded-full text-sm font-bold hover:bg-zinc-50 dark:text-zinc-900">Our Carriers</button>
@@ -133,6 +141,10 @@ export default function HelpCategories() {
       <RefundPolicy
       isOpen={showRefundModal}
       onClose={() => setShowRefundModal(false)}
+      />
+      <QuoteModal
+      isOpen={showQuoteModal}
+      onClose={() => setShowQuoteModal(false)}
       />
       
     </section>

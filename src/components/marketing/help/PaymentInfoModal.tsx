@@ -1,18 +1,31 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import { X } from 'lucide-react'
 
-type RefundPolicyProps= {
+type PaymentModalProps ={
     isOpen: boolean;
     onClose: () => void;
 }
 
-// const []
+export default function PaymentModal({ isOpen, onClose }: PaymentModalProps) {
+const [copied, setCopied] = useState(false)
 
-export default function RefundPolicy({isOpen , onClose} : RefundPolicyProps) {
+const copyAccountNumber = () => {
+  navigator.clipboard.writeText('1224559800')
+
+  setCopied(true)
+
+  setTimeout(() => {
+    setCopied(false)
+  }, 2000)
+
+}
+
     if (!isOpen) return null
+
   return (
-     <div className='fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm' >
-        <div className="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden"
+    <div className='fixed inset-0 z-50 flex items-center justify-center p-2 bg-black/70 backdrop-blur-sm' >
+        <div className="bg-white  max-w-lg rounded-3xl shadow-2xl overflow-y-scroll h-10/12"
         onClick={(e)=> e.stopPropagation}
         >
             <div className="px-6 py-5 border-b flex items-center justify-between">
@@ -71,9 +84,9 @@ export default function RefundPolicy({isOpen , onClose} : RefundPolicyProps) {
                 <span className="font-semibold flex items-center gap-2">
                   1224559800 
                   {
-                //     <span 
-                //     // onClick={copyAccountNumber}
-                //   className="material-symbols-outlined text-xs cursor-pointer hover:text-[#17CFAD]">{copied ? 'check' : 'content_copy'}</span>
+                    <span 
+                    onClick={copyAccountNumber}
+                  className="material-symbols-outlined text-xs cursor-pointer hover:text-[#17CFAD]">{copied ? 'check' : 'content_copy'}</span>
                   }
                 </span>
               </div>
@@ -98,16 +111,6 @@ export default function RefundPolicy({isOpen , onClose} : RefundPolicyProps) {
 
         {/* Footer */}
         <div className="px-6 py-5 bg-zinc-50 border-t flex justify-end gap-3">
-          <button 
-            onClick={onClose}
-            className="px-6 py-3 text-sm font-medium text-zinc-600 hover:text-zinc-800 transition-colors border-2 border-zinc-300 rounded-lg hover:bg-zinc-100"
-          >
-            Close
-          </button>
-          <button
-           className="px-8 py-3 bg-[#17CFAD] text-white text-sm font-bold rounded-2xl hover:bg-[#12A88F] transition-all">
-            Confirm Method
-          </button>
         </div>
 
         </div>
@@ -115,6 +118,6 @@ export default function RefundPolicy({isOpen , onClose} : RefundPolicyProps) {
         </div>
 
         </div>
+
   )
 }
-

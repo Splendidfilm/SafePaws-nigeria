@@ -29,7 +29,7 @@ export default function Testimonials() {
             Happy Tails
           </h2>
           <h3 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
-            Trusted by Pet Parents
+            Trusted by Pet Owners
           </h3>
         </div>
 

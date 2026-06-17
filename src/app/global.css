@@ -23,7 +23,7 @@
   font-family: 'Material Symbols Filled';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px; /* Adjust size as needed */
+  font-size: 20px; /* Adjust size as needed */
   display: inline-block;
   line-height: 1;
   letter-spacing: normal;
@@ -35,4 +35,7 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.custom-checkbox:checked {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAgCUcwrPodZimgjmPskgA_gT1-KTu6SCsZ0vBxDDj7A4VT3Dy7zk2zzk5OqwTT2HBR5HIBazEYnVwgyC0vfAPFSLQcGNJe74FFyeFajkm7dUqclG0r7v63J3kjyg110ytmENQLLrbrjNR-6CG5qNqq3TBYr1tCJqmqYyYEkwEmydwI-zE8GcQdZL_ouojJwLvljh80h8F_O04mS8_1pSLnH5QshOLDiW3qTuzQwjMf2pVZvvOO8kzJV_CsY9NtCReroLvtqgcpIyHV)
+    }
 

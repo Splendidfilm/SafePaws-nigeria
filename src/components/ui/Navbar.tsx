@@ -4,6 +4,8 @@
 import { useState } from 'react';
 import Logo from './Logo';
 import Button from './button';
+// import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 const navLinks = [
   { name: 'Home', link: '/' },
@@ -13,7 +15,9 @@ const navLinks = [
   { name: 'Safety Guidlines', link: '/safety' },
 ];
 
+
 export default function Navbar() {
+  const route = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -70,7 +74,9 @@ export default function Navbar() {
             ))}
             
             <div className="pt-4">
-              <Button variant="primary" size="md" className="w-full">
+              <Button 
+              onClick={() => route.push('/login')}
+              variant="primary" size="md" className="w-full">
                 Book Now
               </Button>
             </div>

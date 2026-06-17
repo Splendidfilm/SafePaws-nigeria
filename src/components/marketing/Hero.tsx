@@ -2,8 +2,12 @@
 'use client'
 import Image from 'next/image';
 import Button from '../ui/button';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function Hero() {
+  
+  const router = useRouter();
   return (
     <section id="home" className="w-full bg-white dark:bg-[#11211e]">
       <div className="px-4 md:px-10 lg:px-40 mx-auto py-12 lg:py-20">
@@ -37,12 +41,16 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="primary" size="md">
+              <Button
+              onClick={() => router.push('/login') }
+              variant="primary" size="md">
                 Book Pet Transport
               </Button>
 
               <Button variant="outline" size="md">
+              <a href="#how-it-works"  rel="noopener noreferrer">
                 See How It Works
+              </a>
               </Button>
             </div>
 
@@ -54,9 +62,9 @@ export default function Hero() {
             {/* Social Proof */}
             <div className="flex items-center gap-3 pt-2">
               <div className="flex -space-x-2">
-                <div className="size-8 rounded-full bg-zinc-200 dark:bg-zinc-700 border-2 border-white dark:border-[#11211e]" />
-                <div className="size-8 rounded-full bg-zinc-200 dark:bg-zinc-700 border-2 border-white dark:border-[#11211e]" />
-                <div className="size-8 rounded-full bg-zinc-200 dark:bg-zinc-700 border-2 border-white dark:border-[#11211e]" />
+                <img src={'/images/Dog_image_GR.png'} className="size-8 rounded-full bg-zinc-200 dark:bg-zinc-700 border-2 border-white dark:border-[#11211e]" />
+                <img src={'/images/Amara.png'} className="size-8 rounded-full bg-zinc-200 dark:bg-zinc-700 border-2 border-white dark:border-[#11211e]" />
+                <img src={'/images/ibrahim.png'} className="size-8 rounded-full bg-zinc-200 dark:bg-zinc-700 border-2 border-white dark:border-[#11211e]" />
               </div>
               <p className="text-sm font-medium text-slate-600 dark:text-zinc-400">
                 Trusted by 500+ Pet Owners in Lagos, Abuja & Port Harcourt
@@ -75,7 +83,7 @@ export default function Hero() {
                 className="object-cover"
                 
               />
-              <div className='absolute inset-0 bg-black/20' />
+              <div className='absolute inset-0 bg-black/20 dark:block hidden' />
             </div>
           </div>
 

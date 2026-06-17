@@ -8,12 +8,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#0e150f",
+        background:{
         "brand-green": "#22C55E",
         "accent-yellow": "#EAB308",
         "on-secondary-fixed": "#002109",
         "on-primary-container": "#003111",
-      },
+      },},
       fontFamily: {
         'space-grotesk': ['Space Grotesk', 'sans-serif'],
       },

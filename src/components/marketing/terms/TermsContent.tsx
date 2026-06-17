@@ -101,7 +101,7 @@ export default function TermsContent() {
 
       <div className="pt-12 border-t border-outline-variant text-center text-sm text-on-surface-variant text-zinc-700 ">
         Last updated: October 2024. For questions regarding these terms, please email{' '}
-        <a href="mailto:legal@safepawsng.com" className="text-primary font-semibold hover:underline">
+        <a href="mailto:legal@safepawsng.com" className="text-primary font-semibold hover:underline hover:text-[#17cfad] ">
           legal@safepawsng.com
         </a>
       </div>

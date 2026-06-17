@@ -1,4 +1,4 @@
-'use client'
+
 import React from 'react';
 import Logo from './Logo';
 import Link from 'next/link';
@@ -102,9 +102,9 @@ const support =[
           </p>
 
           <div className="flex items-center gap-8">
-            <p className="hover:text-[#17CFAD] transition-colors cursor-pointer">
+            {/* <p className="hover:text-[#17CFAD] transition-colors cursor-pointer">
               Privacy Policy
-            </p>
+            </p> */}
             <Link href="/terms" className="hover:text-[#17CFAD] transition-colors cursor-pointer">
               Terms of Service
             </Link>

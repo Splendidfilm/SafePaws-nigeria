@@ -53,9 +53,18 @@ export default function ApplicationForm({jobTitle}: ApplicationFormProps) {
   <div className="max-w-5xl
  mx-auto px-4 md:px-8 pt-24 pb-20 ">
       <header className="mb-12 text-center md:text-left">
-        <div className="flex items-center gap-2 text-[#17CFAD] font-semibold mb-3">
+        <div className="flex items-center gap-2 text-[#17CFAD] font-semibold mb-10 justify-between flex-row-reverse ">
+
+          <div className='flex items-center gap-2 text-[#17CFAD] font-semibold mb-3' >
           <span className="material-symbols-outlined">work</span>
           <span className="uppercase tracking-widest text-xs">Career Opportunity</span>
+          </div>
+    <button 
+    className=' w-max px-4 py-3 h-max mr-7 bg-white/50 backdrop-blur-2xl hover:shadow-2xl shadow-md rounded-lg text-black flex items-center justify-center group active:scale-90 transition-all '
+    >
+        <span className=" group-hover:-translate-x-2 group-hover:text-[#106554] transition-all material-symbols-outlined text-xs group-active:translate-x-0">arrow_back</span>
+       <p className='text-lg' >Back</p>
+    </button>
         </div>
         <h1 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-4">
           Apply for {jobTitle}
@@ -240,6 +249,7 @@ export default function ApplicationForm({jobTitle}: ApplicationFormProps) {
         </div>
       </div>
     </div>
+    
 </div>
   )
 }
