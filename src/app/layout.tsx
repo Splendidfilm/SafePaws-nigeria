@@ -1,7 +1,6 @@
-// 'use client'
 import type { Metadata } from 'next';
 import { Inter, Noto_Sans } from 'next/font/google';
-// import './globals.css';
+import './globals.css';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -18,10 +17,8 @@ const notoSans = Noto_Sans({
 
 export const metadata: Metadata = {
   title: 'SafePaws Nigeria - Premium Pet Transportation',
-  description: 'Safe, reliable, and comfortable transportation for pets across Nigeria. Climate-controlled vehicles, trained handlers, and real-time GPS tracking.',
-  icons: {
-    icon: '/favicon.ico',
-  },
+  description: 'Safe, reliable, and comfortable transportation for pets across Nigeria.',
+  icons: { icon: '/favicon.ico' },
 };
 
 export default function RootLayout({
@@ -30,20 +27,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${notoSans.variable}`}>
       <head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
           rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
         />
       </head>
-
-      <body
-        className={`${inter.variable} ${notoSans.variable} font-display 
-                   bg-background-light dark:bg-background-dark 
-                   text-text-main dark:text-white 
-                   overflow-x-hidden antialiased w-full dark:bg-[#11211e] `}
-      >
+      <body className="bg-bg text-text font-sans antialiased overflow-x-hidden">
         {children}
       </body>
     </html>
