@@ -5,19 +5,6 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        background:{
-        "brand-green": "#22C55E",
-        "accent-yellow": "#EAB308",
-        "on-secondary-fixed": "#002109",
-        "on-primary-container": "#003111",
-      },},
-      fontFamily: {
-        'space-grotesk': ['Space Grotesk', 'sans-serif'],
-      },
-    },
-  },
+  
   plugins: [],
 }

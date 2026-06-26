@@ -1,7 +1,5 @@
-
 import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/ui/Footer";
-import '@/app/global.css'
+import Footer from "@/components/ui/Footer"; 
 
 export default function MarketingLayout({
   children,
@@ -9,12 +7,10 @@ export default function MarketingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="" >
+    <div className="flex min-h-screen flex-col">
       <Navbar />
-      <main className="flex flex-col items-center dark:bg-[#11211e] bg-zinc-50 w-full ">
-        {children}
-      </main>
-      <Footer />
+      {children}
+      <Footer/>
     </div>
   );
 }

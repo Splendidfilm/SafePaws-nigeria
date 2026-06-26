@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colours */
+  --color-primary: #17CFAD;
+  --color-primary-hover: #13b899;
+  --color-primary-foreground: #0d1f1c;
+  --color--primary-outline:#a0b3b0;
+
+  /* Light mode surfaces */
+  --color-bg: #f8faf9;
+  --color-surface: #ffffff;
+  --color-surface-raised: #f0f5f3;
+  --color-border: #d4e2de;
+  --color-border-strong: #a8c5be;
+
+  /* Light mode text */
+  --color-text: #0d1f1c;
+  --color-text-sub: #4a6b65;
+  --color-text-muted: #7a9e98;
+
+  /* Semantic */
+  --color-error: #dc3545;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Font — placeholder until you pick */
+  --font-sans: var(--font-body), system-ui, sans-serif;
+  --font-display: var(--font-heading), system-ui, sans-serif;
+    --font-sans: var(--font-inter);
+  --font-display: var(--font-noto);
+}
+
+/* Dark mode — system preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #11211e;
+    --color-surface: #1e2e2b;
+    --color-surface-raised: #243832;
+    --color-border: #2a3e3b;
+    --color-border-strong: #3d5a54;
+    --color-text: #e8f0ee;
+    --color-text-sub: #a0b3b0;
+    --color-text-muted: #6a8a85;
+    --color-error: #f87171;
+    --color-success: #34d399;
+    --color-warning: #fbbf24;
+  }
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  * {
+    border-color: var(--color-border);
+    transition: border-color 0.2s, background-color 0.2s;
+  }
+}
+
+.material-symbols-filled {
+  font-family: 'Material Symbols Filled';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px; /* Adjust size as needed */
+  display: inline-block;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.custom-checkbox:checked {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAgCUcwrPodZimgjmPskgA_gT1-KTu6SCsZ0vBxDDj7A4VT3Dy7zk2zzk5OqwTT2HBR5HIBazEYnVwgyC0vfAPFSLQcGNJe74FFyeFajkm7dUqclG0r7v63J3kjyg110ytmENQLLrbrjNR-6CG5qNqq3TBYr1tCJqmqYyYEkwEmydwI-zE8GcQdZL_ouojJwLvljh80h8F_O04mS8_1pSLnH5QshOLDiW3qTuzQwjMf2pVZvvOO8kzJV_CsY9NtCReroLvtqgcpIyHV)
+    }
+

@@ -1,118 +1,200 @@
 'use client'
 import { useState } from 'react'
-// import React, useState from 'react'
 import Logo from '../ui/Logo'
 import Button from '../ui/button'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-
+import { useRouter } from 'next/navigation'
 
 export default function LoginForm() {
-    const router = useRouter() 
-    const [visible, setVisible] = useState(false)
-    const [animate, setAnimate] = useState(false)
+  const router = useRouter()
+  const [visible, setVisible] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setLoading(true)
+    setError('')
+
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        setError(data.message || 'Invalid email or password.')
+        return
+      }
+
+      router.push('/dashboard')
+    } catch {
+      setError('Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
-<div className="layout-container flex h-full grow flex-col justify-center items-center p-4 relative z-10">
-{/* <!-- Login Card --> */}
-<div className="w-full bg-white dark:bg-[#1e2e2b] rounded-xl shadow-lg border border-transparent dark:border-[#2a3e3b] overflow-hidden">
-{/* <!-- Logo Section --> */}
-<div className="flex flex-col items-center pt-10 pb-4 px-8">
-<Logo/>
-</div>
-{/* <!-- Header Text --> */}
-<div className="px-8 pb-6 text-center">
-<p className="text-text-main dark:text-white tracking-light text-[32px] font-bold leading-tight mb-3">Welcome back</p>
-<p className="text-text-sub dark:text-[#a0b3b0] text-sm font-normal leading-normal">Please enter your details to sign in.</p>
-</div>
-{/* <!-- Form --> */}
-<form className="flex flex-col gap-5 px-8 pb-10">
-{/* <!-- Email Field --> */}
-<label className="flex flex-col flex-1">
-<p className="text-text-main dark:text-white text-base font-medium leading-normal pb-2">Email Address</p>
-<input className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-main dark:text-white focus:outline-0 focus:ring-1 focus:ring-[#17CFAD] border border-border-color dark:border-[#2a3e3b] bg-white dark:bg-[#11211e] focus:border-primary h-14 placeholder:text-text-sub p-3.75 text-base font-normal leading-normal transition-colors text-brand-green " placeholder="example.gmail.com" type="email" />
-</label>
+    <div className="flex h-full w-full grow flex-col items-center justify-center p-4">
 
+      {/* Card */}
+      <div className="w-full max-w-md rounded-xl border border-border bg-surface shadow-lg">
 
-{/* <!-- Password Field --> */}
-<label className="flex flex-col flex-1">
+        {/* Logo */}
+        <div className="flex flex-col items-center px-8 pb-4 pt-10">
+          <Logo />
+        </div>
 
-<p className="text-text-main dark:text-white text-base font-medium leading-normal pb-2">
-    Password
-    </p>
-<div className="flex w-full flex-1 items-stretch rounded-lg group focus-within:ring-1 focus-within:ring-[#17CFAD] focus-within:border-primary border border-border-color dark:border-[#2a3e3b] bg-white dark:bg-[#11211e]">
+        {/* Heading */}
+        <div className="px-8 pb-6 text-center">
+          <h1 className="text-3xl font-bold tracking-tight text-text">
+            Welcome back
+          </h1>
+          <p className="mt-2 text-sm text-text-sub">
+            Please enter your details to sign in.
+          </p>
+        </div>
 
-<input className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-l-lg border-none bg-transparent text-text-main dark:text-white focus:outline-0 focus:ring-0 h-14 placeholder:text-text-sub p-[15px] pr-2 text-base font-normal leading-normal" placeholder="Enter password" type="password" required/>
-<div className="text-text-sub flex items-center justify-center pr-[15px] pl-2 rounded-r-lg cursor-pointer hover:text-primary transition-colors">
-<span 
-onClick={() => setVisible(!visible) }
-className="material-symbols-outlined">
-    {visible ? 'visibility' : 'close'}</span>
-</div>
-</div>
-</label>
-{/* <!-- Checkbox & Forgot Password --> */}
-<div className="flex items-center justify-between flex-wrap gap-3">
-<label className="flex gap-x-3 items-center cursor-pointer">
-<input className="custom-checkbox h-5 w-5 rounded border-border-color dark:border-[#2a3e3b] border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 focus:border-border-color dark:focus:border-[#2a3e3b] focus:outline-none transition-all text-[#2a3e3b]" type="checkbox" required />
-<p className="text-text-main text-sm dark:text-white  font-normal leading-normal">Remember for 30 days</p>
-</label>
-<a className="text-primary hover:text-primary/80 font-medium text-sm transition-colors hover:text-[#17CFAD] hover:underline cursor-pointer " href="#">Forgot password?</a>
-</div>
-{/* <!-- Submit Button --> */}
-<div className="pt-2 gap-6 flex flex-col items-center justify-center ">
-<Button
-size='md'
-variant='primary'
-className='w-full justify-center align-center gap-1 hover:gap-2 group  flex flex-row transition-all '
-onClick={() => {
-    setAnimate(!animate)
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="flex flex-col gap-5 px-8 pb-10">
 
-      setTimeout(() => {
-    setAnimate(false)
-  }, 4000)
-    router.push('')
-    }}
->
-    <span className={'material-symbols-outlined' + animate ? 'animate-pulse' : 'animate-none'} >pets</span>
-<span className={animate ? 'hidden transition-all' : 'block transition-all '} >Sign In</span>
-</Button>
+          {/* Error message */}
+          {error && (
+            <div className="rounded-lg border border-error/20 bg-error/10 px-4 py-3">
+              <p className="text-sm text-error">{error}</p>
+            </div>
+          )}
 
-<div className='flex items-center justify-center text-center h-5 gap-4 w-full' >
-    <motion.div className="bg-white/20 h-1 w-2/4 rounded-[200%] shadow-[0_2px_12px_rgba(255,255,255,0.20)] "/>
-<p
-className='text-base text-center text-zinc-400'
->
-    or 
-</p>
-    <motion.div className="bg-white/20 backdrop-blur-3xl h-1 w-2/4 rounded-[200%] shadow-[0_2px_12px_rgba(255,255,255,0.20)]"/>
-</div>
+          {/* Email */}
+          <label className="flex flex-col gap-2">
+            <span className="text-sm font-medium text-text">Email Address</span>
+            <input
+              type="email"
+              placeholder="you@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              disabled={loading}
+              className="h-14 w-full rounded-lg border border-border bg-bg px-4 text-base text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-50 transition-colors"
+            />
+          </label>
 
-<Button
-size='md'
-variant='outline'
-className='w-full'
-// onClick={}
->
-    Google
-</Button>
-</div>
-{/* <!-- Footer Sign Up Link --> */}
-<div className="flex justify-center items-center gap-2 pt-2">
-<p className="text-text-sub dark:text-[#a0b3b0] text-sm font-normal">New to SafePaws?</p>
-<a className="text-primary hover:text-primary/80 text-sm font-bold transition-colors hover:text-[#17CFAD] hover:underline cursor-pointer" 
-onClick={() => router.push('/register')}
+          {/* Password */}
+          <label className="flex flex-col gap-2">
+            <span className="text-sm font-medium text-text">Password</span>
+            <div className="flex h-14 w-full items-center rounded-lg border border-border bg-bg transition-colors focus-within:border-primary focus-within:ring-1 focus-within:ring-primary">
+              <input
+                type={visible ? 'text' : 'password'}
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                disabled={loading}
+                className="h-full flex-1 bg-transparent px-4 text-base text-text placeholder:text-text-muted focus:outline-none disabled:opacity-50"
+              />
+              <button
+                type="button"
+                onClick={() => setVisible(!visible)}
+                className="flex items-center justify-center px-4 text-text-muted hover:text-primary transition-colors"
+                aria-label={visible ? 'Hide password' : 'Show password'}
+              >
+                <span className="material-symbols-outlined text-[20px]">
+                  {visible ? 'visibility_off' : 'visibility'}
+                </span>
+              </button>
+            </div>
+          </label>
 
->Create an account</a>
-</div>
-</form>
-</div>
-{/* <!-- Optional: Simple Footer/Copyright --> */}
-<div className="mt-8 text-center">
-<p className="text-xs text-text-sub dark:text-[#a0b3b0]">© 2026 SafePaws Nigeria. All rights reserved.</p>
-</div>
-</div>
+          {/* Remember me + Forgot password */}
+          <div className="flex items-center justify-between gap-3">
+            <label className="flex cursor-pointer items-center gap-2">
+              <input
+                type="checkbox"
+                className="h-4 w-4 rounded border-border accent-primary"
+              />
+              <span className="text-sm text-text">Remember for 30 days</span>
+            </label>
+            <Link
+              href="/forgot-password"
+              className="text-sm font-medium text-primary hover:underline transition-colors"
+            >
+              Forgot password?
+            </Link>
+          </div>
+
+          {/* Submit */}
+          <div className="flex flex-col gap-4 pt-2">
+            <Button
+              type="submit"
+              size="md"
+              variant="primary"
+              disabled={loading}
+              className="w-full justify-center"
+            >
+              {loading ? (
+                <span className="flex items-center gap-2">
+                  <span className="material-symbols-outlined animate-spin text-[18px]">
+                    progress_activity
+                  </span>
+                  Signing in...
+                </span>
+              ) : (
+                <span className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-[18px]">pets</span>
+                  Sign In
+                </span>
+              )}
+            </Button>
+
+            {/* Divider */}
+            <div className="flex items-center gap-4">
+              <div className="h-px flex-1 bg-border" />
+              <span className="text-sm text-text-muted">or</span>
+              <div className="h-px flex-1 bg-border" />
+            </div>
+
+            {/* Google */}
+            <Button
+              type="button"
+              size="md"
+              variant="outline"
+              className="w-full justify-center gap-2"
+            >
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/>
+                <path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 009 18z" fill="#34A853"/>
+                <path d="M3.964 10.707A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.707V4.961H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.039l3.007-2.332z" fill="#FBBC05"/>
+                <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.961L3.964 6.293C4.672 4.166 6.656 3.58 9 3.58z" fill="#EA4335"/>
+              </svg>
+              Continue with Google
+            </Button>
+          </div>
+
+          {/* Sign up link */}
+          <p className="pt-2 text-center text-sm text-text-sub">
+            New to SafePaws?{' '}
+            <Link
+              href="/register"
+              className="font-semibold text-primary hover:underline transition-colors"
+            >
+              Create an account
+            </Link>
+          </p>
+
+        </form>
+      </div>
+
+      {/* Footer */}
+      <p className="mt-8 text-center text-xs text-text-muted">
+        © 2026 SafePaws Nigeria. All rights reserved.
+      </p>
+
+    </div>
   )
 }

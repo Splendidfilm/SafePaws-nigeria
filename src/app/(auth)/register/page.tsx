@@ -3,7 +3,8 @@ import React from 'react'
 
 function page() {
   return (
-    <div className='w-4/5 flex items-center justify-center max-h-screen overflow-hidden' >
+    <div className='min-h-screen flex flex-col items-center justify-center p-6' 
+    >
       <RegisterForm/>
     </div>
   )
