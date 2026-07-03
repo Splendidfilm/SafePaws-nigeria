@@ -39,6 +39,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         <main
           className="flex-1 overflow-y-auto"
           style={{ background: "#11211e" }}
+          
         >
           <div className="max-w-screen-7xl mx-auto px-5 py-6">
             {children}
