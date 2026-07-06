@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import { useEffect } from "react";
 import { Sidebar } from "./Sidebar";
@@ -9,25 +9,19 @@ interface MobileNavProps {
 }
 
 export function MobileNav({ isOpen, onClose }: MobileNavProps) {
-  // Close on Escape key
+  // Close on Escape
   useEffect(() => {
-    function handleKey(e: KeyboardEvent) {
+    const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
-    }
+    };
     if (isOpen) document.addEventListener("keydown", handleKey);
     return () => document.removeEventListener("keydown", handleKey);
   }, [isOpen, onClose]);
 
-  // Prevent body scroll when open
+  // Lock body scroll
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
   return (
@@ -36,7 +30,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
       <div
         className="fixed inset-0 z-40 lg:hidden transition-all duration-300"
         style={{
-          background: "rgba(0,0,0,0.6)",
+          background: "rgba(0,0,0,0.4)",
           backdropFilter: "blur(2px)",
           opacity: isOpen ? 1 : 0,
           pointerEvents: isOpen ? "auto" : "none",
@@ -45,16 +39,13 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
         aria-hidden="true"
       />
 
-      {/* Drawer */}
+      {/* Slide-in drawer */}
       <div
-        className="fixed inset-y-0 left-0 z-50 lg:hidden transition-transform duration-300 ease-in-out"
-        style={{
-          transform: isOpen ? "translateX(0)" : "translateX(-100%)",
-          width: "240px",
-        }}
+        className="fixed inset-y-0 left-0 z-50 lg:hidden shadow-xl transition-transform duration-300 ease-in-out"
+        style={{ transform: isOpen ? "translateX(0)" : "translateX(-100%)" }}
         role="dialog"
         aria-modal="true"
-        aria-label="Navigation menu"
+        aria-label="Navigation"
       >
         <Sidebar onClose={onClose} isMobile />
       </div>
