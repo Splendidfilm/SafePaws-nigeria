@@ -14,7 +14,7 @@ export default function MissionSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[240px]">
           {/* Safe & Reliable - Large Card */}
-          <div className="md:col-span-2 bg-[#17CFAD] p-10 rounded-3xl flex flex-col justify-end relative overflow-hidden group">
+          <div className="md:col-span-2 bg-primary p-10 rounded-3xl flex flex-col justify-end relative overflow-hidden group">
             <span className="material-symbols-outlined text-white text-9xl cursor-default absolute top-6 right-6 transition-transform  ">
 shield_with_heart
 </span>
@@ -27,7 +27,7 @@ shield_with_heart
           {/* Vetted Professionalism */}
           <div className="bg-white p-10 rounded-3xl shadow-sm border border-zinc-100">
             <div className="w-12 h-12 bg-[#D1F5EF] rounded-full flex items-center justify-center mb-4">
-              <span className="material-symbols-outlined text-[#17CFAD]">verified</span>
+              <span className="material-symbols-outlined text-primary">verified</span>
             </div>
             <h3 className="text-xl font-bold text-zinc-900 mb-2">Vetted Professionalism</h3>
             <p className="text-zinc-600 text-sm">Our drivers undergo rigorous background checks and pet-first-aid certification.</p>

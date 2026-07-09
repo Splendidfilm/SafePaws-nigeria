@@ -15,7 +15,7 @@ export default function MediaContact() {
 
             <div className="space-y-8">
               <div className="flex gap-5">
-                <div className="w-11 h-11 bg-[#D1F5EF] rounded-2xl flex items-center justify-center text-[#17CFAD] shrink-0">
+                <div className="w-11 h-11 bg-[#D1F5EF] rounded-2xl flex items-center justify-center text-primary shrink-0">
                   <span className="material-symbols-outlined">mail</span>
                 </div>
                 <div>
@@ -25,7 +25,7 @@ export default function MediaContact() {
               </div>
 
               <div className="flex gap-5">
-                <div className="w-11 h-11 bg-[#D1F5EF] rounded-2xl flex items-center justify-center text-[#17CFAD] shrink-0">
+                <div className="w-11 h-11 bg-[#D1F5EF] rounded-2xl flex items-center justify-center text-primary shrink-0">
                   <span className="material-symbols-outlined">phone_iphone</span>
                 </div>
                 <div>
@@ -35,7 +35,7 @@ export default function MediaContact() {
               </div>
 
               <div className="flex gap-5">
-                <div className="w-11 h-11 bg-[#D1F5EF] rounded-2xl flex items-center justify-center text-[#17CFAD] shrink-0">
+                <div className="w-11 h-11 bg-[#D1F5EF] rounded-2xl flex items-center justify-center text-primary shrink-0">
                   <span className="material-symbols-outlined">location_on</span>
                 </div>
                 <div>
@@ -57,7 +57,7 @@ export default function MediaContact() {
                   <input 
                     type="text" 
                     placeholder="Your Name" 
-                    className="w-full px-5 py-3 rounded-2xl border border-zinc-200 focus:border-[#17CFAD] focus:ring-1 focus:ring-[#17CFAD] outline-none"
+                    className="w-full px-5 py-3 rounded-2xl border border-zinc-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none"
                   />
                 </div>
                 <div>
@@ -65,14 +65,14 @@ export default function MediaContact() {
                   <input 
                     type="text" 
                     placeholder="Media Publication" 
-                    className="w-full px-5 py-3 rounded-2xl border border-zinc-200 focus:border-[#17CFAD] focus:ring-1 focus:ring-[#17CFAD] outline-none"
+                    className="w-full px-5 py-3 rounded-2xl border border-zinc-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none"
                   />
                 </div>
               </div>
 
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-zinc-700 mb-2">Subject</label>
-                <select id="subject" className="w-full px-5 py-3 rounded-2xl border border-zinc-200 focus:border-[#17CFAD] focus:ring-1 focus:ring-[#17CFAD] outline-none">
+                <select id="subject" className="w-full px-5 py-3 rounded-2xl border border-zinc-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none">
                   <option>Interview Request</option>
                   <option>Data / Statistics Inquiry</option>
                   <option>Asset Request</option>
@@ -85,13 +85,13 @@ export default function MediaContact() {
                 <textarea 
                   rows={5} 
                   placeholder="How can we help?" 
-                  className="w-full px-5 py-3 rounded-2xl border border-zinc-200 focus:border-[#17CFAD] focus:ring-1 focus:ring-[#17CFAD] outline-none resize-y"
+                  className="w-full px-5 py-3 rounded-2xl border border-zinc-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-y"
                 />
               </div>
 
               <button 
                 type="button"
-                className="w-full bg-[#17CFAD] text-white py-4 rounded-2xl font-bold hover:bg-[#12A88F] transition-all active:scale-95"
+                className="w-full bg-primary text-white py-4 rounded-2xl font-bold hover:bg-[#12A88F] transition-all active:scale-95"
               >
                 Send Request
               </button>

@@ -15,17 +15,17 @@ export default function ServiceCard({
   description 
 }: ServiceCardProps) {
   return (
-    <div className="flex flex-col bg-white dark:bg-[#1a2e2b] shadow-lg rounded-3xl py-10 px-8 gap-6 
+    <div className="flex flex-col bg-zinc-50 dark:bg-cardbg shadow-lg rounded-3xl py-10 px-8 gap-6 
                     hover:shadow-2xl hover:-translate-y-1 border border-zinc-100 dark:border-[#2a403d] 
                     transition-all duration-300 group w-full">
       
       {/* Icon Container */}
-      <div className="bg-[#D1F5EF] dark:bg-[#17CFAD]/20 w-fit rounded-2xl p-4 
-                      group-hover:bg-[#17CFAD] transition-colors">
+      <div className="bg-[#D1F5EF] dark:bg-primary/20 w-fit rounded-2xl p-4 
+                      group-hover:bg-primary transition-colors">
         <Icon 
           size={42} 
           strokeWidth={2.25}
-          className="text-[#17CFAD] dark:text-[#5efbd7] group-hover:text-white transition-colors" 
+          className="text-primary dark:text-[#5efbd7] group-hover:text-white transition-colors" 
         />
       </div>
 

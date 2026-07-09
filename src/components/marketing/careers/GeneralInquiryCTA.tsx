@@ -11,7 +11,7 @@ export default function GeneralInquiryCTA() {
   return (
 
     <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto dark:bg-[#11211e]">
-      <div className="bg-[#17CFAD] rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
+      <div className="bg-primary rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
         <div className="absolute top-0 right-0 p-8 opacity-20 hidden md:block">
           <span className="material-symbols-outlined text-[180px] text-black">pets</span>
         </div>
@@ -27,7 +27,7 @@ export default function GeneralInquiryCTA() {
 
           <button 
           onClick={() => setModal(!modal)}
-          className="bg-white text-[#17CFAD] px-12 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-all active:scale-95">
+          className="bg-white text-primary px-12 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-all active:scale-95">
             Send General Inquiry
           </button>
         </div>

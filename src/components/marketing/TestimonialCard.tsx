@@ -26,7 +26,7 @@ export default function TestimonialCard({
     >
       {/* Quote Icon */}
   <div className="relative mb-10">
-    <span className="material-symbols-outlined absolute -left-2 -top-4 text-[#17CFAD]/10 dark:text-white/30 text-8xl rotate-180">
+    <span className="material-symbols-outlined absolute -left-2 -top-4 text-primary/10 dark:text-white/30 text-8xl rotate-180">
       format_quote
     </span>
 
@@ -34,7 +34,7 @@ export default function TestimonialCard({
       {quote}
     </p>
 
-    <span className="material-symbols-outlined absolute -right-2 -bottom-6 text-[#17CFAD]/10 dark:text-white/30 text-8xl">
+    <span className="material-symbols-outlined absolute -right-2 -bottom-6 text-primary/10 dark:text-white/30 text-8xl">
       format_quote
     </span>
   </div>
@@ -42,7 +42,7 @@ export default function TestimonialCard({
       {/* Author Info */}
       <div className="flex items-center gap-4">
         <div 
-          className="w-14 h-14 rounded-full bg-cover border-2 border-[#17CFAD] shrink-0 dark:border-[#17CFAD]/80"
+          className="w-14 h-14 rounded-full bg-cover border-2 border-primary shrink-0 dark:border-primary/80"
           style={{ backgroundImage: `url("${avatarUrl}")` }}
         />
         <div>

@@ -45,7 +45,7 @@ const copyAccountNumber = () => {
             <h3 className='text-xs font-bold uppercase tracking-widest text-zinc-500 mb-4' >Online Gateway</h3>
         <div className="grid grid-cols-2 gap-4">
             {/* Paystack */}
-            <div className="flex flex-col items-center justify-center p-6 bg-white border border-zinc-200 rounded-2xl hover:border-[#17CFAD] transition-all cursor-pointer group ">
+            <div className="flex flex-col items-center justify-center p-6 bg-white border border-zinc-200 rounded-2xl hover:border-primary transition-all cursor-pointer group ">
                 <div className="  bg-blue-100 rounded-full flex flex-col  items-center justify-center mb-3">
                 <span className="material-symbols-outlined text-blue-600 text-3xl p-4">account_balance_wallet</span>
                 
@@ -56,7 +56,7 @@ const copyAccountNumber = () => {
                 </span>
             </div>
             {/* Flutterwave */}
-            <div className="flex flex-col items-center justify-center p-6 bg-white border border-zinc-200 rounded-2xl hover:border-[#17CFAD] transition-all cursor-pointer group">
+            <div className="flex flex-col items-center justify-center p-6 bg-white border border-zinc-200 rounded-2xl hover:border-primary transition-all cursor-pointer group">
                 <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-3">
                 <span className="material-symbols-outlined text-orange-600 text-3xl">payments</span>
                 </div>
@@ -70,7 +70,7 @@ const copyAccountNumber = () => {
 
         <section className="bg-zinc-50 p-6 rounded-2xl border border-zinc-100">
             <div className="flex items-center gap-3 mb-5">
-              <span className="material-symbols-outlined text-[#17CFAD]">account_balance</span>
+              <span className="material-symbols-outlined text-primary">account_balance</span>
               <h3 className="text-sm font-bold">Direct Bank Transfer</h3>
             </div>
             
@@ -86,7 +86,7 @@ const copyAccountNumber = () => {
                   {
                     <span 
                     onClick={copyAccountNumber}
-                  className="material-symbols-outlined text-xs cursor-pointer hover:text-[#17CFAD]">{copied ? 'check' : 'content_copy'}</span>
+                  className="material-symbols-outlined text-xs cursor-pointer hover:text-primary">{copied ? 'check' : 'content_copy'}</span>
                   }
                 </span>
               </div>
@@ -98,10 +98,10 @@ const copyAccountNumber = () => {
           </section>
 
           {/* Pay on Pickup Note */}
-          <section className="flex gap-4 p-5 bg-[#D1F5EF]/30 rounded-2xl border border-[#17CFAD]/20">
-            <span className="material-symbols-outlined text-[#17CFAD] shrink-0">info</span>
+          <section className="flex gap-4 p-5 bg-[#D1F5EF]/30 rounded-2xl border border-primary/20">
+            <span className="material-symbols-outlined text-primary shrink-0">info</span>
             <div>
-              <h4 className="text-sm font-bold text-[#17CFAD] mb-1">Pay on Pickup Policy</h4>
+              <h4 className="text-sm font-bold text-primary mb-1">Pay on Pickup Policy</h4>
               <p className="text-xs text-zinc-600 leading-relaxed">
                 We offer &apos;Pay on Pickup&apos; for local intra-city relocations. 
                 A 30% commitment deposit is required for inter-state bookings.

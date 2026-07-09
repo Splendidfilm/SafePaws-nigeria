@@ -20,14 +20,14 @@ export default function PressReleases() {
           {Info.map((info, index)=>(
              <div
              key={index}
-             className="group bg-white p-8 rounded-3xl border border-zinc-100 hover:border-[#17CFAD] transition-all flex flex-col md:flex-row md:items-center justify-between">
+             className="group bg-white p-8 rounded-3xl border border-zinc-100 hover:border-primary transition-all flex flex-col md:flex-row md:items-center justify-between">
             <div className="flex items-start gap-6">
-              <div className="hidden md:flex flex-col items-center justify-center bg-zinc-100 w-20 h-20 rounded-2xl border border-zinc-200 group-hover:bg-[#D1F5EF] group-hover:border-[#17CFAD] transition-all">
+              <div className="hidden md:flex flex-col items-center justify-center bg-zinc-100 w-20 h-20 rounded-2xl border border-zinc-200 group-hover:bg-[#D1F5EF] group-hover:border-primary transition-all">
                 <span className="text-xs font-bold text-zinc-500">NOV</span>
                 <span className="text-3xl font-black text-zinc-900">15</span>
               </div>
               <div>
-                <h3 className="text-lg font-bold text-zinc-900 group-hover:text-[#17CFAD] transition-colors">
+                <h3 className="text-lg font-bold text-zinc-900 group-hover:text-primary transition-colors">
                   {info.title}
                 </h3>
                 <p className="text-zinc-600 text-sm mt-2">

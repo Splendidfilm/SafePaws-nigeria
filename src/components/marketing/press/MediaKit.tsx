@@ -22,11 +22,11 @@ export default function MediaKit() {
             {/* Logo Package */}
             <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10 hover:bg-white/20 transition-all group">
               <div className="w-12 h-12 bg-[#D1F5EF] rounded-2xl flex items-center justify-center mb-6">
-                <span className="material-symbols-outlined text-[#17CFAD] text-3xl">palette</span>
+                <span className="material-symbols-outlined text-primary text-3xl">palette</span>
               </div>
               <h4 className="text-white text-xl font-bold mb-3">Logo Package</h4>
               <p className="text-zinc-400 text-sm mb-8">EPS, PNG, and SVG formats in all primary brand variations.</p>
-              <button className="w-full py-4 bg-white text-zinc-900 font-bold rounded-2xl hover:bg-[#D1F5EF] hover:text-[#17CFAD] transition-all flex items-center justify-center gap-2">
+              <button className="w-full py-4 bg-white text-zinc-900 font-bold rounded-2xl hover:bg-[#D1F5EF] hover:text-primary transition-all flex items-center justify-center gap-2">
                 Download ZIP <span className="material-symbols-outlined">download</span>
               </button>
             </div>
@@ -34,11 +34,11 @@ export default function MediaKit() {
             {/* High-Res Photos */}
             <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10 hover:bg-white/20 transition-all group">
               <div className="w-12 h-12 bg-[#D1F5EF] rounded-2xl flex items-center justify-center mb-6">
-                <span className="material-symbols-outlined text-[#17CFAD] text-3xl">photo_library</span>
+                <span className="material-symbols-outlined text-primary text-3xl">photo_library</span>
               </div>
               <h4 className="text-white text-xl font-bold mb-3">High-Res Photos</h4>
               <p className="text-zinc-400 text-sm mb-8">Professional imagery of our vehicles, facilities, and team.</p>
-              <button className="w-full py-4 bg-white text-zinc-900 font-bold rounded-2xl hover:bg-[#D1F5EF] hover:text-[#17CFAD] transition-all flex items-center justify-center gap-2">
+              <button className="w-full py-4 bg-white text-zinc-900 font-bold rounded-2xl hover:bg-[#D1F5EF] hover:text-primary transition-all flex items-center justify-center gap-2">
                 Download ZIP <span className="material-symbols-outlined">download</span>
               </button>
             </div>
@@ -46,11 +46,11 @@ export default function MediaKit() {
             {/* Executive Bios */}
             <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10 hover:bg-white/20 transition-all group">
               <div className="w-12 h-12 bg-[#D1F5EF] rounded-2xl flex items-center justify-center mb-6">
-                <span className="material-symbols-outlined text-[#17CFAD] text-3xl">description</span>
+                <span className="material-symbols-outlined text-primary text-3xl">description</span>
               </div>
               <h4 className="text-white text-xl font-bold mb-3">Executive Bios</h4>
               <p className="text-zinc-400 text-sm mb-8">Professional headshots and biographies of our leadership team.</p>
-              <button className="w-full py-4 bg-white text-zinc-900 font-bold rounded-2xl hover:bg-[#D1F5EF] hover:text-[#17CFAD] transition-all flex items-center justify-center gap-2">
+              <button className="w-full py-4 bg-white text-zinc-900 font-bold rounded-2xl hover:bg-[#D1F5EF] hover:text-primary transition-all flex items-center justify-center gap-2">
                 Download ZIP <span className="material-symbols-outlined">download</span>
               </button>
             </div>

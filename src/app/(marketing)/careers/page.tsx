@@ -7,7 +7,7 @@ import React from 'react'
 
 function page() {
   return (
-    <div className='w-full dark:bg-[#11211e]' >
+    <div className='w-full dark:bg-bg' >
       <CareersHero />
       <CultureSection/>
       <BenefitsSection/>

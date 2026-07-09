@@ -36,40 +36,40 @@ export default function HelpCategories() {
         {/* Booking & Scheduling - Large Card */}
         <div className="md:col-span-8 bg-white p-8 rounded-3xl border border-zinc-100 hover:shadow-lg transition-all group">
           <div className="flex items-start gap-6">
-            <div className="w-14 h-14 bg-[#D1F5EF] rounded-2xl flex items-center justify-center text-[#17CFAD] shrink-0 group-hover:scale-110 transition-transform">
+            <div className="w-14 h-14 bg-[#D1F5EF] rounded-2xl flex items-center justify-center text-primary shrink-0 group-hover:scale-110 transition-transform">
               <span className="material-symbols-outlined text-3xl">calendar_month</span>
             </div>
             <div className="flex-1">
               <h3 className="text-2xl font-bold text-zinc-900 mb-4">Booking & Scheduling</h3>
               <div className="grid md:grid-cols-2 gap-x-12 gap-y-4">
                 <ul className="space-y-3">
-                  <li><a href="#" className="text-zinc-600 hover:text-[#17CFAD] flex items-center gap-2">→ How to book a pet move?</a></li>
-                  <li><a href="#" className="text-zinc-600 hover:text-[#17CFAD] flex items-center gap-2">→ Required documents for transit</a></li>
-                  <li><a href="#" className="text-zinc-600 hover:text-[#17CFAD] flex items-center gap-2">→ Rescheduling your pet&apos;s trip</a></li>
+                  <li><a href="#" className="text-zinc-600 hover:text-primary flex items-center gap-2">→ How to book a pet move?</a></li>
+                  <li><a href="#" className="text-zinc-600 hover:text-primary flex items-center gap-2">→ Required documents for transit</a></li>
+                  <li><a href="#" className="text-zinc-600 hover:text-primary flex items-center gap-2">→ Rescheduling your pet&apos;s trip</a></li>
                 </ul>
                 <ul className="space-y-3">
-                  <li><a href="#" className="text-zinc-600 hover:text-[#17CFAD] flex items-center gap-2">→ International vs Domestic</a></li>
-                  <li><a href="#" className="text-zinc-600 hover:text-[#17CFAD] flex items-center gap-2">→ Last-minute bookings</a></li>
+                  <li><a href="#" className="text-zinc-600 hover:text-primary flex items-center gap-2">→ International vs Domestic</a></li>
+                  <li><a href="#" className="text-zinc-600 hover:text-primary flex items-center gap-2">→ Last-minute bookings</a></li>
                 </ul>
               </div>
             </div>
           </div>
-          <button className="mt-10 text-[#17CFAD] font-bold flex items-center gap-2 hover:gap-3 transition-all">
+          <button className="mt-10 text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all">
             View all articles <span className="material-symbols-outlined">arrow_forward</span>
           </button>
         </div>
 
         {/* Pet Care */}
         <div className="md:col-span-4 bg-[#F1F5F3] p-8 rounded-3xl border border-zinc-100 hover:shadow-lg transition-all group flex flex-col">
-          <div className="w-14 h-14 bg-[#D1F5EF] rounded-2xl flex items-center justify-center text-[#17CFAD] mb-6 group-hover:scale-110 transition-transform">
+          <div className="w-14 h-14 bg-[#D1F5EF] rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
             <span className="material-symbols-outlined text-3xl">pets</span>
           </div>
           <h3 className="text-2xl font-bold mb-4 text-zinc-900 ">Pet Care & Comfort</h3>
           <ul className="space-y-4 flex-1 border-b-2 border-b-zinc-200 pb-10">
-            <li><a href="#" className="text-zinc-600 hover:text-[#17CFAD]">Feeding during transit</a></li>
-            <li><a href="#" className="text-zinc-600 hover:text-[#17CFAD]">Sedation policy & safety</a></li>
-            <li><a href="#" className="text-zinc-600 hover:text-[#17CFAD]">Crate size guide</a></li>
-            <li><a href="#" className="text-zinc-600 hover:text-[#17CFAD]">Special medical needs</a></li>
+            <li><a href="#" className="text-zinc-600 hover:text-primary">Feeding during transit</a></li>
+            <li><a href="#" className="text-zinc-600 hover:text-primary">Sedation policy & safety</a></li>
+            <li><a href="#" className="text-zinc-600 hover:text-primary">Crate size guide</a></li>
+            <li><a href="#" className="text-zinc-600 hover:text-primary">Special medical needs</a></li>
           </ul>
           <p className="text-xs text-zinc-500 font-medium mt-auto pt-4">12 Articles</p>
         </div>
@@ -97,7 +97,7 @@ export default function HelpCategories() {
                     
                   }
                 }}
-                className="w-full flex justify-between items-center text-left py-3 px-4 hover:bg-white rounded-xl transition-colors text-zinc-700 hover:text-[#17CFAD]"
+                className="w-full flex justify-between items-center text-left py-3 px-4 hover:bg-white rounded-xl transition-colors text-zinc-700 hover:text-primary"
               >
                 {item.text}
                 <span className="material-symbols-outlined text-sm">open_in_new</span>

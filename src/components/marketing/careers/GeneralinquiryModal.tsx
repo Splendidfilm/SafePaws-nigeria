@@ -81,7 +81,7 @@ const [copied, setCopied] = useState(false)
                     {/* Personal Information */}
                     <section className="bg-white p-8 rounded-3xl border border-zinc-100">
                       <h2 className="text-xl text-zinc-700 font-bold mb-6 flex items-center gap-3">
-                        <span className="material-symbols-outlined text-[#17CFAD]">person</span>
+                        <span className="material-symbols-outlined text-primary">person</span>
                         Personal Information
                       </h2>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -93,7 +93,7 @@ const [copied, setCopied] = useState(false)
                             onChange={handleChange}
                             type="text"
                             required
-                            className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-[#17CFAD] focus:ring-1 focus:ring-[#17CFAD]"
+                            className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-primary focus:ring-1 focus:ring-primary"
                             placeholder="John Doe"
                           />
                         </div>
@@ -105,7 +105,7 @@ const [copied, setCopied] = useState(false)
                             onChange={handleChange}
                             type="email"
                             required
-                            className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-[#17CFAD] focus:ring-1 focus:ring-[#17CFAD]"
+                            className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-primary focus:ring-1 focus:ring-primary"
                             placeholder="john@example.com"
                           />
                         </div>
@@ -117,7 +117,7 @@ const [copied, setCopied] = useState(false)
                             onChange={handleChange}
                             type="tel"
                             required
-                            className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-[#17CFAD] focus:ring-1 focus:ring-[#17CFAD]"
+                            className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-primary focus:ring-1 focus:ring-primary"
                             placeholder="+234 000 000 0000"
                           />
                         </div>
@@ -128,7 +128,7 @@ const [copied, setCopied] = useState(false)
                             name="city"
                             value={formData.city}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-[#17CFAD] focus:ring-1 focus:ring-[#17CFAD] text-zinc-700 "  
+                            className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-primary focus:ring-1 focus:ring-primary text-zinc-700 "  
                           >
                             <option value="Lagos">Lagos</option>
                             <option value="Abuja">Abuja</option>
@@ -142,7 +142,7 @@ const [copied, setCopied] = useState(false)
                     {/* Professional Details */}
                     <section className="bg-white p-8 rounded-3xl border border-zinc-100">
                       <h2 className="text-xl font-bold mb-6 flex items-center gap-3 text-zinc-700 ">
-                        <span className="material-symbols-outlined text-[#17CFAD]">link</span>
+                        <span className="material-symbols-outlined text-primary">link</span>
                         Professional Details
                       </h2>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -153,7 +153,7 @@ const [copied, setCopied] = useState(false)
                             value={formData.linkedin}
                             onChange={handleChange}
                             type="url"
-                            className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-[#17CFAD]"
+                            className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-primary"
                             placeholder="linkedin.com/in/username"
                           />
                         </div>
@@ -164,7 +164,7 @@ const [copied, setCopied] = useState(false)
                             value={formData.portfolio}
                             onChange={handleChange}
                             type="url"
-                            className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-[#17CFAD]"
+                            className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-primary"
                             placeholder="yourportfolio.com"
                           />
                         </div>
@@ -174,10 +174,10 @@ const [copied, setCopied] = useState(false)
                     {/* Resume Upload */}
                     <section className="bg-white p-8 rounded-3xl border border-zinc-100">
                       <h2 className="text-xl font-bold mb-6 flex items-center gap-3 text-zinc-900 ">
-                        <span className="material-symbols-outlined text-[#17CFAD]">upload_file</span>
+                        <span className="material-symbols-outlined text-primary">upload_file</span>
                         Resume / CV
                       </h2>
-                      <div className="border-2 border-dashed border-zinc-300 rounded-3xl p-12 text-center hover:border-[#17CFAD] transition-colors cursor-pointer">
+                      <div className="border-2 border-dashed border-zinc-300 rounded-3xl p-12 text-center hover:border-primary transition-colors cursor-pointer">
                         <span className="material-symbols-outlined text-5xl text-zinc-400 mb-4 block">cloud_upload</span>
                         <p className="font-semibold text-zinc-700">Drag and drop your file here</p>
                         <p className="text-sm text-zinc-500 mt-1">or click to browse (PDF, DOCX • Max 5MB)</p>
@@ -187,7 +187,7 @@ const [copied, setCopied] = useState(false)
                     {/* Questionnaire */}
                     {/* <section className="bg-white p-8 rounded-3xl border border-zinc-100">
                       <h2 className="text-xl font-bold mb-6 flex items-center gap-3 text-zinc-900 ">
-                        <span className="material-symbols-outlined text-[#17CFAD]">quiz</span>
+                        <span className="material-symbols-outlined text-primary">quiz</span>
                         Questionnaire
                       </h2>
                       <div className="space-y-8">
@@ -198,7 +198,7 @@ const [copied, setCopied] = useState(false)
                             value={formData.whyJoin}
                             onChange={handleChange}
                             rows={4}
-                            className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-[#17CFAD]"
+                            className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-primary"
                             placeholder="Tell us about your motivation..."
                           />
                         </div>
@@ -209,7 +209,7 @@ const [copied, setCopied] = useState(false)
                             value={formData.experience}
                             onChange={handleChange}
                             rows={4}
-                            className="w-full text-zinc-700 px-4 py-3 rounded-2xl border border-zinc-200 focus:border-[#17CFAD]"
+                            className="w-full text-zinc-700 px-4 py-3 rounded-2xl border border-zinc-200 focus:border-primary"
                             placeholder="Describe your background handling animals..."
                           />
                         </div>
@@ -219,7 +219,7 @@ const [copied, setCopied] = useState(false)
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-[#17CFAD] hover:bg-[#12A88F] disabled:bg-zinc-400 text-white font-bold py-5 rounded-2xl text-lg transition-all active:scale-[0.98]"
+                      className="w-full bg-primary hover:bg-[#12A88F] disabled:bg-zinc-400 text-white font-bold py-5 rounded-2xl text-lg transition-all active:scale-[0.98]"
                     >
                       {isSubmitting ? "Submitting Application..." : "Submit Application"}
                     </button>
@@ -229,10 +229,10 @@ const [copied, setCopied] = useState(false)
 
 
           {/* Notice */}
-          <section className="flex gap-4 p-5 bg-[#D1F5EF]/30 rounded-2xl border border-[#17CFAD]/20">
-            <span className="material-symbols-outlined text-[#17CFAD] shrink-0">info</span>
+          <section className="flex gap-4 p-5 bg-[#D1F5EF]/30 rounded-2xl border border-primary/20">
+            <span className="material-symbols-outlined text-primary shrink-0">info</span>
             <div>
-              <h4 className="text-sm font-bold text-[#17CFAD] mb-1">Notice</h4>
+              <h4 className="text-sm font-bold text-primary mb-1">Notice</h4>
               <p className="text-xs text-zinc-600 leading-relaxed">
                You will receive your resopionse within 2-3 days,Which  will be sent to the email you provided.
               </p>

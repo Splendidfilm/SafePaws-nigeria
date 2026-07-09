@@ -13,7 +13,7 @@ export default function LatestNews() {
             <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50">Latest News</h2>
             <p className="text-zinc-600 dark:text-zinc-200  mt-2">External media coverage and editorial features</p>
           </div>
-          <button className="text-[#17CFAD] font-bold flex items-center gap-2 hover:gap-3 transition-all group">
+          <button className="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all group">
             View All Coverage
             <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
           </button>
@@ -31,7 +31,7 @@ export default function LatestNews() {
             <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
             
             <div className="absolute bottom-0 left-0 p-8 text-white">
-              <span className="bg-white/90 text-[#17CFAD] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block">
+              <span className="bg-white/90 text-primary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block">
                 TechFocus Nigeria
               </span>
               <h3 className="text-3xl font-bold mb-4 leading-tight">
@@ -59,22 +59,22 @@ export default function LatestNews() {
                   New logistics routes established connecting Lagos to Accra and Abidjan.
                 </p>
               </div>
-              <a href="#" className="mt-6 text-[#17CFAD] font-bold flex items-center gap-2 text-sm">
+              <a href="#" className="mt-6 text-primary font-bold flex items-center gap-2 text-sm">
                 Read More <span className="material-symbols-outlined">trending_flat</span>
               </a>
             </div>
 
             {/* Article 2 */}
-            <div className="bg-[#D1F5EF]/30 p-8 rounded-3xl border border-[#17CFAD]/20 hover:shadow-xl transition-all flex-1 flex flex-col dark:bg-[#17CFAD] justify-between">
+            <div className="bg-[#D1F5EF]/30 p-8 rounded-3xl border border-primary/20 hover:shadow-xl transition-all flex-1 flex flex-col dark:bg-primary justify-between">
               <div>
                 
-                <span className="text-[#17CFAD] font-semibold text-sm dark:text-zinc-900 ">Daily Trust • Oct 12, 2024</span>
+                <span className="text-primary font-semibold text-sm dark:text-zinc-900 ">Daily Trust • Oct 12, 2024</span>
                 <h3 className="text-xl font-bold text-zinc-900 mt-3 leading-snug dark:text-zinc-100
                  ">
                   The Rising Demand for Professional Pet Sitters and Movers in Nigeria
                 </h3>
               </div>
-              <a href="#" className="mt-6 text-[#17CFAD] font-bold flex items-center gap-2 text-sm dark:text-zinc-100 ">
+              <a href="#" className="mt-6 text-primary font-bold flex items-center gap-2 text-sm dark:text-zinc-100 ">
                 Read More <span className="material-symbols-outlined">trending_flat</span>
               </a>
             </div>
@@ -92,7 +92,7 @@ export default function LatestNews() {
                 /> */}
             </div>
             <div className="flex-1">
-              <span className="text-[#17CFAD] text-sm font-medium">Vanguard News • Oct 05, 2024</span>
+              <span className="text-primary text-sm font-medium">Vanguard News • Oct 05, 2024</span>
               <h3 className="text-2xl font-bold text-white mt-3 leading-tight">
                 SafePaws Hits 10,000 Safe Deliveries Milestone in 2024
               </h3>

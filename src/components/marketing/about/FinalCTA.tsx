@@ -1,12 +1,17 @@
 // src/components/marketing/about/FinalCTA.tsx
+'use client'
 
 import Button from "@/components/ui/button";
+import { useRouter } from "next/navigation"; 
 
 export default function FinalCTA() {
+
+  const router = useRouter()
+
   return (
     <section className="py-20 border-b border-b-zinc-600">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="bg-[#17CFAD] rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
+        <div className="bg-primary rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
           {/* Decorative circles */}
           <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
             <div className="absolute top-10 left-10 w-40 h-40 border-4 border-white rounded-full" />
@@ -20,14 +25,17 @@ export default function FinalCTA() {
             Join thousands of Nigerian pet owners who trust SafePaws for long-distance and local relocation.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-
+          10">
            <Button
            variant="about"
             size="lg"
+            onClick={() => router.push('/login')}
            >Book a Trip Now</Button>
            <Button
            variant='aboutOutline'
            size='lg'
+           onClick={() => router.push('/help')}
            >Contact Sales</Button>
           </div>
         </div>

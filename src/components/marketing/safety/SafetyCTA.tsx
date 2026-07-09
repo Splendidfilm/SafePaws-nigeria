@@ -2,7 +2,7 @@
 export default function SafetyCTA() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-20 text-center">
-      <div className="bg-[#17CFAD] rounded-[2.5rem] p-12 md:p-20 text-white relative overflow-hidden">
+      <div className="bg-primary rounded-[2.5rem] p-12 md:p-20 text-white relative overflow-hidden">
         
         {/* Decorative circles */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20" />
@@ -18,7 +18,7 @@ export default function SafetyCTA() {
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <button className="bg-white text-[#17CFAD] px-10 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition-transform active:scale-95">
+            <button className="bg-white text-primary px-10 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition-transform active:scale-95">
               Get a Quote
             </button>
             

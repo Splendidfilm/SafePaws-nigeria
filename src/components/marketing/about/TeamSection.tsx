@@ -48,7 +48,7 @@ export default function TeamSection() {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
           {team.map((member, index) => (
             <div key={index} className="group">
               <div className="aspect-3/4 rounded-3xl overflow-hidden mb-4 relative">
@@ -65,7 +65,7 @@ export default function TeamSection() {
                 className="absolute bottom-4 left-4 right-4 transition-all duration-300">
                   <motion.div
                   className="bg-white/90 backdrop-blur-md p-4 rounded-2xl">
-                    <p className="text-xs font-bold text-[#17CFAD] uppercase tracking-wider">{member.role}</p>
+                    <p className="text-xs font-bold text-primary uppercase tracking-wider">{member.role}</p>
                   </motion.div>
                 </motion.div>
               </div>

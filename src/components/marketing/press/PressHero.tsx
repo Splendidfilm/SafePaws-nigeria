@@ -2,7 +2,7 @@
 export default function PressHero() {
   return (
     <section className="relative py-20 overflow-hidden bg-[#F8FAF9]  bg-cover bg-center w-full dark:bg-[#11211e] ">
-      <div className="absolute inset-0 bg-linear-to-br from-[#17CFAD]/10 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-transparent" />
 
       <div className="absolute right-0 top-0 w-1/3 h-full bg-[#D1F5EF]/10 rounded-l-full blur-3xl" />
 
@@ -19,7 +19,7 @@ export default function PressHero() {
             <button >
                 <a 
               href="#latest-news" 
-              className="bg-[#17CFAD] text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 hover:shadow-lg transition-all"
+              className="bg-primary text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 hover:shadow-lg transition-all"
             >
               Latest Coverage
               <span className="material-symbols-outlined text-sm">arrow_downward</span>

@@ -23,7 +23,7 @@ export default function GetStartedCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="flex flex-col items-center bg-zinc-100 border border-zinc-300 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 w-full max-w-95 dark:bg-[#1a2e2b] dark:border-[#2a403d] group -hover:rotate-8 "
+      className="flex flex-col items-center bg-zinc-100 border border-zinc-300 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 w-full max-w-95 dark:bg-cardbg dark:border-[#2a403d] group -hover:rotate-8 "
     >
       {/* Icon Circle with nice animation */}
       <motion.div

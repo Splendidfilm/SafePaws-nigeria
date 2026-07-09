@@ -12,7 +12,8 @@ type ButtonProps = {
     | 'aboutOutline'
     | 'insurance'
     | 'carriers'
-    | 'latestNews';
+    | 'latestNews'
+    | 'none';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
   disabled?: boolean;
@@ -64,6 +65,8 @@ function Button({
     latestNews:
       'bg-primary text-primary-foreground rounded-2xl ' +
       'shadow-[0_2px_10px_rgba(23,207,173,0.25)] hover:shadow-[0_6px_22px_rgba(23,207,173,0.38)]',
+
+      none:'',
   };
 
   const sizes = {
