@@ -114,7 +114,7 @@ export default function Navbar() {
               <Button
               size='sm'
               variant='none'
-                onClick={() => router.push("/register")}
+                onClick={() => router.push("/login")}
                 className="hidden md:block text-sm font-medium transition-colors hover:text-white hover:scale-105 "
               >
                 Log in
