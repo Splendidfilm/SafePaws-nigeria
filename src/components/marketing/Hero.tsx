@@ -254,51 +254,6 @@ export function Hero() {
         opacity: 0.4,
       }} />
 
-      {/* Nav */}
-      <nav className="relative z-10 flex items-center justify-between px-6 md:px-12 py-6">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-            style={{ background: "var(--color-primary)" }}>
-            <span className="text-sm">🐾</span>
-          </div>
-          <span className="font-bold text-lg tracking-tight" style={{ color: "var(--color-text)" }}>
-            SafePaws
-          </span>
-        </div>
-
-        <div className="hidden md:flex items-center gap-8">
-          {["Services", "How It Works", "Coverage", "Pricing"].map((item) => (
-            <a key={item}
-              href={`#${item.toLowerCase().replace(/ /g, "-")}`}
-              className="text-sm font-medium transition-colors"
-              style={{ color: "var(--color-text-sub)" }}
-              onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--color-text)")}
-              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "var(--color-text-sub)")}
-            >
-              {item}
-            </a>
-          ))}
-        </div>
-
-        <div className="flex items-center gap-3">
-          <Link href="/login"
-            className="hidden md:block text-sm font-medium transition-colors"
-            style={{ color: "var(--color-text-sub)" }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--color-text)")}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--color-text-sub)")}
-          >
-            Log in
-          </Link>
-          <Link href="/register"
-            className="text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
-            style={{ background: "var(--color-primary)", color: "var(--color-primary-foreground)" }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--color-primary-hover)")}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--color-primary)")}
-          >
-            Get Started
-          </Link>
-        </div>
-      </nav>
 
       {/* Hero body */}
       <div className="relative z-10 flex-1 flex items-center">
@@ -470,7 +425,7 @@ export function Hero() {
             scroll
           </span>
           <div className="w-px h-8 rounded-full" style={{
-            background: "linear-gradient(to bottom, var(--color-primary), transparent) hello",
+            background: "linear-gradient(to bottom, var(--color-primary), transparent)",
           }} />
         </div>
       </motion.div>
