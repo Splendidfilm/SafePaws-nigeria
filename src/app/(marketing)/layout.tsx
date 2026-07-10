@@ -10,6 +10,7 @@ export default function MarketingLayout({
   return (
     <div className="flex w-full min-h-screen overflow-x-hidden  flex-col">
       <Navbar />
+      <div className="flex-1 mt-20 w-full"/>
       {children}
       <Footer/>
     </div>
