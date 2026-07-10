@@ -39,7 +39,7 @@ export default function LoginForm() {
 
   return (
     <div className="flex min-h-screen w-full items-center justify-center px-4 py-12"
-      style={{ background: 'var(--color-bg)' }}
+      // style={{ background: 'var(--color-bg)' }}
     >
       <div className="w-full max-w-[26rem]">
 
