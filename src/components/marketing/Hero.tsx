@@ -470,7 +470,7 @@ export function Hero() {
             scroll
           </span>
           <div className="w-px h-8 rounded-full" style={{
-            background: "linear-gradient(to bottom, var(--color-primary), transparent)",
+            background: "linear-gradient(to bottom, var(--color-primary), transparent) hello",
           }} />
         </div>
       </motion.div>
