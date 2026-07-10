@@ -1,133 +1,163 @@
-// src/components/marketing/Navbar.tsx
 'use client';
 
-import { useState } from 'react';
 import Logo from './Logo';
 import Button from './button';
-import Link from 'next/link';
-// import { useRouter } from 'next/router';
 import { useRouter } from 'next/navigation';
-import { style } from 'framer-motion/client';
+import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
 
-const navLinks = [
-  { name: 'Home', link: '/' },
-  { name: 'Careers', link: '/careers' },
-  { name: 'About us', link: '/about' },
-  { name: 'Help Center', link: '/help' },
-  { name: 'Safety Guidlines', link: '/safety' },
+const navItems = [
+  'Services',
+  'How It Works',
+  'Coverage',
+  'Pricing',
 ];
-
 
 export default function Navbar() {
   const router = useRouter();
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+
+  // Hide navbar on scroll down
+  useEffect(() => {
+    let lastScroll = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+
+      if (currentScroll <= 20) {
+        setShowNavbar(true);
+      } else if (currentScroll > lastScroll) {
+        setShowNavbar(false);
+        setMobileMenuOpen(false);
+      } else {
+        setShowNavbar(true);
+      }
+
+      lastScroll = currentScroll;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Prevent background scrolling while menu is open
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? 'hidden' : 'auto';
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [mobileMenuOpen]);
 
   return (
-    // <nav className="w-full bg-white/40 backdrop-blur-xl dark:bg-[#1a2e2b]/20 border-b border-zinc-200 dark:border-[#2a403d] sticky top-0 z-50">
-    //   <div className="w-full mx-auto px-4 md:px-10 lg:px-16">
-    //     <header className="flex items-center justify-between py-4">
-          
-    //       {/* Logo */}
-    //       <Logo />
+    <>
+      {/* Navbar */}
+      <nav
+        className={`
+          fixed top-0 left-0 w-full z-50
+          flex items-center justify-between
+          px-6 md:px-12 py-5
+          bg-bg/20 backdrop-blur-2xl
+          transition-transform duration-300 ease-in-out
+          ${showNavbar ? 'translate-y-0' : '-translate-y-full'}
+        `}
+      >
+        <Logo />
 
-    //       {/* Desktop Navigation */}
-    //       <div className="hidden md:flex items-center gap-10">
-    //         <div className="flex items-center gap-8 lg:gap-10">
-    //           {navLinks.map((item) => (
-    //             <a
-    //               key={item.name}
-    //               href={item.link}
-    //               className="text-slate-700 dark:text-zinc-200 hover:text-[#17CFAD] font-medium transition-colors"
-    //             >
-    //               {item.name}
-    //             </a>
-    //           ))}
-    //         </div>
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase().replace(/ /g, '-')}`}
+              className="text-sm font-medium text-text transition-colors hover:text-white"
+            >
+              {item}
+            </a>
+          ))}
+        </div>
 
-    //         <Button variant="primary" size="md">
-    //           Book Now
-    //         </Button>
-    //       </div>
+        {/* Right Side */}
+        <div className="flex items-center gap-3">
+          <Button
+            size="sm"
+            variant="none"
+            onClick={() => router.push('/login')}
+            className="hidden md:block"
+          >
+            Log in
+          </Button>
 
-    //       {/* Mobile Menu Button */}
-    //       <button
-    //         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-    //         className="md:hidden p-2 text-slate-700 dark:text-zinc-200 hover:text-[#17CFAD] transition-colors"
-    //         aria-label="Toggle menu"
-    //       >
-    //         <span className="material-symbols-outlined text-3xl">
-    //           {mobileMenuOpen ? 'close' : 'menu'}
-    //         </span>
-    //       </button>
-    //     </header>
+          <Button
+            size="sm"
+            className="hidden md:block"
+            onClick={() => router.push('/register')}
+          >
+            Get Started
+          </Button>
 
-    //     {/* Mobile Menu */}
-    //     {mobileMenuOpen && (
-    //       <div className="md:hidden py-6 border-t border-zinc-100 dark:border-[#2a403d] flex flex-col gap-5">
-    //         {navLinks.map((item) => (
-    //           <a
-    //             key={item.name}
-    //             href={item.link}
-    //             className="text-slate-700 dark:text-zinc-200 hover:text-[#17CFAD] font-medium py-2 transition-colors"
-    //             onClick={() => setMobileMenuOpen(false)}
-    //           >
-    //             {item.name}
-    //           </a>
-    //         ))}
-            
-    //         <div className="pt-4">
-    //           <Button 
-    //           onClick={() => route.push('/login')}
-    //           variant="primary" size="md" className="w-full">
-    //             Book Now
-    //           </Button>
-    //         </div>
-    //       </div>
-    //     )}
-    //   </div>
-    // </nav>
+          {/* Hamburger */}
+          <button
+            className="md:hidden"
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+          >
+            {mobileMenuOpen ? (
+              <X size={28} className="text-text" />
+            ) : (
+              <Menu size={28} className="text-text" />
+            )}
+          </button>
+        </div>
+      </nav>
 
-        <nav
-        
-        className=" sticky  flex items-center justify-between px-6 md:px-12 py-6 top-0 z-50 bg-bg/20 backdrop-blur-2xl scroll ">
-
-         <Logo/>
-    
-            <div className="hidden md:flex items-center gap-8">
-              {["Services", "How It Works", "Coverage", "Pricin"].map((item) => (
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.25 }}
+            className="fixed top-[72px] left-0 w-full z-40 md:hidden bg-bg/20 backdrop-blur-xl border-t border-white/10"
+          >
+            <div className="flex flex-col gap-6 px-6 py-8">
+              {navItems.map((item) => (
                 <a
                   key={item}
-                  href={`#${item.toLowerCase().replace(/ /g, "-")}`}
-                  className="text-sm font-medium transition-colors"
-                  style={{ color: "rgba(255,255,255,0.55)" }}
-                  onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "white")}
-                  onMouseLeave={(e) =>
-                    ((e.target as HTMLElement).style.color = "rgba(255,255,255,0.55)")
-                  }
+                  href={`#${item.toLowerCase().replace(/ /g, '-')}`}
+                  className="text-lg font-medium text-text hover:text-white transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   {item}
                 </a>
               ))}
-            </div>
-    
-            <div className="flex items-center gap-3">
+
               <Button
-              size='sm'
-              variant='none'
-                onClick={() => router.push("/login")}
-                className="hidden md:block text-sm font-medium transition-colors hover:text-white hover:scale-105 "
+                variant="none"
+                onClick={() => {
+                  router.push('/login');
+                  setMobileMenuOpen(false);
+                }}
               >
                 Log in
               </Button>
+
               <Button
-                onClick={() => router.push("/register")}
-                size='sm'
-                className="text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+                onClick={() => {
+                  router.push('/register');
+                  setMobileMenuOpen(false);
+                }}
               >
                 Get Started
               </Button>
             </div>
-          </nav>
-    
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
