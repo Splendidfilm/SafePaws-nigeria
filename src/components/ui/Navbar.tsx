@@ -82,7 +82,7 @@ export default function Navbar() {
         </div>
 
         {/* Right Side */}
-        <div className="flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-3">
           <Button
             size="sm"
             variant="none"
