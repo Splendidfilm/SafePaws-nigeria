@@ -15,7 +15,7 @@ function Logo() {
           >
             <span className="text-xs  material-symbols-outlined ">pets</span>
           </div>
-          <span className="font-bold text-white text-lg tracking-tight">SafePaws</span>
+          <span className="font-bold text-text text-lg tracking-tight">SafePaws</span>
         </div>
   );
 }
