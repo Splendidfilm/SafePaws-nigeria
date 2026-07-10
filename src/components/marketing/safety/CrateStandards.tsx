@@ -20,7 +20,7 @@ export default function CrateStandards() {
 
           {/* Content Side */}
           <div className="w-full md:w-1/2">
-            <span className="text-[#17CFAD] font-bold tracking-widest uppercase text-sm mb-4 block">
+            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
               Hardware Standards
             </span>
             
@@ -34,7 +34,7 @@ export default function CrateStandards() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div className="flex gap-4">
-                <span className="material-symbols-outlined text-[#17CFAD] text-3xl mt-1">grid_view</span>
+                <span className="material-symbols-outlined text-primary text-3xl mt-1">grid_view</span>
                 <div>
                   <h4 className="font-bold text-zinc-900">Ventilation</h4>
                   <p className="text-zinc-600 text-sm mt-1">Minimum 4-side ventilation for optimal airflow.</p>
@@ -42,7 +42,7 @@ export default function CrateStandards() {
               </div>
 
               <div className="flex gap-4">
-                <span className="material-symbols-outlined text-[#17CFAD] text-3xl mt-1">lock</span>
+                <span className="material-symbols-outlined text-primary text-3xl mt-1">lock</span>
                 <div>
                   <h4 className="font-bold text-zinc-900">Security</h4>
                   <p className="text-zinc-600 text-sm mt-1">Metal bolts and spring-loaded door locks only.</p>
@@ -50,7 +50,7 @@ export default function CrateStandards() {
               </div>
 
               <div className="flex gap-4">
-                <span className="material-symbols-outlined text-[#17CFAD] text-3xl mt-1">aspect_ratio</span>
+                <span className="material-symbols-outlined text-primary text-3xl mt-1">aspect_ratio</span>
                 <div>
                   <h4 className="font-bold text-zinc-900">Size Ratio</h4>
                   <p className="text-zinc-600 text-sm mt-1">Must allow pet to stand, turn, and lie down naturally.</p>
@@ -58,7 +58,7 @@ export default function CrateStandards() {
               </div>
 
               <div className="flex gap-4">
-                <span className="material-symbols-outlined text-[#17CFAD] text-3xl mt-1">restaurant</span>
+                <span className="material-symbols-outlined text-primary text-3xl mt-1">restaurant</span>
                 <div>
                   <h4 className="font-bold text-zinc-900">Provisioning</h4>
                   <p className="text-zinc-600 text-sm mt-1">Two fixed bowls accessible from outside the door.</p>

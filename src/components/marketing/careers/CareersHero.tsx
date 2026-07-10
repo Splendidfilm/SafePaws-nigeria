@@ -13,7 +13,7 @@ export default function CareersHero() {
             CAREERS
           </span>
           <h1 className="text-5xl lg:text-7xl font-black text-zinc-900 tracking-tight leading-tight mb-8 dark:text-zinc-50 ">
-            Join Our <span className="text-[#17CFAD]">Pack</span>
+            Join Our <span className="text-primary">Pack</span>
           </h1>
           <p className="text-xl dark:text-zinc-100 text-zinc-600 max-w-xl leading-relaxed mb-10">
             We&apos;re building the future of pet logistics in Nigeria. Help us create a world where every pet journey is safe, comfortable, and full of love.
@@ -22,7 +22,7 @@ export default function CareersHero() {
           <div className="flex flex-wrap gap-4">
             <a 
               href="#open-roles" 
-              className="bg-[#17CFAD] text-white px-8 py-4 rounded-2xl font-bold hover:bg-[#12A88F] transition-all"
+              className="bg-primary text-white px-8 py-4 rounded-2xl font-bold hover:bg-[#12A88F] transition-all"
             >
               View Openings
             </a>
@@ -56,7 +56,7 @@ export default function CareersHero() {
           <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl hidden md:block">
             <div className="flex items-center gap-4">
               <div className="bg-[#D1F5EF] p-3 rounded-full">
-                <span className="material-symbols-outlined text-[#17CFAD]">pets</span>
+                <span className="material-symbols-outlined text-primary">pets</span>
               </div>
               <div>
                 <p className="text-sm font-bold text-zinc-900">100% Pet Friendly</p>

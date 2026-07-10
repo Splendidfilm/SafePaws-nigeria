@@ -11,7 +11,7 @@ function CTA() {
   return (
   
     <div className='flex flex-col items-center justify-center gap-9 py-10 dark:bg-[#11211e] w-full ' >
-          <div className="size-15 bg-[#D1F5EF] flex items-center justify-center rounded-full text-[#17CFAD]">
+          <div className="size-15 bg-[#D1F5EF] flex items-center justify-center rounded-full text-primary">
         <motion.span
         initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
         whileInView={{ opacity: 1, scale:1, rotate: -15 }}

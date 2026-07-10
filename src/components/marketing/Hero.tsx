@@ -1,94 +1,506 @@
-// src/components/marketing/Hero.tsx
-'use client'
-import Image from 'next/image';
-import Button from '../ui/button';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+"use client";
 
-export default function Hero() {
-  
-  const router = useRouter();
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import {
+  Shield,
+  Thermometer,
+  Star,
+  MapPin,
+  ArrowRight,
+  CheckCircle2,
+  Clock,
+} from "lucide-react";
+import { motion } from "framer-motion";
+
+// ─── Animated ETA counter ────────────────────────────────────────────────────
+function ETACounter() {
+  const [minutes, setMinutes] = useState(47);
+  const [seconds, setSeconds] = useState(23);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSeconds((s) => {
+        if (s === 0) {
+          setMinutes((m) => (m > 0 ? m - 1 : 0));
+          return 59;
+        }
+        return s - 1;
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section id="home" className="w-full bg-white dark:bg-[#11211e]">
-      <div className="px-4 md:px-10 lg:px-40 mx-auto py-12 lg:py-20">
-        <div className="flex flex-col-reverse gap-10 lg:flex-row lg:items-center w-full">
-          
-          {/* Left Content */}
-          <div className="flex flex-col gap-6 md:w-1/2 flex-1 lg:pr-8">
-            <div className="flex flex-col gap-4 text-left">
-              {/* Badge */}
-              <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-[#D1F5EF] dark:bg-[#17CFAD]/20 bg-brand-green border border-[#17CFAD] w-fit">
-                <span className="material-symbols-outlined text-[#17CFAD] text-sm">verified</span>
-                <span className="text-xs font-semibold text-[#17CFAD] dark:text-[#5efbd7] uppercase tracking-wide">
-                  Premium Pet Transport
-                </span>
-              </div>
+    <span className="font-black tabular-nums">
+      {String(minutes).padStart(2, "0")}:{String(seconds).padStart(2, "0")}
+    </span>
+  );
+}
 
-              {/* Heading */}
-              <h1 className="text-slate-900 dark:text-white text-5xl lg:text-6xl font-black leading-[1.05] tracking-[-0.02em]">
-                Safe, Reliable Transport
-                <span className="text-[#17CFAD] block">For Your Pets Across Nigeria 🐾</span>
-              </h1>
+// ─── Animated route dots ─────────────────────────────────────────────────────
+function RouteLine() {
+  return (
+    <div className="flex flex-col items-center gap-0">
+      {/* Origin */}
+      <div className="flex items-center gap-3 w-full">
+        <div className="w-3 h-3 rounded-full border-2 border-white bg-transparent shrink-0" />
+        <span className="text-sm font-semibold text-white">Lagos, VI</span>
+      </div>
+      {/* Dashes */}
+      <div className="flex flex-col gap-1 ml-[5px] my-1">
+        {[...Array(4)].map((_, i) => (
+          <div
+            key={i}
+            className="w-0.5 h-1.5 rounded-full"
+            style={{
+              background: "rgba(255,255,255,0.35)",
+              animationDelay: `${i * 0.15}s`,
+            }}
+          />
+        ))}
+      </div>
+      {/* Van indicator — animated */}
+      <div
+        className="flex items-center gap-3 w-full py-1"
+        style={{ animation: "vanPulse 2s ease-in-out infinite" }}
+      >
+        <div
+          className="w-3 h-3 rounded-full shrink-0 flex items-center justify-center"
+          style={{ background: "var(--color-primary)" }}
+        >
+          <div className="w-1.5 h-1.5 rounded-full bg-white" />
+        </div>
+        <span className="text-xs font-medium" style={{ color: "var(--color-primary)" }}>
+          En route · Ibadan Expressway
+        </span>
+      </div>
+      {/* More dashes */}
+      <div className="flex flex-col gap-1 ml-[5px] my-1">
+        {[...Array(4)].map((_, i) => (
+          <div
+            key={i}
+            className="w-0.5 h-1.5 rounded-full"
+            style={{ background: "rgba(255,255,255,0.2)" }}
+          />
+        ))}
+      </div>
+      {/* Destination */}
+      <div className="flex items-center gap-3 w-full">
+        <MapPin size={12} style={{ color: "var(--color-primary)", flexShrink: 0 }} />
+        <span className="text-sm font-semibold" style={{ color: "var(--color-text-muted)" }}>
+          Abuja, Maitama
+        </span>
+      </div>
+    </div>
+  );
+}
 
-              <p className="text-slate-700 dark:text-zinc-300 text-xl font-semibold leading-snug">
-                We move your pets with care, comfort, and zero stress.
-              </p>
+// ─── The cinematic journey card ───────────────────────────────────────────────
+function JourneyCard() {
+  const [visible, setVisible] = useState(false);
 
-              <p className="text-slate-600 dark:text-zinc-400 text-base leading-relaxed">
-                From climate-controlled vehicles to trained handlers, SafePaws ensures your furry companions travel safely across Nigeria&apos;s major cities.
-              </p>
-            </div>
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), 300);
+    return () => clearTimeout(t);
+  }, []);
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-              onClick={() => router.push('/login') }
-              variant="primary" size="md">
-                Book Pet Transport
-              </Button>
+  return (
+    <div
+      className="relative w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl transition-all duration-700"
+      style={{
+        background: "#0f1f1c",
+        border: "1px solid rgba(23,207,173,0.2)",
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0) scale(1)" : "translateY(24px) scale(0.97)",
+        boxShadow: "0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(23,207,173,0.1)",
+      }}
+    >
+      {/* Card header */}
+      <div
+        className="px-5 py-4 flex items-center justify-between"
+        style={{ borderBottom: "1px solid rgba(255,255,255,0.07)" }}
+      >
+        <div className="flex items-center gap-2">
+          <span
+            className="w-2 h-2 rounded-full"
+            style={{
+              background: "var(--color-primary)",
+              boxShadow: "0 0 8px var(--color-primary)",
+              animation: "pulse 2s ease-in-out infinite",
+            }}
+          />
+          <span className="text-xs font-bold uppercase tracking-widest text-white/70">
+            Live Journey
+          </span>
+        </div>
+        <span
+          className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider"
+          style={{
+            background: "rgba(23,207,173,0.15)",
+            color: "var(--color-primary)",
+            border: "1px solid rgba(23,207,173,0.3)",
+          }}
+        >
+          In Transit
+        </span>
+      </div>
 
-              <Button variant="outline" size="md">
-              <a href="#how-it-works"  rel="noopener noreferrer">
-                See How It Works
-              </a>
-              </Button>
-            </div>
-
-            {/* Trust Points */}
-            <p className="text-sm text-slate-600 dark:text-zinc-400">
-              ✔ Fully monitored trips &nbsp;✔ Trained handlers &nbsp;✔ Nationwide coverage
-            </p>
-
-            {/* Social Proof */}
-            <div className="flex items-center gap-3 pt-2">
-              <div className="flex -space-x-2">
-                <img src={'/images/Dog_image_GR.png'} className="size-8 rounded-full bg-zinc-200 dark:bg-zinc-700 border-2 border-white dark:border-[#11211e]" />
-                <img src={'/images/Amara.png'} className="size-8 rounded-full bg-zinc-200 dark:bg-zinc-700 border-2 border-white dark:border-[#11211e]" />
-                <img src={'/images/ibrahim.png'} className="size-8 rounded-full bg-zinc-200 dark:bg-zinc-700 border-2 border-white dark:border-[#11211e]" />
-              </div>
-              <p className="text-sm font-medium text-slate-600 dark:text-zinc-400">
-                Trusted by 500+ Pet Owners in Lagos, Abuja & Port Harcourt
-              </p>
-            </div>
+      {/* Pet info */}
+      <div className="px-5 pt-4 pb-3 flex items-center gap-3">
+        <div
+          className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0"
+          style={{ background: "rgba(255,255,255,0.06)" }}
+        >
+          🐕
+        </div>
+        <div>
+          <p className="font-bold text-white text-base leading-tight">Max</p>
+          <p className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>
+            Golden Retriever · 2 yrs · 28kg
+          </p>
+        </div>
+        {/* Comfort badges */}
+        <div className="ml-auto flex flex-col gap-1.5 items-end">
+          <div
+            className="flex items-center gap-1.5 text-[10px] font-semibold px-2 py-1 rounded-lg"
+            style={{ background: "rgba(23,207,173,0.12)", color: "var(--color-primary)" }}
+          >
+            <Thermometer size={11} />
+            22°C
           </div>
-
-          {/* Right Image */}
-          <div className="w-full flex-1">
-            <div className="relative w-full aspect-4/3 rounded-3xl shadow-2xl overflow-hidden">
-              <Image
-                src="/images/group-of-portrait.jpg"
-                alt="Happy dog in a pet carrier"
-                priority
-                fill
-                className="object-cover"
-                
-              />
-              <div className='absolute inset-0 bg-black/20 dark:block hidden' />
-            </div>
+          <div
+            className="flex items-center gap-1.5 text-[10px] font-semibold px-2 py-1 rounded-lg"
+            style={{ background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.6)" }}
+          >
+            😴 Resting
           </div>
-
         </div>
       </div>
+
+      {/* Route */}
+      <div
+        className="mx-5 my-2 p-4 rounded-xl"
+        style={{ background: "rgba(255,255,255,0.04)" }}
+      >
+        <RouteLine />
+      </div>
+
+      {/* ETA bar */}
+      <div
+        className="mx-5 mb-3 px-4 py-3 rounded-xl flex items-center justify-between"
+        style={{ background: "rgba(23,207,173,0.08)", border: "1px solid rgba(23,207,173,0.15)" }}
+      >
+        <div>
+          <p className="text-[10px] uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.4)" }}>
+            Arrival in
+          </p>
+          <p className="text-2xl font-black text-white leading-tight">
+            <ETACounter />
+          </p>
+        </div>
+        <div className="text-right">
+          <p className="text-[10px] uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.4)" }}>
+            Progress
+          </p>
+          <p className="text-sm font-bold" style={{ color: "var(--color-primary)" }}>
+            68% complete
+          </p>
+        </div>
+      </div>
+
+      {/* Progress bar */}
+      <div className="mx-5 mb-4">
+        <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.08)" }}>
+          <div
+            className="h-full rounded-full transition-all duration-1000"
+            style={{
+              width: "68%",
+              background: "linear-gradient(90deg, var(--color-primary), #0fe8c3)",
+              boxShadow: "0 0 12px rgba(23,207,173,0.5)",
+            }}
+          />
+        </div>
+      </div>
+
+      {/* Handler row */}
+      <div
+        className="px-5 pb-5 pt-3 flex items-center gap-3"
+        style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+      >
+        <div
+          className="w-9 h-9 rounded-full shrink-0 flex items-center justify-center font-bold text-sm"
+          style={{ background: "var(--color-primary)", color: "#0d1f1c" }}
+        >
+          K
+        </div>
+        <div className="flex-1">
+          <p className="text-sm font-bold text-white leading-none">Kehinde A.</p>
+          <div className="flex items-center gap-1 mt-0.5">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} size={10} className="fill-yellow-400 text-yellow-400" />
+            ))}
+            <span className="text-[10px] ml-1" style={{ color: "rgba(255,255,255,0.4)" }}>
+              4.9 · 312 trips
+            </span>
+          </div>
+        </div>
+        <div
+          className="text-[10px] font-semibold px-2 py-1 rounded-lg flex items-center gap-1"
+          style={{ background: "rgba(16,185,129,0.15)", color: "#10b981" }}
+        >
+          <CheckCircle2 size={10} />
+          Verified
+        </div>
+      </div>
+
+      {/* Subtle glow */}
+      <div
+        className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-40 h-16 rounded-full blur-2xl pointer-events-none"
+        style={{ background: "rgba(23,207,173,0.15)" }}
+      />
+    </div>
+  );
+}
+
+// ─── Hero section ─────────────────────────────────────────────────────────────
+export function Hero() {
+  const [statsVisible, setStatsVisible] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setStatsVisible(true), 600);
+    return () => clearTimeout(t);
+  }, []);
+
+  return (
+    <section
+      className="relative min-h-screen flex flex-col overflow-hidden"
+      style={{ background: "#080f0e" }}
+    >
+      {/* ── Background texture ── */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `
+            radial-gradient(ellipse 80% 60% at 60% 40%, rgba(23,207,173,0.07) 0%, transparent 70%),
+            radial-gradient(ellipse 50% 40% at 20% 80%, rgba(23,207,173,0.04) 0%, transparent 60%)
+          `,
+        }}
+      />
+      {/* Subtle grid */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)`,
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+
+  
+      {/* ── Hero content ── */}
+      <div className="relative z-10 flex-1 flex items-center">
+        <div className="w-full max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+            {/* Left — copy */}
+            <div>
+              {/* Eyebrow */}
+              <div
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6"
+                style={{
+                  background: "rgba(23,207,173,0.1)",
+                  color: "var(--color-primary)",
+                  border: "1px solid rgba(23,207,173,0.2)",
+                }}
+              >
+                <Shield size={12} />
+                Nigeria's most trusted pet transport
+              </div>
+
+              {/* Headline */}
+              <h1
+                className="font-black leading-[1.05] tracking-tight mb-6"
+                style={{ color: "white", fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
+              >
+                Your pet travels{" "}
+                <span
+                  style={{
+                    color: "var(--color-primary)",
+                    textShadow: "0 0 40px rgba(23,207,173,0.3)",
+                  }}
+                >
+                  safely.
+                </span>
+                <br />
+                <span style={{ color: "rgba(255,255,255,0.55)", fontWeight: 400, fontSize: "0.75em" }}>
+                  You stay in control.
+                </span>
+              </h1>
+
+              {/* Sub */}
+              <p
+                className="text-lg leading-relaxed mb-8 max-w-md"
+                style={{ color: "rgba(255,255,255,0.55)" }}
+              >
+                Climate-controlled vehicles, trained handlers, and live GPS tracking —
+                from Lagos to Abuja, your pet is never out of sight.
+              </p>
+
+              {/* CTAs */}
+              <div className="flex flex-wrap gap-3 mb-10">
+                <Link
+                  href="/register"
+                  className="flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm transition-all"
+                  style={{
+                    background: "var(--color-primary)",
+                    color: "#0d1f1c",
+                    boxShadow: "0 8px 32px rgba(23,207,173,0.3)",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.background = "var(--color-primary-hover)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 40px rgba(23,207,173,0.45)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.background = "var(--color-primary)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px rgba(23,207,173,0.3)";
+                  }}
+                >
+                  Book your first transport
+                  <ArrowRight size={16} />
+                </Link>
+                <a
+                  href="#how-it-works"
+                  className="flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm transition-colors"
+                  style={{
+                    background: "rgba(255,255,255,0.07)",
+                    color: "rgba(255,255,255,0.8)",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                  }}
+                  onMouseEnter={(e) =>
+                    ((e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.1)")
+                  }
+                  onMouseLeave={(e) =>
+                    ((e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.07)")
+                  }
+                >
+                  See how it works
+                </a>
+              </div>
+
+              {/* Trust stats */}
+              <div
+                className="flex flex-wrap gap-6 pt-8 transition-all duration-700"
+                style={{
+                  borderTop: "1px solid rgba(255,255,255,0.08)",
+                  opacity: statsVisible ? 1 : 0,
+                  transform: statsVisible ? "translateY(0)" : "translateY(8px)",
+                }}
+              >
+                {[
+                  { value: "500+", label: "Pets transported" },
+                  { value: "99.8%", label: "Safe delivery rate" },
+                  { value: "4.9★", label: "Average handler rating" },
+                  { value: "3 cities", label: "Lagos · Abuja · PH" },
+                ].map(({ value, label }) => (
+                  <div key={label}>
+                    <p className="text-xl font-black text-white leading-none">{value}</p>
+                    <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>
+                      {label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right — live journey card */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative">
+                {/* Floating label above card */}
+                <div
+                  className="absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold z-10 whitespace-nowrap"
+                  style={{
+                    background: "rgba(23,207,173,0.15)",
+                    color: "var(--color-primary)",
+                    border: "1px solid rgba(23,207,173,0.25)",
+                  }}
+                >
+                  <Clock size={11} />
+                  Live journey in progress
+                </div>
+                <JourneyCard />
+                {/* Handler previews floating below card */}
+                <div
+                  className="absolute -bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2.5 rounded-full whitespace-nowrap"
+                  style={{
+                    background: "rgba(15,31,28,0.95)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    backdropFilter: "blur(12px)",
+                  }}
+                >
+                  {/* Handler avatars */}
+                  <div className="flex -space-x-2">
+                    {["K", "A", "C"].map((initial, i) => (
+                      <div
+                        key={i}
+                        className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border"
+                        style={{
+                          background: `hsl(${160 + i * 30}, 60%, 40%)`,
+                          borderColor: "#0f1f1c",
+                          color: "white",
+                        }}
+                      >
+                        {initial}
+                      </div>
+                    ))}
+                  </div>
+                  <span className="text-[11px] font-medium" style={{ color: "rgba(255,255,255,0.6)" }}>
+                    12 handlers active now
+                  </span>
+                  <span
+                    className="w-1.5 h-1.5 rounded-full"
+                    style={{
+                      background: "var(--color-primary)",
+                      boxShadow: "0 0 6px var(--color-primary)",
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Scroll indicator ── */}
+      <motion.div
+      initial={{ opacity:0, y: 5  }}
+      animate={{ opacity:1, y:0 }}
+      transition={{ ease:'easeIn', duration:1.5, delay:0.5 }}
+      className="relative z-10 flex justify-center pb-8">
+        <div className="flex flex-col items-center gap-1.5">
+          <span className="text-[10px] uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.25)" }}>
+            scroll
+          </span>
+          <div
+            className="w-px h-8 rounded-full"
+            style={{
+              background: "linear-gradient(to bottom, rgba(23,207,173,0.4), transparent)",
+            }}
+          />
+        </div>
+      </motion.div>
+
+      <style>{`
+        @keyframes vanPulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.7; }
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--color-primary); }
+          50% { opacity: 0.6; box-shadow: 0 0 16px var(--color-primary); }
+        }
+      `}</style>
     </section>
   );
 }

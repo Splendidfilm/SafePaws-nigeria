@@ -36,9 +36,9 @@ export default function Coverage() {
              whileInView={{ opacity:2, x:0 }}
              viewport={{once: true}}
              transition={{ ease:'linear', duration:0.5, delay:0.5 }}
-             className="flex items-center gap-4 bg-white p-4 rounded-2xl border border-zinc-100 hover:border-[#17CFAD]/30 transition-colors dark:bg-[#1a2e2b] dark:border-white/30 ">
+             className="flex items-center gap-4 bg-white p-4 rounded-2xl border border-zinc-100 hover:border-primary/30 transition-colors dark:bg-[#1a2e2b] dark:border-white/30 ">
                 <div className="w-10 h-10 flex items-center justify-center bg-[#D1F5EF] rounded-xl">
-                  <span className="material-symbols-outlined text-[#17CFAD] text-3xl">{item.icon}</span>
+                  <span className="material-symbols-outlined text-primary text-3xl">{item.icon}</span>
                 </div>
                 <div>
                   <p className="font-semibold text-slate-900 dark:text-zinc-100 ">{item.city}</p>
@@ -71,18 +71,18 @@ export default function Coverage() {
               {/* Map Pins with Animation */}
               <div className="absolute bottom-[35%] left-[28%] flex flex-col items-center">
                 <div className="animate-bounce">
-                  <span className="material-symbols-outlined text-[#17CFAD] text-5xl drop-shadow-md">location_on</span>
+                  <span className="material-symbols-outlined text-primary text-5xl drop-shadow-md">location_on</span>
                 </div>
-                <div className="mt-1 bg-white px-3 py-1 rounded-lg shadow text-xs font-bold text-[#17CFAD] whitespace-nowrap">
+                <div className="mt-1 bg-white px-3 py-1 rounded-lg shadow text-xs font-bold text-primary whitespace-nowrap">
                   Lagos
                 </div>
               </div>
 
               <div className="absolute top-[38%] right-[32%] flex flex-col items-center">
                 <div className="animate-bounce">
-                  <span className="material-symbols-outlined text-[#17CFAD] text-5xl drop-shadow-md shadow-white shadow-2xl">location_on</span>
+                  <span className="material-symbols-outlined text-primary text-5xl drop-shadow-md shadow-white shadow-2xl">location_on</span>
                 </div>
-                <div className="mt-1 bg-white px-3 py-1 rounded-lg shadow text-xs font-bold text-[#17CFAD] whitespace-nowrap">
+                <div className="mt-1 bg-white px-3 py-1 rounded-lg shadow text-xs font-bold text-primary whitespace-nowrap">
                   Abuja
                 </div>
               </div>
@@ -90,9 +90,9 @@ export default function Coverage() {
               {/* Optional third pin */}
               <div className="absolute top-[65%] left-[55%] flex flex-col items-center">
                 <div className="animate-bounce">
-                  <span className="material-symbols-outlined text-[#17CFAD] text-4xl drop-shadow-md">location_on</span>
+                  <span className="material-symbols-outlined text-primary text-4xl drop-shadow-md">location_on</span>
                 </div>
-                <div className="mt-1 bg-white px-3 py-1 rounded-lg shadow text-xs font-bold text-[#17CFAD]">
+                <div className="mt-1 bg-white px-3 py-1 rounded-lg shadow text-xs font-bold text-primary">
                   PH
                 </div>
               </div>

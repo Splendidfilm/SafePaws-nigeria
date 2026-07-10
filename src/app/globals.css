@@ -9,6 +9,7 @@
 
   /* Light mode surfaces */
   --color-bg: #f8faf9;
+  --color-cardbg:#0f1f1c;
   --color-surface: #ffffff;
   --color-surface-raised: #f0f5f3;
   --color-border: #d4e2de;
@@ -37,10 +38,11 @@
   --font-display: var(--font-noto);
 }
 
-/* Dark mode — system preference */
+/* Dark mode — system preference #0f1f1c */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #11211e;
+    --color-bg: #07100f;
+    --color-cardbg:#0f1f1c;
     --color-surface: #1e2e2b;
     --color-surface-raised: #243832;
     --color-border: #2a3e3b;

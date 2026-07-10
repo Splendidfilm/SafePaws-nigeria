@@ -8,7 +8,7 @@ import FinalCTA from '@/components/marketing/about/FinalCTA';
 
 export default function AboutPage() {
   return (
-      <main className='w-full dark:bg-[#11211e]' >
+      <main className='w-full dark:bg-bg' >
         <AboutHero />
         <MissionSection />
         <ValuesSection />

@@ -44,15 +44,15 @@ export default function SafetyHero() {
       {/* Content */}
       <div className="relative z-20 max-w-2xl mx-auto text-center px-6">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-[#17cfad]/15 border border-[#17cfad]/35 rounded-full px-4 py-1.5 mb-6">
-          <span className="w-2 h-2 rounded-full bg-[#17cfad] shadow-[0_0_0_3px_rgba(23,207,173,0.25)] flex-shrink-0" />
-          <span className="text-[11px] font-semibold text-[#17cfad] uppercase tracking-widest">
+        <div className="inline-flex items-center gap-2 bg-primary/15 border border-primary/35 rounded-full px-4 py-1.5 mb-6">
+          <span className="w-2 h-2 rounded-full bg-primary shadow-[0_0_0_3px_rgba(23,207,173,0.25)] flex-shrink-0" />
+          <span className="text-[11px] font-semibold text-primary uppercase tracking-widest">
             SafePaws Nigeria
           </span>
         </div>
 
         <h1 className="text-4xl md:text-[44px] font-extrabold text-white mb-5 tracking-tight leading-[1.15] [text-shadow:0_2px_30px_rgba(0,0,0,0.3)]">
-          Our <span className="text-[#17cfad]">Safety Standards</span>
+          Our <span className="text-primary">Safety Standards</span>
           <br />
           for Every Journey
         </h1>
@@ -66,7 +66,7 @@ export default function SafetyHero() {
         <div className="flex divide-x divide-white/10 border border-white/10 rounded-[14px] overflow-hidden bg-white/5 backdrop-blur-sm max-w-md mx-auto">
           {stats.map(({ value, label }) => (
             <div key={label} className="flex-1 py-3.5 px-2 text-center">
-              <div className="text-xl font-bold text-[#17cfad] leading-none mb-1">
+              <div className="text-xl font-bold text-primary leading-none mb-1">
                 {value}
               </div>
               <div className="text-[11px] font-medium text-white/50 uppercase tracking-wider">

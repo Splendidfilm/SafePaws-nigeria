@@ -19,7 +19,7 @@ const support =[
 ]
 
   return (
-    <footer className="w-full bg-[#F8F9FA] pt-16 pb-10 rounded-t-3xl mb-18 shadow-2xl dark:bg-[#11211e] ">
+    <footer className="w-full bg-bg dark:border-t  pt-16 pb-10 rounded-b-3xl mb-18 shadow-2xl dark:shadow-primary-foreground  ">
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
         
         {/* Main Footer Content */}
@@ -47,7 +47,7 @@ const support =[
                   key={index}
                   href={item.link}>
                     <li 
-                    className="text-[#6B7280] hover:text-[#17CFAD] transition-colors cursor-pointer dark:text-zinc-300"
+                    className="text-[#6B7280] hover:text-primary transition-colors cursor-pointer dark:text-zinc-300"
                   >
                     {item.name }
                   </li>
@@ -66,7 +66,7 @@ const support =[
                   href={item.link}
                   >
                   <li 
-                    className="text-[#6B7280] hover:text-[#17CFAD] transition-colors cursor-pointer dark:text-zinc-300 "
+                    className="text-[#6B7280] hover:text-primary transition-colors cursor-pointer dark:text-zinc-300 "
                   >
                     {item.name}
                   </li>
@@ -80,11 +80,11 @@ const support =[
               <h3 className="font-semibold text-slate-700 mb-4 dark:text-zinc-100">Contact</h3>
               <ul className="space-y-3">
                   <li className="text-[#6B7280] ] transition-colors cursor-pointer dark:text-zinc-300 ">
-                  Email: <a className='hover:text-[#17CFAD]' href="mailto:info@safepawsng.com">info@safepawsng.com</a>
+                  Email: <a className='hover:text-primary' href="mailto:info@safepawsng.com">info@safepaws.ng</a>
                 </li>
                 <li className="text-[#6B7280] transition-colors cursor-pointer dark:text-zinc-300 flex ">
                   Phone:<span className='w-max flex flex-col items-start ml-2 justify-center group ' >
-                    <a className='hover:text-[#17CFAD]' href="tel:+2349127730659">+234 912 773 0659</a>
+                    <a className='hover:text-primary' href="tel:+2349127730659">+234 912 773 0659</a>
                    
                   </span>
                 </li>
@@ -105,7 +105,7 @@ const support =[
             {/* <p className="hover:text-[#17CFAD] transition-colors cursor-pointer">
               Privacy Policy
             </p> */}
-            <Link href="/terms" className="hover:text-[#17CFAD] transition-colors cursor-pointer">
+            <Link href="/terms" className="hover:text-primary transition-colors cursor-pointer">
               Terms of Service
             </Link>
           </div>    

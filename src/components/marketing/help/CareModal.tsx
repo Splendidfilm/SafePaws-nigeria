@@ -54,17 +54,17 @@ export default function RefundPolicy({isOpen , onClose} : RefundPolicyProps) {
         <section className="bg-zinc-50 p-6 rounded-2xl border border-zinc-100">
             {conditions.map((condition,index)=>(
               <div className="flex items-center gap-3 mb-5">
-              <span className="material-symbols-outlined text-[#17CFAD]">{condition.icon}</span>
+              <span className="material-symbols-outlined text-primary">{condition.icon}</span>
               <h3 className="text-sm font-bold text-zinc-400 ">{condition.text}</h3>
             </div>
             ))}
           </section>
 
           {/* Pay on Pickup Note */}
-          <section className="flex gap-4 p-5 bg-[#D1F5EF]/30 rounded-2xl border border-[#17CFAD]/20">
-            <span className="material-symbols-outlined text-[#17CFAD] shrink-0">info</span>
+          <section className="flex gap-4 p-5 bg-[#D1F5EF]/30 rounded-2xl border border-primary/20">
+            <span className="material-symbols-outlined text-primary shrink-0">info</span>
             <div>
-              <h4 className="text-sm font-bold text-[#17CFAD] mb-1">Pay on Pickup Policy</h4>
+              <h4 className="text-sm font-bold text-primary mb-1">Pay on Pickup Policy</h4>
               <p className="text-xs text-zinc-600 leading-relaxed">
                 We offer &apos;Pay on Pickup&apos; for local intra-city relocations. 
                 A 30% commitment deposit is required for inter-state bookings.

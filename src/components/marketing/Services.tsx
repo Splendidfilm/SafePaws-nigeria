@@ -24,12 +24,12 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className=" w-full  bg-[#F6F8F8] dark:bg-[#11211e] py-20">
+    <section id="services" className=" w-full bg-bg py-20">
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 w-full ">
         
         {/* Header */}
         <div className="flex flex-col items-center gap-4 text-center mb-16">
-          <h3 className="text-[#17CFAD] font-bold text-lg tracking-wider uppercase">
+          <h3 className="text-primary font-bold text-lg tracking-wider uppercase">
             Our Services
           </h3>
           

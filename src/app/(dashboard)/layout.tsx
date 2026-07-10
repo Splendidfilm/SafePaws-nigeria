@@ -5,46 +5,46 @@ import { Sidebar } from "@/components/dashboard/Sidebar";
 import { Header } from "@/components/dashboard/Header";
 import { MobileNav } from "@/components/dashboard/MobileNav";
 
-interface DashboardLayoutProps {
+export default function DashboardLayout({
+  children,
+}: {
   children: React.ReactNode;
-}
-
-export default function DashboardLayout({ children }: DashboardLayoutProps) {
+}) {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   return (
     <div
-      className="flex h-screen overflow-hidden"
-      style={{ background: "#11211e", color: "#d0ebe6" }}
+      className="flex h-screen w-full overflow-hidden"
+      style={{ background: "var(--color-bg)", color: "var(--color-text)" }}
     >
-      {/* Desktop sidebar — hidden on mobile */}
+      {/* Desktop sidebar */}
       <div className="hidden lg:flex lg:shrink-0">
         <Sidebar />
       </div>
 
-      {/* Mobile nav drawer */}
+      {/* Mobile drawer */}
       <MobileNav
         isOpen={mobileNavOpen}
         onClose={() => setMobileNavOpen(false)}
       />
 
       {/* Main column */}
-      <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
+      <main
+        className="flex-1 flex flex-col h-full overflow-hidden"
+        style={{ background: "var(--color-bg)" }}
+      >
         <Header
           onMenuClick={() => setMobileNavOpen(true)}
           unreadCount={3}
         />
 
-        {/* Page content */}
-        <main
-          className="flex-1 overflow-y-auto"
-          style={{ background: "#11211e" }}
-        >
-          <div className="max-w-screen-7xl mx-auto px-5 py-6">
+        {/* Scrollable content */}
+        <div className="flex-1 overflow-y-auto p-6 lg:p-10 scroll-smooth">
+          <div className="max-w-6xl mx-auto space-y-8">
             {children}
           </div>
-        </main>
-      </div>
+        </div>
+      </main>
     </div>
   );
 }

@@ -25,7 +25,7 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
         
         <div className="text-center mb-12">
-          <h2 className="text-[#17CFAD] text-sm font-bold tracking-wider uppercase mb-2">
+          <h2 className="text-primary text-sm font-bold tracking-wider uppercase mb-2">
             Happy Tails
           </h2>
           <h3 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">

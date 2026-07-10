@@ -1,61 +1,66 @@
-// src/components/marketing/GetStartedCard.
 'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
 import { LucideIcon } from 'lucide-react';
 
-type GetStartedProps = {
+interface GetStartedCardProps {
   icon: LucideIcon;
   title: string;
   description: string;
-  // number?: number;        // Optional: if you want to show 1, 2, 3
-};
+  index: number;
+}
 
-export default function GetStartedCard({
-  icon: Icon,
-  title,
-  description,
-  // number,
-}: GetStartedProps) {
+export default function GetStartedCard({ icon: Icon, title, description, index }: GetStartedCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 60 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      className="flex flex-col items-center bg-zinc-100 border border-zinc-300 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 w-full max-w-95 dark:bg-[#1a2e2b] dark:border-[#2a403d] group -hover:rotate-8 "
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.55, ease: 'easeOut', delay: index * 0.12 }}
+      className="relative flex flex-col items-center text-center p-8 rounded-2xl w-full h-full"
+      style={{
+        background: 'var(--color-surface)',
+        border: '1px solid var(--color-border)',
+      }}
+      whileHover={{ y: -4, transition: { duration: 0.2 } }}
     >
-      {/* Icon Circle with nice animation */}
-      <motion.div
-        initial={{ scale: 0.8, rotate: -12 }}
-        whileInView={{ 
-          scale: 1, 
-          rotate: 0,
-          backgroundColor: "#17CFAD" 
-        }}
-      
-      
-        transition={{
-          duration: 0.7,
-          ease: "backOut",
-          backgroundColor: { duration: 0.4 }
-        }}
-        className="w-20 h-20 flex items-center justify-center rounded-2xl shadow-md mb-8 group-hover:rotaet-8 transition-all"
+      {/* Step number — top-right corner */}
+      <span
+        className="absolute top-4 right-5 text-xs font-bold tabular-nums"
+        style={{ color: 'var(--color-text-muted)' }}
       >
-        <Icon 
-          size={36} 
-          strokeWidth={2.5}
-          className="text-white" 
+        {String(index + 1).padStart(2, '0')}
+      </span>
+
+      {/* Icon circle */}
+      <motion.div
+        initial={{ scale: 0.7, rotate: -10 }}
+        whileInView={{ scale: 1, rotate: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: 'backOut', delay: index * 0.12 + 0.15 }}
+        className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shrink-0"
+        style={{
+          background: 'color-mix(in srgb, var(--color-primary) 12%, transparent)',
+        }}
+      >
+        <Icon
+          size={28}
+          strokeWidth={1.75}
+          style={{ color: 'var(--color-primary)' }}
         />
       </motion.div>
 
-      {/* Title */}
-      <h3 className="text-2xl font-semibold text-slate-800 text-center mb-4 dark:text-zinc-100 ">
+      <h3
+        className="text-lg font-bold mb-3 leading-tight"
+        style={{ color: 'var(--color-text)' }}
+      >
         {title}
       </h3>
 
-      {/* Description */}
-      <p className="text-slate-600 text-base leading-relaxed text-center  dark:text-zinc-300">
+      <p
+        className="text-sm leading-relaxed"
+        style={{ color: 'var(--color-text-sub)' }}
+      >
         {description}
       </p>
     </motion.div>

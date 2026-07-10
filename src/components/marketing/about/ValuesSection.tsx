@@ -29,10 +29,10 @@ export default function ValuesSection() {
           {values.map((value, index) => (
             <div 
               key={index}
-              className="p-8 rounded-3xl bg-white border border-zinc-100 hover:border-[#17CFAD] transition-all duration-300 group dark:bg-[#19322d] dark:border-zinc-500 "
+              className="p-8 rounded-3xl bg-white border border-zinc-100 hover:border-primary transition-all duration-300 group dark:bg-[#19322d] dark:border-zinc-500 "
             >
               <div className="w-14 h-14 bg-[#D1F5EF] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-[#17CFAD] text-4xl">
+                <span className="material-symbols-outlined text-primary text-4xl">
                   {value.icon}
                 </span>
               </div>

@@ -53,9 +53,9 @@ export default function ApplicationForm({jobTitle}: ApplicationFormProps) {
   <div className="max-w-5xl
  mx-auto px-4 md:px-8 pt-24 pb-20 ">
       <header className="mb-12 text-center md:text-left">
-        <div className="flex items-center gap-2 text-[#17CFAD] font-semibold mb-10 justify-between flex-row-reverse ">
+        <div className="flex items-center gap-2 text-primary font-semibold mb-10 justify-between flex-row-reverse ">
 
-          <div className='flex items-center gap-2 text-[#17CFAD] font-semibold mb-3' >
+          <div className='flex items-center gap-2 text-primary font-semibold mb-3' >
           <span className="material-symbols-outlined">work</span>
           <span className="uppercase tracking-widest text-xs">Career Opportunity</span>
           </div>
@@ -82,7 +82,7 @@ export default function ApplicationForm({jobTitle}: ApplicationFormProps) {
             {/* Personal Information */}
             <section className="bg-white p-8 rounded-3xl border border-zinc-100">
               <h2 className="text-xl text-zinc-700 font-bold mb-6 flex items-center gap-3">
-                <span className="material-symbols-outlined text-[#17CFAD]">person</span>
+                <span className="material-symbols-outlined text-primary">person</span>
                 Personal Information
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -94,7 +94,7 @@ export default function ApplicationForm({jobTitle}: ApplicationFormProps) {
                     onChange={handleChange}
                     type="text"
                     required
-                    className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-[#17CFAD] focus:ring-1 focus:ring-[#17CFAD]"
+                    className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-primary focus:ring-1 focus:ring-primary"
                     placeholder="John Doe"
                   />
                 </div>
@@ -106,7 +106,7 @@ export default function ApplicationForm({jobTitle}: ApplicationFormProps) {
                     onChange={handleChange}
                     type="email"
                     required
-                    className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-[#17CFAD] focus:ring-1 focus:ring-[#17CFAD]"
+                    className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-primary focus:ring-1 focus:ring-primary"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -118,7 +118,7 @@ export default function ApplicationForm({jobTitle}: ApplicationFormProps) {
                     onChange={handleChange}
                     type="tel"
                     required
-                    className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-[#17CFAD] focus:ring-1 focus:ring-[#17CFAD]"
+                    className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-primary focus:ring-1 focus:ring-primary"
                     placeholder="+234 000 000 0000"
                   />
                 </div>
@@ -129,7 +129,7 @@ export default function ApplicationForm({jobTitle}: ApplicationFormProps) {
                     name="city"
                     value={formData.city}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-[#17CFAD] focus:ring-1 focus:ring-[#17CFAD] text-zinc-700 "  
+                    className="w-full px-4 py-3 rounded-2xl border border-zinc-200 focus:border-primary focus:ring-1 focus:ring-[#17CFAD] text-zinc-700 "  
                   >
                     <option value="Lagos">Lagos</option>
                     <option value="Abuja">Abuja</option>
@@ -233,15 +233,15 @@ export default function ApplicationForm({jobTitle}: ApplicationFormProps) {
             <h3 className="font-bold text-lg mb-5">Application Tips</h3>
             <ul className="space-y-5 text-sm text-zinc-700">
               <li className="flex gap-3">
-                <span className="material-symbols-outlined text-[#17CFAD] mt-0.5">check_circle</span>
+                <span className="material-symbols-outlined text-primary mt-0.5">check_circle</span>
                 Highlight any certifications in animal behavior or first aid.
               </li>
               <li className="flex gap-3">
-                <span className="material-symbols-outlined text-[#17CFAD] mt-0.5">check_circle</span>
+                <span className="material-symbols-outlined text-primary mt-0.5">check_circle</span>
                 Be specific about the breeds you have worked with.
               </li>
               <li className="flex gap-3">
-                <span className="material-symbols-outlined text-[#17CFAD] mt-0.5">check_circle</span>
+                <span className="material-symbols-outlined text-primary mt-0.5">check_circle</span>
                 Mention if you have a valid driver&apos;s license.
               </li>
             </ul>

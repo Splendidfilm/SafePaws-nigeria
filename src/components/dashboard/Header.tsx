@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -10,103 +10,124 @@ interface HeaderProps {
 }
 
 export function Header({ onMenuClick, unreadCount = 0 }: HeaderProps) {
-  const [searchFocused, setSearchFocused] = useState(false);
-
-  // Get greeting based on time of day
-  function getGreeting() {
-    const hour = new Date().getHours();
-    if (hour < 12) return "Good morning";
-    if (hour < 17) return "Good afternoon";
-    return "Good evening";
-  }
+  const [focused, setFocused] = useState(false);
 
   return (
     <header
-      className="h-16 flex items-center gap-4 px-5 shrink-0"
+      className="h-16 flex items-center justify-between px-6 py-3 shrink-0 z-10"
       style={{
-        borderBottom: "1px solid rgba(23,207,173,0.08)",
-        background: "rgba(17,33,30,0.8)",
-        backdropFilter: "blur(8px)",
+        background: "var(--color-surface)",
+        borderBottom: "1px solid var(--color-border)",
       }}
     >
-      {/* Mobile hamburger */}
-      <button
-        onClick={onMenuClick}
-        className="lg:hidden p-2 rounded-lg transition-colors"
-        style={{ color: "#7aafa3" }}
-        aria-label="Open menu"
-      >
-        <Menu size={20} />
-      </button>
-
-      {/* Greeting — hidden on small screens to save space */}
-      <div className="hidden sm:block flex-1 min-w-0">
-        <p className="text-sm font-medium truncate" style={{ color: "#d0ebe6" }}>
-          {getGreeting()}, Abina 👋
-        </p>
-      </div>
-
-      {/* Spacer on mobile */}
-      <div className="flex-1 sm:hidden" />
-
-      {/* Search */}
-      <div
-        className="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-150 cursor-text"
-        style={{
-          background: searchFocused ? "rgba(23,207,173,0.06)" : "rgba(255,255,255,0.03)",
-          border: `1px solid ${searchFocused ? "rgba(23,207,173,0.3)" : "rgba(255,255,255,0.06)"}`,
-          width: searchFocused ? "220px" : "160px",
-        }}
-        onClick={() => document.getElementById("dashboard-search")?.focus()}
-      >
-        <Search size={14} style={{ color: "#4d7a70", flexShrink: 0 }} />
-        <input
-          id="dashboard-search"
-          type="text"
-          placeholder="Search..."
-          className="bg-transparent text-sm outline-none w-full"
-          style={{ color: "#d0ebe6" }}
-          onFocus={() => setSearchFocused(true)}
-          onBlur={() => setSearchFocused(false)}
-        />
-        <kbd
-          className="hidden sm:inline-flex items-center text-[10px] px-1.5 py-0.5 rounded font-mono shrink-0"
-          style={{
-            background: "rgba(255,255,255,0.05)",
-            color: "#4d7a70",
-            border: "1px solid rgba(255,255,255,0.08)",
-          }}
+      {/* Mobile: hamburger + wordmark */}
+      <div className="flex items-center gap-4 lg:hidden">
+        <button
+          onClick={onMenuClick}
+          style={{ color: "var(--color-text)" }}
+          aria-label="Open navigation"
         >
-          ⌘ + K
-        </kbd>
+          <Menu size={22} />
+        </button>
+        <h2 className="font-bold text-lg" style={{ color: "var(--color-text)" }}>
+          SafePaws
+        </h2>
       </div>
 
-      {/* Notification bell */}
-      <Link
-        href="/dashboard/notifications"
-        className="relative p-2 rounded-lg transition-colors"
-        style={{ color: "#7aafa3" }}
-        aria-label={`Notifications${unreadCount > 0 ? ` — ${unreadCount} unread` : ""}`}
-      >
-        <Bell size={20} />
-        {unreadCount > 0 && (
+      {/* Desktop: search */}
+      <div className="hidden lg:flex w-full max-w-md">
+        <div className="relative w-full">
           <span
-            className="absolute top-1.5 right-1.5 flex items-center justify-center min-w-4 h-4 px-1 rounded-full text-[10px] font-semibold"
-            style={{ background: "#17CFAD", color: "#0b1a17" }}
+            className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+            style={{ color: "var(--color-text-muted)" }}
           >
-            {unreadCount > 9 ? "9+" : unreadCount}
+            <Search size={17} />
           </span>
-        )}
-      </Link>
+          <input
+            type="text"
+            placeholder="Search trips, invoices, or help articles..."
+            className="w-full py-2 pl-10 pr-4 text-sm rounded-[--radius-sm] outline-none transition-all"
+            style={{
+              background: "var(--color-surface-raised)",
+              color: "var(--color-text)",
+              border: focused
+                ? "2px solid var(--color-primary)"
+                : "2px solid transparent",
+            }}
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
+          />
+        </div>
+      </div>
 
-      {/* Avatar — desktop only (sidebar has it too; keep here for quick access on mobile) */}
-      <button
-        className="w-8 h-8 rounded-full shrink-0 flex items-center justify-center text-xs font-semibold lg:hidden"
-        style={{ background: "#17CFAD", color: "#0b1a17" }}
-        aria-label="Account"
-      >
-        A
-      </button>
+      {/* Right side */}
+      <div className="flex items-center gap-5 ml-auto">
+        {/* Help Center link */}
+        <Link
+          href="/dashboard/support"
+          className="hidden md:block text-sm font-medium transition-colors"
+          style={{ color: "var(--color-text-sub)" }}
+          onMouseEnter={(e) =>
+            ((e.currentTarget as HTMLElement).style.color = "var(--color-text)")
+          }
+          onMouseLeave={(e) =>
+            ((e.currentTarget as HTMLElement).style.color = "var(--color-text-sub)")
+          }
+        >
+          Help Center
+        </Link>
+
+        {/* Notification bell */}
+        <Link
+          href="/dashboard/notifications"
+          className="relative p-2 rounded-full transition-colors"
+          style={{ color: "var(--color-text)" }}
+          aria-label={`Notifications${unreadCount > 0 ? ` — ${unreadCount} unread` : ""}`}
+          onMouseEnter={(e) =>
+            ((e.currentTarget as HTMLElement).style.background = "var(--color-surface-raised)")
+          }
+          onMouseLeave={(e) =>
+            ((e.currentTarget as HTMLElement).style.background = "transparent")
+          }
+        >
+          <Bell size={20} />
+          {unreadCount > 0 && (
+            <span
+              className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full border-2"
+              style={{
+                background: "var(--color-error)",
+                borderColor: "var(--color-surface)",
+              }}
+              aria-hidden="true"
+            />
+          )}
+        </Link>
+
+        {/* User + avatar */}
+        <div
+          className="flex items-center gap-3 pl-4"
+          style={{ borderLeft: "1px solid var(--color-border)" }}
+        >
+          <div className="text-right hidden md:block">
+            <p className="text-sm font-bold leading-tight" style={{ color: "var(--color-text)" }}>
+              Abina
+            </p>
+            <p className="text-xs" style={{ color: "var(--color-text-sub)" }}>
+              Pet Owner
+            </p>
+          </div>
+          <div
+            className="h-10 w-10 rounded-full shrink-0 flex items-center justify-center font-bold text-sm border-2"
+            style={{
+              background: "var(--color-primary)",
+              color: "var(--color-primary-foreground)",
+              borderColor: "var(--color-surface)",
+            }}
+          >
+            A
+          </div>
+        </div>
+      </div>
     </header>
   );
 }

@@ -15,7 +15,7 @@ export default function VisitHubSection() {
 
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <span className="material-symbols-outlined text-[#17CFAD] text-2xl mt-1">location_on</span>
+              <span className="material-symbols-outlined text-primary text-2xl mt-1">location_on</span>
               <div>
                 <p className="font-medium text-zinc-900">12 Victoria Island Expressway</p>
                 <p className="text-zinc-600">Lagos, Nigeria</p>
@@ -23,7 +23,7 @@ export default function VisitHubSection() {
             </div>
 
             <div className="flex items-start gap-4">
-              <span className="material-symbols-outlined text-[#17CFAD] text-2xl mt-1">call</span>
+              <span className="material-symbols-outlined text-primary text-2xl mt-1">call</span>
               <div>
                 <p className="font-medium text-zinc-900">+234 (0) 800-PET-MOVE</p>
                 <p className="text-zinc-600">Toll-free support line</p>
@@ -40,11 +40,11 @@ export default function VisitHubSection() {
             className="w-full h-full object-cover"
             fill
           />
-          <div className="absolute inset-0 bg-[#17CFAD]/10 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
 
           {/* Location Pin */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <div className="w-14 h-14 bg-white text-[#17CFAD] rounded-full flex items-center justify-center shadow-2xl ring-8 ring-white/50">
+            <div className="w-14 h-14 bg-white text-primary rounded-full flex items-center justify-center shadow-2xl ring-8 ring-white/50">
               <span className="material-symbols-outlined text-3xl">location_on</span>
             </div>
           </div>
