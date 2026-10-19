@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Link from "next/link";
 import {
   MapPin,
@@ -8,7 +8,6 @@ import {
   Syringe,
   Receipt,
   Wallet,
-  ChevronRight,
   Plus,
   Thermometer,
   Layers,
@@ -16,24 +15,13 @@ import {
   CalendarCheck,
   PackageCheck,
   PawPrint,
+  ChevronRight,
   Crosshair,
   Pill,
 } from "lucide-react";
-
-// ─── Types ────────────────────────────────────────────────────────────────────
+import { useSafePawsStore } from "@/lib/store";
 
 type HealthStatus = "ok" | "warning" | "urgent";
-
-interface Pet {
-  id: string;
-  name: string;
-  breed: string;
-  age: string;
-  emoji: string;
-  emojiBg: string;
-  healthStatus: HealthStatus;
-  healthLabel: string;
-}
 
 interface Reminder {
   id: string;
@@ -45,86 +33,6 @@ interface Reminder {
   accentColor: string;
   accentBg: string;
 }
-
-// ─── Mock data — swap for real server fetches / React Query later ─────────────
-
-const ACTIVE_BOOKING = {
-  petName: "Bruno",
-  destination: "Lekki Vet Clinic",
-  destinationAddress: "Admiralty Way, Lekki Phase 1",
-  eta: "15 min",
-  etaOnTime: true,
-  handlerName: "Chinedu O.",
-  handlerRating: 4.9,
-  vehicleTempC: 22,
-  petStatus: "Comfortable and resting",
-  bookingId: "SP-2024-00123",
-};
-
-const PETS: Pet[] = [
-  {
-    id: "pet_1",
-    name: "Bruno",
-    breed: "Golden Retriever",
-    age: "3 yrs",
-    emoji: "🐕",
-    emojiBg: "#fef3c7",
-    healthStatus: "ok",
-    healthLabel: "Vaccinations up to date",
-  },
-  {
-    id: "pet_2",
-    name: "Luna",
-    breed: "Siamese Cat",
-    age: "2 yrs",
-    emoji: "🐈",
-    emojiBg: "#e0f2fe",
-    healthStatus: "warning",
-    healthLabel: "Check-up due in 3 days",
-  },
-];
-
-const REMINDERS: Reminder[] = [
-  {
-    id: "r1",
-    type: "vaccination",
-    title: "Luna's Vaccination",
-    subtitle: "Tomorrow, 10:00 AM",
-    actionLabel: "Book Transport",
-    actionHref: "/dashboard/booking",
-    accentColor: "var(--color-primary)",
-    accentBg: "color-mix(in srgb, var(--color-primary) 12%, transparent)",
-  },
-  {
-    id: "r2",
-    type: "invoice",
-    title: "Pending Invoice",
-    subtitle: "Trip #SP-2024-00118 · ₦4,500",
-    actionLabel: "Pay Now",
-    actionHref: "/dashboard/wallet",
-    accentColor: "var(--color-warning)",
-    accentBg: "color-mix(in srgb, var(--color-warning) 12%, transparent)",
-  },
-  {
-    id: "r3",
-    type: "medication",
-    title: "Bruno's Medication",
-    subtitle: "Antibiotic 5mg · Due at 8:00 PM",
-    actionLabel: "Mark as given",
-    actionHref: "/dashboard/health",
-    accentColor: "#8b5cf6",
-    accentBg: "color-mix(in srgb, #8b5cf6 12%, transparent)",
-  },
-];
-
-const QUICK_STATS = [
-  { label: "Total Trips",   value: "12", sub: "lifetime",   icon: PackageCheck, color: "var(--color-primary)" },
-  { label: "Pets",          value: "2",  sub: "registered", icon: PawPrint,     color: "var(--color-warning)" },
-  { label: "Upcoming",      value: "1",  sub: "booking",    icon: CalendarCheck,color: "#3b82f6" },
-  { label: "Health Alerts", value: "1",  sub: "this week",  icon: HeartPulse,   color: "var(--color-error)" },
-];
-
-// ─── Health status config ─────────────────────────────────────────────────────
 
 const HEALTH_STYLE: Record<HealthStatus, { dot: string; text: string }> = {
   ok:      { dot: "var(--color-success)", text: "var(--color-success)" },
@@ -139,9 +47,50 @@ const REMINDER_ICON: Record<Reminder["type"], React.ReactNode> = {
   appointment:  <CalendarCheck size={18} />,
 };
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
-
 export default function DashboardPage() {
+  const { pets, bookings, vaccinations, medications, actions } = useSafePawsStore();
+  const activeBooking = bookings.find((b) => b.status === "IN_TRANSIT") || bookings[0];
+
+  const quickStats = [
+    { label: "Total Trips",   value: bookings.length.toString(), sub: "recorded",   icon: PackageCheck, color: "var(--color-primary)" },
+    { label: "Pets",          value: pets.length.toString(),     sub: "registered", icon: PawPrint,     color: "var(--color-warning)" },
+    { label: "Active Trips",  value: bookings.filter((b) => b.status === "IN_TRANSIT").length.toString(),  sub: "in transit", icon: CalendarCheck, color: "#3b82f6" },
+    { label: "Health Alerts", value: vaccinations.filter((v) => v.status === "due_soon").length.toString(),  sub: "this month",  icon: HeartPulse,   color: "var(--color-error)" },
+  ];
+
+  const reminders: Reminder[] = [
+    {
+      id: "r1",
+      type: "vaccination",
+      title: "Luna's FVRCP Booster",
+      subtitle: "Due in 3 days · Lekki Vet Clinic",
+      actionLabel: "Book Transport",
+      actionHref: "/dashboard/booking",
+      accentColor: "var(--color-primary)",
+      accentBg: "color-mix(in srgb, var(--color-primary) 12%, transparent)",
+    },
+    {
+      id: "r2",
+      type: "invoice",
+      title: "SafePaws Escrow Receipt",
+      subtitle: `Trip #${activeBooking?.id || 'SP-2024-00123'} · ₦${(activeBooking?.totalPrice || 8150).toLocaleString()}`,
+      actionLabel: "View Wallet",
+      actionHref: "/dashboard/wallet",
+      accentColor: "var(--color-warning)",
+      accentBg: "color-mix(in srgb, var(--color-warning) 12%, transparent)",
+    },
+    {
+      id: "r3",
+      type: "medication",
+      title: "Bruno's Prescription",
+      subtitle: "Amoxicillin 5mg · Due at 8:00 PM",
+      actionLabel: "Mark as given",
+      actionHref: "/dashboard/health",
+      accentColor: "#8b5cf6",
+      accentBg: "color-mix(in srgb, #8b5cf6 12%, transparent)",
+    },
+  ];
+
   return (
     <>
       {/* ── Welcome heading ────────────────────────────────────────────────── */}
@@ -154,7 +103,7 @@ export default function DashboardPage() {
             Welcome back, Abina
           </h2>
           <p className="text-lg" style={{ color: "var(--color-text-sub)" }}>
-            Here's what's happening with your furry friends today.
+            Here&apos;s what&apos;s happening with your furry friends today.
           </p>
         </div>
         <Link
@@ -239,10 +188,10 @@ export default function DashboardPage() {
                     />
                     <div>
                       <p className="font-bold text-lg leading-tight" style={{ color: "var(--color-text)" }}>
-                        {ACTIVE_BOOKING.destination}
+                        {activeBooking.deliveryAddress.split(',')[0]}
                       </p>
                       <p className="text-sm mt-0.5" style={{ color: "var(--color-text-sub)" }}>
-                        {ACTIVE_BOOKING.destinationAddress}
+                        {activeBooking.deliveryAddress}
                       </p>
                     </div>
                   </div>
@@ -256,11 +205,11 @@ export default function DashboardPage() {
                   >
                     Estimated Arrival
                   </p>
-                  <p className="text-2xl font-black" style={{ color: "var(--color-text)" }}>
-                    {ACTIVE_BOOKING.eta}
+                  <p className="text-2xl font-black font-mono" style={{ color: "var(--color-text)" }}>
+                    {activeBooking.eta || "15 min"}
                   </p>
                   <p className="text-sm font-medium mt-0.5" style={{ color: "var(--color-success)" }}>
-                    {ACTIVE_BOOKING.etaOnTime ? "On time" : "Slight delay"}
+                    On schedule · Lekki Corridor
                   </p>
                 </div>
 
@@ -273,9 +222,9 @@ export default function DashboardPage() {
                   }}
                 >
                   <Thermometer size={13} style={{ color: "var(--color-primary)" }} />
-                  <span>{ACTIVE_BOOKING.vehicleTempC}°C</span>
+                  <span className="font-mono">{activeBooking.cabinTempC || 22}°C</span>
                   <span style={{ color: "var(--color-border-strong)" }}>·</span>
-                  <span>{ACTIVE_BOOKING.petStatus}</span>
+                  <span>{activeBooking.petStatus}</span>
                 </div>
 
                 {/* Handler */}
@@ -291,18 +240,18 @@ export default function DashboardPage() {
                         color: "var(--color-primary-foreground)",
                       }}
                     >
-                      {ACTIVE_BOOKING.handlerName.charAt(0)}
+                      {activeBooking.handlerName.charAt(0)}
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="font-bold" style={{ color: "var(--color-text)" }}>
-                        {ACTIVE_BOOKING.handlerName}
+                        {activeBooking.handlerName}
                       </p>
                       <div
                         className="flex items-center gap-1 text-xs mt-0.5"
                         style={{ color: "var(--color-text-sub)" }}
                       >
                         <Star size={12} className="fill-yellow-400 text-yellow-400" />
-                        <span>{ACTIVE_BOOKING.handlerRating} Rating</span>
+                        <span>{activeBooking.handlerRating} Rating</span>
                         <span className="mx-1">·</span>
                         <BadgeCheck size={12} style={{ color: "var(--color-success)" }} />
                         <span style={{ color: "var(--color-success)" }} className="font-medium">
@@ -310,58 +259,68 @@ export default function DashboardPage() {
                         </span>
                       </div>
                     </div>
-                    <button
+                    <a
+                      href={`tel:${activeBooking.handlerPhone || '+2348035550192'}`}
                       className="h-10 w-10 flex items-center justify-center rounded-full transition-colors"
                       style={{
                         background: "color-mix(in srgb, var(--color-primary) 12%, transparent)",
                         color: "var(--color-primary)",
                       }}
-                      aria-label={`Call ${ACTIVE_BOOKING.handlerName}`}
+                      aria-label={`Call ${activeBooking.handlerName}`}
                     >
                       <Phone size={17} />
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
 
-              {/* Map placeholder — swap with <GoogleMap> on API integration */}
+              {/* Live Stylized SVG Route Preview */}
               <div
-                className="relative h-64 md:h-auto overflow-hidden"
-                style={{ background: "var(--color-surface-raised)" }}
+                className="relative h-64 md:h-auto overflow-hidden bg-zinc-950 flex items-center justify-center p-3 select-none"
               >
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                  <Crosshair size={36} style={{ color: "var(--color-border-strong)" }} />
-                  <p className="text-sm font-medium" style={{ color: "var(--color-text-muted)" }}>
-                    Live Map
-                  </p>
-                  <p className="text-xs" style={{ color: "var(--color-text-muted)" }}>
-                    Google Maps · coming soon
-                  </p>
-                </div>
+                <svg className="w-full h-full max-w-sm" viewBox="0 0 300 200">
+                  <path
+                    d="M 30,130 C 100,130 120,70 180,70 C 230,70 250,40 280,40"
+                    fill="none"
+                    stroke="#27272a"
+                    strokeWidth="5"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M 30,130 C 100,130 120,70 180,70 C 230,70 250,40 280,40"
+                    fill="none"
+                    stroke="#17CFAD"
+                    strokeWidth="5"
+                    strokeDasharray="300"
+                    strokeDashoffset={300 - (300 * (activeBooking.progressPercentage || 68)) / 100}
+                    strokeLinecap="round"
+                  />
+                  <circle cx="30" cy="130" r="7" fill="#10B981" />
+                  <circle cx="280" cy="40" r="7" fill="#EF4444" />
+                  <g transform="translate(180, 70)">
+                    <circle r="10" fill="rgba(23,207,173,0.3)" className="animate-ping" />
+                    <circle r="7" fill="#17CFAD" />
+                  </g>
+                </svg>
 
-                {/* Layers control (decorative) */}
-                <div
-                  className="absolute top-4 right-4 p-2 rounded-[--radius-sm] shadow-md"
-                  style={{ background: "var(--color-surface)" }}
-                >
-                  <Layers size={17} style={{ color: "var(--color-text-sub)" }} />
+                <div className="absolute top-3 left-3 bg-zinc-900/80 backdrop-blur-sm rounded-lg px-2.5 py-1 text-[11px] text-white font-mono border border-zinc-800">
+                  <span className="text-emerald-400 font-bold">{activeBooking.progressPercentage || 68}%</span> En Route
                 </div>
 
                 {/* Track Live overlay */}
                 <div
-                  className="absolute bottom-0 left-0 right-0 flex items-end justify-center p-4"
-                  style={{ background: "linear-gradient(to top, rgba(0,0,0,0.45), transparent)" }}
+                  className="absolute bottom-0 left-0 right-0 flex items-end justify-center p-3"
+                  style={{ background: "linear-gradient(to top, rgba(0,0,0,0.6), transparent)" }}
                 >
                   <Link
-                    href={`/dashboard/tracking/${ACTIVE_BOOKING.bookingId}`}
-                    className="flex items-center justify-center gap-2 w-full py-2 px-4 rounded-[--radius-sm] text-sm font-bold shadow-lg transition-colors"
+                    href={`/dashboard/tracking/${activeBooking.id}`}
+                    className="flex items-center justify-center gap-2 w-full py-2 px-4 rounded-xl text-xs font-bold shadow-lg transition-colors text-white"
                     style={{
-                      background: "var(--color-surface)",
-                      color: "var(--color-text)",
+                      background: "var(--color-primary)",
                     }}
                   >
-                    <MapPin size={15} style={{ color: "var(--color-primary)" }} />
-                    Track Live
+                    <MapPin size={14} />
+                    Open Live GPS Tracking
                   </Link>
                 </div>
               </div>
@@ -384,7 +343,7 @@ export default function DashboardPage() {
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4">
-              {PETS.map((pet) => {
+              {pets.map((pet) => {
                 const hs = HEALTH_STYLE[pet.healthStatus];
                 return (
                   <Link
@@ -440,7 +399,7 @@ export default function DashboardPage() {
 
               {/* Add pet — TRD §5.4 */}
               <Link
-                href="/dashboard/pets/new"
+                href="/dashboard/pets"
                 className="flex items-center justify-center gap-3 p-4 rounded-[--radius-md] border border-dashed transition-colors min-h-[96px]"
                 style={{
                   borderColor: "var(--color-border-strong)",
@@ -466,7 +425,7 @@ export default function DashboardPage() {
           {/* Quick stats — TRD §5.3 */}
           <section aria-label="Quick stats">
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {QUICK_STATS.map(({ label, value, sub, icon: Icon, color }) => (
+              {quickStats.map(({ label, value, sub, icon: Icon, color }) => (
                 <div
                   key={label}
                   className="rounded-[--radius-md] border shadow-sm p-4"
@@ -522,7 +481,7 @@ export default function DashboardPage() {
             </div>
 
             <div className="space-y-4">
-              {REMINDERS.map((r, i) => (
+              {reminders.map((r, i) => (
                 <div key={r.id}>
                   {i > 0 && (
                     <div

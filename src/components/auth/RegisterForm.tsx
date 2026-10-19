@@ -382,7 +382,7 @@ export default function RegisterForm() {
               </div>
               {confirm.length > 0 && !passwordsMatch && (
                 <p className="text-xs" style={{ color: 'var(--color-error)' }}>
-                  Passwords don't match
+                  Passwords don&apos;t match
                 </p>
               )}
             </div>

@@ -59,7 +59,7 @@ export default function ForgotPassword() {
                 </p>
               </div>
               <p className="text-xs text-text-muted">
-                Didn't receive it? Check your spam folder or{' '}
+                Didn&apos;t receive it? Check your spam folder or{' '}
                 <button
                   type="button"
                   onClick={() => setSuccess(false)}
@@ -87,7 +87,7 @@ export default function ForgotPassword() {
                 </div>
                 <h1 className="text-2xl font-bold text-text">Reset your password</h1>
                 <p className="mt-2 text-sm text-text-sub">
-                  Enter your email and we'll send you a reset link.
+                  Enter your email and we&apos;ll send you a reset link.
                 </p>
               </div>
 

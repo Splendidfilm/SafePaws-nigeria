@@ -1,9 +1,6 @@
 import React from 'react'
+import Verify from '@/components/auth/Verify'
 
-export default function page() {
-  return (
-    <div>
-      
-    </div>
-  )
+export default function VerifyEmailPage() {
+  return <Verify />
 }

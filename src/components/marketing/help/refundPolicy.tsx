@@ -52,11 +52,11 @@ export default function RefundPolicy({isOpen , onClose} : RefundPolicyProps) {
 
           {/* Conditions */}
         <section className="bg-zinc-50 p-6 rounded-2xl border border-zinc-100">
-            {conditions.map((condition,index)=>(
-              <div className="flex items-center gap-3 mb-5">
-              <span className="material-symbols-outlined text-primary">{condition.icon}</span>
-              <h3 className="text-sm font-bold text-zinc-400 ">{condition.text}</h3>
-            </div>
+            {conditions.map((condition, index) => (
+              <div key={index} className="flex items-center gap-3 mb-5">
+                <span className="material-symbols-outlined text-primary">{condition.icon}</span>
+                <h3 className="text-sm font-bold text-zinc-400 ">{condition.text}</h3>
+              </div>
             ))}
           </section>
 

@@ -270,7 +270,7 @@ export function Hero() {
                   border: "1px solid color-mix(in srgb, var(--color-primary) 22%, transparent)",
                 }}>
                 <Shield size={12} />
-                Nigeria's most trusted pet transport
+                Nigeria&apos;s most trusted pet transport
               </div>
 
               {/* Headline */}
